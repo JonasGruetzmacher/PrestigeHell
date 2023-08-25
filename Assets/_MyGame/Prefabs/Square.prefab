@@ -624,7 +624,7 @@ MonoBehaviour:
   Billboard: 0
   InstantiatedOnDeath: {fileID: 0}
   HealthBarOffset: {x: 0, y: 1, z: 0}
-  AlwaysVisible: 1
+  AlwaysVisible: 0
   DisplayDurationOnHit: 1
   HideBarAtZero: 1
   HideBarAtZeroDelay: 1

@@ -593,6 +593,8 @@ GameObject:
   - component: {fileID: -8139061195096790753}
   - component: {fileID: 6214733238307393164}
   - component: {fileID: 4672990670352266084}
+  - component: {fileID: -3318816802040893992}
+  - component: {fileID: -460807181019045799}
   m_Layer: 0
   m_Name: XPOrb
   m_TagString: Untagged
@@ -700,7 +702,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5985453685250786793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -739,3 +741,32 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LifeTime: 0
+--- !u!114 &-3318816802040893992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985453685250786793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb9568c50c057146a770e1a57bb7891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stat: {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
+--- !u!58 &-460807181019045799
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5985453685250786793}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997

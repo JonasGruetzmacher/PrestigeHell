@@ -4,12 +4,16 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
 using System.Linq;
+using System.Resources;
 
 [CreateAssetMenu(menuName = "Stats")]
 public class Stats : SerializedScriptableObject
 {
     public Dictionary<Stat, float> instanceStats = new Dictionary<Stat, float>();
     public Dictionary<Stat, float> stats = new Dictionary<Stat, float>();
+
+    [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.OneLine)]
+    public Dictionary<Stat, ScalingStat> statCurves = new Dictionary<Stat, ScalingStat>();
     private List<StatsUpgrade> appliedUpgrades = new List<StatsUpgrade>();
 
     public event Action<Stats, StatsUpgrade> upgradeApplied;
@@ -51,6 +55,7 @@ public class Stats : SerializedScriptableObject
 
     public float GetUpgradedValue(Stat stat, float baseValue)
     {
+        baseValue = AddScaling(baseValue, stat);
         foreach (var upgrade in appliedUpgrades)
         {
             if(!upgrade.upgradeToApply.TryGetValue(stat, out var upgradeValue))
@@ -61,6 +66,15 @@ public class Stats : SerializedScriptableObject
                 baseValue += upgradeValue;
         }
         return baseValue;
+    }
+
+    private float AddScaling(float baseValue, Stat stat)
+    {
+        if(statCurves == null)
+            return baseValue;
+        if(!statCurves.TryGetValue(stat, out var curve))
+            return baseValue;
+        return baseValue + curve.curve.Evaluate(ResourcesManager.Instance.GetResourceAmount(ResourceType.Danger));
     }
 
     [Button]

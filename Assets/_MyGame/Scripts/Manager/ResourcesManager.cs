@@ -10,11 +10,11 @@ using MoreMountains.TopDownEngine;
 
 public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<ResourceEvent>, MMEventListener<TopDownEngineEvent>
 {
-    public static ResourcesManager instance;
 
 
     public MMSerializableDictionary<ResourceType, float> resources = new MMSerializableDictionary<ResourceType, float>();
 
+    [SerializeField] private AnimationCurve levelCurve;
 
     public void Start()
     {
@@ -86,7 +86,7 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     private void CheckLevelUp()
     {
-        if (resources[ResourceType.LevelPoints]>=10)
+        if (resources[ResourceType.LevelPoints]>= GetNextLevelRequirement())
         {
             LevelUp();
         }
@@ -94,34 +94,37 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     private void LevelUp()
     {
-        RemoveResource(ResourceType.LevelPoints, 10);
+        RemoveResource(ResourceType.LevelPoints, levelCurve.Evaluate(resources[ResourceType.Level]));
         AddResource(ResourceType.Level, 1);
+        GameEvent.Trigger(Eventname.LevelUp);
+    }
+
+    public float GetNextLevelRequirement()
+    {
+        return levelCurve.Evaluate(resources[ResourceType.Level] + 1);
     }
 
     private void Reset()
     {
         SetResource(ResourceType.Level, 0);
         SetResource(ResourceType.LevelPoints, 0);
+        SetResource(ResourceType.Danger, 0);
     }
 
     public virtual void OnMMEvent(ResourceEvent eventType)
     {
-        switch (eventType.resourceAmount.type)
+        switch (eventType.resourceMethod)
         {
-            case ResourceType.XP:
-                switch (eventType.resourceMethod)
-                {
-                    case ResourceMethods.Add:
-                        AddResource(eventType.resourceAmount);
-                        AddResource(ResourceType.LevelPoints, eventType.resourceAmount.amount);
-                        break;
-                    case ResourceMethods.Remove:
-                        RemoveResource(eventType.resourceAmount);
-                        break;
-                    case ResourceMethods.Set:
-                        resources[eventType.resourceAmount.type] = eventType.resourceAmount.amount;
-                        break;
-                }
+            case ResourceMethods.Add:
+                AddResource(eventType.resourceAmount);
+                if(eventType.resourceAmount.type == ResourceType.XP)
+                    AddResource(ResourceType.LevelPoints, eventType.resourceAmount.amount);
+                break;
+            case ResourceMethods.Remove:
+                RemoveResource(eventType.resourceAmount);
+                break;
+            case ResourceMethods.Set:
+                resources[eventType.resourceAmount.type] = eventType.resourceAmount.amount;
                 break;
         } 
     }
@@ -139,8 +142,8 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
     private void UpdateResource(ResourceType type)
     {
         MyGUIManager.Instance.SendMessageUpwards("UpdateResourceBar", type);
+        MyGUIManager.Instance.SendMessageUpwards("UpdateResourceText", type);
     }
-
 
 
     private void OnEnable()
@@ -159,23 +162,23 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 }
 
 public struct ResourceEvent
-	{
-		public ResourceMethods resourceMethod;
-		public ResourceAmount resourceAmount;
+{
+    public ResourceMethods resourceMethod;
+    public ResourceAmount resourceAmount;
 
-		public ResourceEvent(ResourceMethods pointsMethod, ResourceAmount resourceAmount)
-        {
-            this.resourceMethod = pointsMethod;
-            this.resourceAmount = resourceAmount;
-        }
+    public ResourceEvent(ResourceMethods pointsMethod, ResourceAmount resourceAmount)
+    {
+        this.resourceMethod = pointsMethod;
+        this.resourceAmount = resourceAmount;
+    }
 
-		static ResourceEvent e;
-		public static void Trigger(ResourceMethods pointsMethod, ResourceAmount resourceAmount)
-        {
-            e.resourceMethod = pointsMethod;
-            e.resourceAmount = resourceAmount;
-            MMEventManager.TriggerEvent(e);
-        }
-	}
+    static ResourceEvent e;
+    public static void Trigger(ResourceMethods pointsMethod, ResourceAmount resourceAmount)
+    {
+        e.resourceMethod = pointsMethod;
+        e.resourceAmount = resourceAmount;
+        MMEventManager.TriggerEvent(e);
+    }
+}
 
     public enum ResourceMethods { Add, Remove, Set }

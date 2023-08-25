@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
+using Unity.VisualScripting;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
 public static class HelperFunctions
 {
@@ -36,6 +39,22 @@ public static class HelperFunctions
         }
         return count;
     }
+
+    public static string ToPrettyString<T,V>(this Dictionary<T,V> dict)
+    {
+        string text = "";
+        foreach (var pair in dict)
+        {
+            text += pair.ToPrettyString() + "\n";
+        }
+        return text;
+    }
+
+    public static string ToPrettyString<T,V>(this KeyValuePair<T,V> pair)
+    {
+        return $"{pair.Key}: {pair.Value}";
+    }
+
 }
 
 [System.Serializable]
@@ -81,12 +100,47 @@ public enum ResourceType
     XP,
     Level,
     LevelPoints,
+    Danger,
+    dangerPoints,
 }
 
 public enum Stat
 {
-    health,
-    speed,
-    touchDamage,
-    
+    health = 0,
+    speed = 1,
+    touchDamage = 2,
+    attackSpeed = 3,
+    damageReduction = 4,
+    collectRange = 5,
+    xPGain = 6,
+}
+
+public struct ScalingStat
+{
+    [HideLabel]
+    public AnimationCurve curve;
+}
+
+public struct GameEvent
+{
+    public Eventname eventName;
+
+    public GameEvent(Eventname name)
+    {
+        this.eventName = name;
+    }
+
+
+    static GameEvent e;
+    public static void Trigger(Eventname eventName)
+    {
+        e.eventName = eventName;
+        MMEventManager.TriggerEvent(e);
+    }
+}
+
+public enum Eventname
+{
+    DangerChanged = 0,
+    LevelUp = 1,
 }

@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Tools;
 using MoreMountains.TopDownEngine;
 using UnityEngine;
 
-public class CharacterStats : CharacterAbility
+public class CharacterStats : CharacterAbility, MMEventListener<GameEvent>
 {
     [SerializeField] private Stats stats;
 
@@ -15,12 +16,14 @@ public class CharacterStats : CharacterAbility
     {
         base.OnEnable();
         stats.upgradeApplied += OnUpgradeApplied;
+        this.MMEventStartListening<GameEvent>();
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
         stats.upgradeApplied -= OnUpgradeApplied;
+        this.MMEventStopListening<GameEvent>();
     }
 
     protected  override void Initialization()
@@ -77,5 +80,17 @@ public class CharacterStats : CharacterAbility
                 _health.ReceiveHealth(statsUpgrade.upgradeToApply[Stat.health], this.gameObject);
         }
         
+    }
+
+    public void OnMMEvent(GameEvent eventType)
+    {
+        switch (eventType.eventName)
+        {
+            case Eventname.DangerChanged:
+                ApplyStats();
+                break;
+            default:
+                break;
+        }
     }
 }

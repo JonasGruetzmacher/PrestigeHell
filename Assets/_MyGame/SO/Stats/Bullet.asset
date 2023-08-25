@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49bf55faac9e80d4a9f83622382db1de, type: 3}
-  m_Name: SpeedBuff
+  m_Script: {fileID: 11500000, guid: 575ffb728fdffc340a7f26b13535bdf6, type: 3}
+  m_Name: Bullet
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,7 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: upgradeToApply
+    - Name: instanceStats
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
         mscorlib]], mscorlib
@@ -40,16 +40,32 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: stats
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
       Data: 1
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: $v
       Entry: 4
-      Data: 10
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -59,11 +75,3 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeName: +1 Speed
-  cost:
-  - type: 0
-    amount: 1
-  upgradeLimit: 10
-  unitsToUpgrade:
-  - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
-  isPercentageUpgrade: 0

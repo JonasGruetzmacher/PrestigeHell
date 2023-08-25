@@ -36,9 +36,9 @@ public class StatsUpgrade : Upgrade
 
     private bool CanPurchase()
     {
-        foreach (var resourceAmount in cost)
+        foreach (var resourceAmount in GetNextUpgradeCost())
         {
-            if (resourceAmount.amount > ResourcesManager.Instance.GetResourceAmount(resourceAmount.type))
+            if (resourceAmount.Value > ResourcesManager.Instance.GetResourceAmount(resourceAmount.Key))
             {
                 return false;
             }
@@ -48,9 +48,9 @@ public class StatsUpgrade : Upgrade
 
     private void PayUpgrade()
     {
-        foreach (var resourceAmount in cost)
+        foreach (var resourceAmount in GetNextUpgradeCost())
         {
-            ResourceEvent.Trigger(ResourceMethods.Remove, resourceAmount);
+            ResourceEvent.Trigger(ResourceMethods.Remove, new ResourceAmount(resourceAmount.Key, (int)resourceAmount.Value));
         }
     }
 

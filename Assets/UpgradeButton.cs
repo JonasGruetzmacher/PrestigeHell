@@ -20,7 +20,7 @@ public class UpgradeButton : MonoBehaviour
         upgradeName.text = upgrade.upgradeName;
         // upgradeDescription.text = upgrade.description;
         string text = "";
-        foreach (var resource in upgrade.cost)
+        foreach (var resource in upgrade.GetNextUpgradeCost())
         {
             text += resource.ToPrettyString() + "\n";
         }
