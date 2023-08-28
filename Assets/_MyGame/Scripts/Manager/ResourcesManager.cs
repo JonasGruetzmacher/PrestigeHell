@@ -16,8 +16,9 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     [SerializeField] private AnimationCurve levelCurve;
 
-    public void Start()
+    protected override void Awake()
     {
+        base.Awake();
         foreach (var resource in ResourceType.GetValues(typeof(ResourceType)))
         {
             resources.Add((ResourceType)resource, 0);

@@ -15,7 +15,12 @@ public class UpgradeButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI upgradeCost;
 
 
-    private void Start()
+    public void SetUpgrade(Upgrade upgrade)
+    {
+        this.upgrade = upgrade;
+    }
+
+    public void Initialize()
     {
         upgradeName.text = upgrade.upgradeName;
         // upgradeDescription.text = upgrade.description;
