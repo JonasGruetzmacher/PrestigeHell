@@ -4981,7 +4981,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8448
   Owner: {fileID: 0}
-  TriggerFilter: 195
+  TriggerFilter: 64
   MinDamageCaused: 10
   MaxDamageCaused: 10
   TypedDamages: []

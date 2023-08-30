@@ -144,3 +144,11 @@ public enum Eventname
     DangerChanged = 0,
     LevelUp = 1,
 }
+
+public enum LevelUpgradeState
+{
+    Locked = 0,
+    Unlocked = 1,
+    Selected = 2,
+    Disabled = 3,
+}

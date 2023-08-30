@@ -5,9 +5,12 @@ using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
 using TMPro;
 using System.Resources;
+using UnityEngine.EventSystems;
 
 public class MyGUIManager : GUIManager
 {
+	public GameObject levelUpPanel;
+
 	public MMProgressBar XPBar;
 	public MMProgressBar dangerBar;
 	[SerializeField] private MMSerializableDictionary<ResourceType, MMProgressBar> resourceBars = new MMSerializableDictionary<ResourceType, MMProgressBar>();
@@ -22,6 +25,7 @@ public class MyGUIManager : GUIManager
 	{
 		base.Start();
 		StartCoroutine(UpdateResourceBarCoroutine(ResourceType.Danger));
+		SetLevelUpPanel(false);
 	}
 
     public virtual void UpdateBar(MMProgressBar bar, float currentXP,float minXP,float maxXP,string playerID)
@@ -83,6 +87,15 @@ public class MyGUIManager : GUIManager
 			UpdateResourceBar(resourceType);
 			yield return new WaitForSeconds(0.1f);
 		}
+	}
+
+	public virtual void SetLevelUpPanel(bool state)
+	{
+		if (levelUpPanel != null)
+			{
+				levelUpPanel.SetActive(state);
+				EventSystem.current.sendNavigationEvents = state;
+			}
 	}
 
 	// protected void OnEnable()

@@ -32,10 +32,18 @@ public class StatsUpgrade : Upgrade
         {
             unitToUpgrade.UnlockUpgrade(this);
         }
+        foreach (var blockUpgrade in blockedUpgrades)
+        {
+            blockUpgrade.Unlock(false);
+        }
     }
 
     private bool CanPurchase()
     {
+        if(GetNextUpgradeCost() == null)
+        {
+            return true;
+        }
         foreach (var resourceAmount in GetNextUpgradeCost())
         {
             if (resourceAmount.Value > ResourcesManager.Instance.GetResourceAmount(resourceAmount.Key))
@@ -48,6 +56,10 @@ public class StatsUpgrade : Upgrade
 
     private void PayUpgrade()
     {
+        if (GetNextUpgradeCost() == null)
+        {
+            return;
+        }
         foreach (var resourceAmount in GetNextUpgradeCost())
         {
             ResourceEvent.Trigger(ResourceMethods.Remove, new ResourceAmount(resourceAmount.Key, (int)resourceAmount.Value));
@@ -57,7 +69,6 @@ public class StatsUpgrade : Upgrade
     public override void ResetUpgrade()
     {
         currentUpgradeCount = 0;
+        isUnlocked = false;
     }
-
-
 }
