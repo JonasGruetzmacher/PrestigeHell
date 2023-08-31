@@ -43,8 +43,12 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
     public void AddResource(ResourceType type, float amount)
     {
         resources[type] += amount;
-        if(type != ResourceType.LevelPoints)
+        if(type == ResourceType.LevelPoints)
             CheckLevelUp();
+        if(type == ResourceType.Danger)
+        {
+            GameEvent.Trigger(Eventname.DangerChanged);
+        }
         UpdateResource(type);
     }
 

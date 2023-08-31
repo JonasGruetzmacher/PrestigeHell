@@ -4918,7 +4918,7 @@ MonoBehaviour:
   DirectionCanBeChangedBySpawner: 1
   FlipValue: {x: -1, y: 1, z: 1}
   ProjectileIsFacingRight: 1
-  InitialInvulnerabilityDuration: 0.2
+  InitialInvulnerabilityDuration: 0
   DamageOwner: 0
 --- !u!114 &114266039652667574
 MonoBehaviour:

@@ -7,6 +7,7 @@ using UnityEngine;
 public class DangerManager : MMSingleton<DangerManager>, MMEventListener<TopDownEngineEvent>
 {
     private float dangerProgress;
+    [SerializeField] private float secondsToDanger = 20f;
 
     private void Start()
     {
@@ -36,7 +37,7 @@ public class DangerManager : MMSingleton<DangerManager>, MMEventListener<TopDown
             while(dangerProgress <= 100)
             {
                 dangerProgress += 1;
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(secondsToDanger / 100f);
             }
             ResourceEvent.Trigger(ResourceMethods.Add, new ResourceAmount(ResourceType.Danger, 1));
             dangerProgress -= 100;
