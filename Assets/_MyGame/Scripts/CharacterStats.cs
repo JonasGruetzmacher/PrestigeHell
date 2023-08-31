@@ -4,7 +4,7 @@ using MoreMountains.Tools;
 using MoreMountains.TopDownEngine;
 using UnityEngine;
 
-public class CharacterStats : CharacterAbility, MMEventListener<GameEvent>
+public class CharacterStats : CharacterAbility
 {
     [SerializeField] private Stats stats;
 
@@ -15,15 +15,20 @@ public class CharacterStats : CharacterAbility, MMEventListener<GameEvent>
     protected override void OnEnable()
     {
         base.OnEnable();
-        stats.upgradeApplied += OnUpgradeApplied;
-        this.MMEventStartListening<GameEvent>();
+        if (gameObject.tag == "Player")
+        {
+            stats.upgradeApplied += OnUpgradeApplied;
+        }
+        if (gameObject.tag == "Enemy")
+        {
+            GetComponent<MMPoolableObject>().ExecuteOnEnable.AddListener(ApplyStats);
+        }
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
         stats.upgradeApplied -= OnUpgradeApplied;
-        this.MMEventStopListening<GameEvent>();
     }
 
     protected  override void Initialization()
@@ -42,6 +47,8 @@ public class CharacterStats : CharacterAbility, MMEventListener<GameEvent>
 
     private void ApplyStats()
     {
+        if (stats == null)
+            return;
         if (stats.IncludesStat(Stat.speed))
         {
             _characterMovement.WalkSpeed = stats.GetStat(Stat.speed);
@@ -71,6 +78,9 @@ public class CharacterStats : CharacterAbility, MMEventListener<GameEvent>
     {
         if (stat != stats)
             return;
+        if (gameObject.tag != "Player")
+            return;
+        
         ApplyStats();
 
         if(upgrade is StatsUpgrade)
@@ -80,17 +90,5 @@ public class CharacterStats : CharacterAbility, MMEventListener<GameEvent>
                 _health.ReceiveHealth(statsUpgrade.upgradeToApply[Stat.health], this.gameObject);
         }
         
-    }
-
-    public void OnMMEvent(GameEvent eventType)
-    {
-        switch (eventType.eventName)
-        {
-            case Eventname.DangerChanged:
-                ApplyStats();
-                break;
-            default:
-                break;
-        }
     }
 }
