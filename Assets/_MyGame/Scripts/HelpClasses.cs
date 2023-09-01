@@ -152,3 +152,11 @@ public enum LevelUpgradeState
     Selected = 2,
     Disabled = 3,
 }
+
+public enum Style
+{
+    None = 0,
+    Primary = 1,
+    Secondary = 2,
+    Tertiary = 3,
+}
