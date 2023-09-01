@@ -12,27 +12,42 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
     [SerializeField] private GameObject upgradePrefab;
     [SerializeField] private Transform upgradesParent;
 
+    [SerializeField] private List<Upgrade> permanentUpgradeList = new List<Upgrade>();
+    [SerializeField] private int maxUpgrades = 3;
+
     [ShowInInspector, ReadOnly]
-    private List<Upgrade> _upgrades = new List<Upgrade>();
+    private Queue<Upgrade> upgrades = new Queue<Upgrade>();
+
+    [ShowInInspector, ReadOnly]
+    private List<Upgrade> currentUpgrades = new List<Upgrade>();
+
+    [ShowInInspector, ReadOnly]
+    private List<Upgrade> allUpgrades = new List<Upgrade>();
 
     protected void Start()
     {
-        
-
         Initialize();
-
-        
     }
 
     private void Initialize()
     {
-        _upgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades");
+        allUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades");
 
-        foreach (var upgrade in _upgrades)
+        foreach (var upgrade in permanentUpgradeList)
         {
-            AddUpgradeToUI(upgrade);
+            upgrades.Enqueue(upgrade);
         }
 
+        for (int i = 0; i < maxUpgrades; i++)
+        {
+            if (upgrades.Count == 0)
+            {
+                break;
+            }
+            var upgrade = upgrades.Dequeue();
+            currentUpgrades.Add(upgrade);
+            AddUpgradeToUI(upgrade);
+        }
     }
 
     private void AddUpgradeToUI(Upgrade upgrade)
@@ -46,7 +61,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
 
     private void ResetLevelUpgrades()
     {
-        foreach (var upgrade in _upgrades)
+        foreach (var upgrade in allUpgrades)
         {
             upgrade.ResetUpgrade();
         }

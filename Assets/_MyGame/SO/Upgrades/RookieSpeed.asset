@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 1
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -99,7 +99,9 @@ MonoBehaviour:
       Data: 
   upgradeName: +10% MS
   description: 
-  upgradeLimit: 5
+  blockedUpgrades: []
+  isUnlocked: 0
+  upgradeLimit: 1
   unitsToUpgrade:
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   isPercentageUpgrade: 1

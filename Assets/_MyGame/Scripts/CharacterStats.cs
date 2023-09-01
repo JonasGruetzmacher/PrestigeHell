@@ -15,13 +15,9 @@ public class CharacterStats : CharacterAbility
     protected override void OnEnable()
     {
         base.OnEnable();
-        if (gameObject.tag == "Player")
+        if (gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             stats.upgradeApplied += OnUpgradeApplied;
-        }
-        if (gameObject.tag == "Enemy")
-        {
-            GetComponent<MMPoolableObject>().ExecuteOnEnable.AddListener(ApplyStats);
         }
     }
 
@@ -43,6 +39,11 @@ public class CharacterStats : CharacterAbility
         ApplyStats();
         _health.InitializeCurrentHealth();
 
+    }
+
+    public void InitWithStats()
+    {   
+        Initialization();
     }
 
     private void ApplyStats()

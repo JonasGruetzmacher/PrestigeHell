@@ -5983,6 +5983,11 @@ MonoBehaviour:
   upgradePrefab: {fileID: 4958020627444804920, guid: 15916e052c2811c43b1b7bc0ef1d418a,
     type: 3}
   upgradesParent: {fileID: 54800795}
+  permanentUpgradeList:
+  - {fileID: 11400000, guid: c21b9bc41ecfa0d439405e4545cea982, type: 2}
+  - {fileID: 11400000, guid: e508c3cc77b40c94bae2688e52773f7b, type: 2}
+  - {fileID: 11400000, guid: 6160e5de35daa2b4b9cc65dbe9213427, type: 2}
+  maxUpgrades: 3
 --- !u!1001 &760223807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8741,18 +8746,18 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 10
-      inSlope: 20
-      outSlope: 20
+      value: 100
+      inSlope: 200
+      outSlope: 200
       tangentMode: 136
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 2
-      value: 100
-      inSlope: 40
-      outSlope: 40
+      value: 500
+      inSlope: 177.77777
+      outSlope: 177.77777
       tangentMode: 136
       weightedMode: 0
       inWeight: 0.33333334
@@ -10648,6 +10653,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -7.9
       objectReference: {fileID: 0}
+    - target: {fileID: 20156376138150884, guid: b6993e89d9af3f64182a41c77cf345c2,
+        type: 3}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 114043434711042032, guid: b6993e89d9af3f64182a41c77cf345c2,
         type: 3}
       propertyPath: ManageButtons
@@ -10667,6 +10677,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lens.GateFit
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114246380927595094, guid: b6993e89d9af3f64182a41c77cf345c2,
+        type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114248769906142106, guid: b6993e89d9af3f64182a41c77cf345c2,
         type: 3}

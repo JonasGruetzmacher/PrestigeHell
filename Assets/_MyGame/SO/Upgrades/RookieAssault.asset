@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 1
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -99,7 +99,9 @@ MonoBehaviour:
       Data: 
   upgradeName: +1 Base Dmg
   description: Increases Base Damage
-  upgradeLimit: 10
+  blockedUpgrades: []
+  isUnlocked: 0
+  upgradeLimit: 5
   unitsToUpgrade:
   - {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
   isPercentageUpgrade: 0

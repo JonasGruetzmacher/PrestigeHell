@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 10
+      Data: 50
     - Name: 
       Entry: 8
       Data: 
@@ -99,6 +99,8 @@ MonoBehaviour:
       Data: 
   upgradeName: +1 Base XP Gain
   description: Increases XP Gain
+  blockedUpgrades: []
+  isUnlocked: 0
   upgradeLimit: 1
   unitsToUpgrade:
   - {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
