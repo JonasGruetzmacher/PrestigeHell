@@ -13,20 +13,23 @@ public class UpgradeButtonView : CUIComponent
     public GameObject containerLeftBottom;
     public GameObject containerRightBottom;
 
-    private GameObject containerLeft;
-    private GameObject containerRight;
+    public GameObject containerLeft;
+    public GameObject containerRight;
 
-    private VerticalLayoutGroup verticalLayoutGroup;
+    private VerticalLayoutGroup verticalLayoutGroupLeft;
+    private VerticalLayoutGroup verticalLayoutGroupRight;
     private HorizontalLayoutGroup horizontalLayoutGroup;
 
     public override void Setup()
     {
-        verticalLayoutGroup = GetComponent<VerticalLayoutGroup>();
         horizontalLayoutGroup = GetComponent<HorizontalLayoutGroup>();
+        verticalLayoutGroupLeft = containerLeft.GetComponent<VerticalLayoutGroup>();
+        verticalLayoutGroupRight = containerRight.GetComponent<VerticalLayoutGroup>();
     }
 
     public override void Configure()
     {
-        
+        horizontalLayoutGroup.padding = viewSO.padding;
+        horizontalLayoutGroup.spacing = viewSO.spacing;
     }
 }

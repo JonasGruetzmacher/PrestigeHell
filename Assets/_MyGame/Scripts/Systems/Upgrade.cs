@@ -41,4 +41,14 @@ public abstract class Upgrade : SerializedScriptableObject
         upgradeStateChanged?.Invoke(this, unlock);
     }
 
+    public virtual String GetNextUpgradeCosts()
+    {
+        String costs = "";
+        foreach (var resource in upgradeCost)
+        {
+            costs += resource.Value.ToString() + " " + resource.Key.ToString() + "\n";
+        }
+        return costs;
+    }
+
 }

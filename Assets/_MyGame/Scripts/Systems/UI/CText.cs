@@ -9,6 +9,7 @@ public class CText : CUIComponent
 {
     public CTextSO textSO;
     public Style style;
+    public bool autoSize = false;
 
     private TextMeshProUGUI textMeshProUGUI;
 
@@ -22,5 +23,12 @@ public class CText : CUIComponent
         textMeshProUGUI.font = textSO.font;
         textMeshProUGUI.fontSize = textSO.fontSize;
         textMeshProUGUI.color = textSO.theme.GetTextColor(style);
+        textMeshProUGUI.enableAutoSizing = autoSize;
+        textMeshProUGUI.fontSizeMin = 5;
+    }
+
+    public void SetText(string text)
+    {
+        textMeshProUGUI.text = text;
     }
 }

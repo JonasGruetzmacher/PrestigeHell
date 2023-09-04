@@ -53,8 +53,8 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
     private void AddUpgradeToUI(Upgrade upgrade)
     {
         var upgradeGO = Instantiate(upgradePrefab, upgradesParent);
-        upgradeGO.GetComponent<UpgradeButton>().SetUpgrade(upgrade);
-        upgradeGO.GetComponent<UpgradeButton>().Initialize();
+        upgradeGO.GetComponent<BasicUpgradeVisual>().upgrade = upgrade;
+        upgradeGO.GetComponent<BasicUpgradeVisual>().Init();
     }
 
     
