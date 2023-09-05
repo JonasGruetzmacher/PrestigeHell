@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49bf55faac9e80d4a9f83622382db1de, type: 3}
-  m_Name: BasicWellnessComfort 1
+  m_Name: BasicWellnessComfort
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 5
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
@@ -99,7 +99,9 @@ MonoBehaviour:
       Data: 
   upgradeName: +10% Health
   description: Increases Max Health
-  upgradeLimit: 10
+  blockedUpgrades: []
+  isUnlocked: 0
+  upgradeLimit: 5
   unitsToUpgrade:
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   isPercentageUpgrade: 1

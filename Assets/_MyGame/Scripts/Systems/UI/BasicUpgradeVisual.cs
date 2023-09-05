@@ -20,4 +20,41 @@ public class BasicUpgradeVisual : CUpgradeButton
         price.autoSize = true;
         bought.autoSize = true;
     }
+
+    private void UpdateText()
+    {
+        price.SetText(upgrade.GetNextUpgradeCosts());
+        bought.SetText(upgrade.currentUpgradeCount.ToString() + "/" + upgrade.upgradeLimit.ToString());
+    }
+
+    public override void Setup()
+    {
+        base.Setup();
+        upgrade.upgradeApplied += UpgradeApplied;
+        upgrade.upgradeCompleted += UpgradeCompleted;
+    }
+
+    public void UpgradeApplied(Upgrade upgrade)
+    {
+        UpdateText();
+    }
+
+    public void UpgradeCompleted(Upgrade upgrade)
+    {
+        Destroy(gameObject);
+    }
+
+
+    public override void OnClick()
+    {
+        base.OnClick();
+        upgrade.DoUpgrade();
+
+    }
+
+    private void OnDestroy()
+    {
+        upgrade.upgradeApplied -= UpgradeApplied;
+        upgrade.upgradeCompleted -= UpgradeCompleted;
+    }
 }

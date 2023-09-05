@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b246e497ac8a4e4bbe1d752b6d79ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewSO: {fileID: 0}
+  viewSO: {fileID: 11400000, guid: 70adc811bbccd4c448a0a7cde4427e8d, type: 2}
   containerLeftTop: {fileID: 612505439751768567}
   containerRightTop: {fileID: 8467500192218037874}
   containerLeftBottom: {fileID: 2660742134724969988}
@@ -144,12 +144,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 5
+    m_Right: 5
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1

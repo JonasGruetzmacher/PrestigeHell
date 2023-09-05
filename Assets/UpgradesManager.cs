@@ -46,6 +46,9 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
             }
             var upgrade = upgrades.Dequeue();
             currentUpgrades.Add(upgrade);
+            
+            upgrade.upgradeCompleted += OnUpgradeCompleted;
+
             AddUpgradeToUI(upgrade);
         }
     }
@@ -55,6 +58,20 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
         var upgradeGO = Instantiate(upgradePrefab, upgradesParent);
         upgradeGO.GetComponent<BasicUpgradeVisual>().upgrade = upgrade;
         upgradeGO.GetComponent<BasicUpgradeVisual>().Init();
+    }
+
+    private void OnUpgradeCompleted(Upgrade upgrade)
+    {
+        upgrade.upgradeCompleted -= OnUpgradeCompleted;
+        currentUpgrades.Remove(upgrade);
+
+        if (upgrades.Count > 0)
+        {
+            var newUpgrade = upgrades.Dequeue();
+            currentUpgrades.Add(newUpgrade);
+            newUpgrade.upgradeCompleted += OnUpgradeCompleted;
+            AddUpgradeToUI(newUpgrade);
+        }
     }
 
     

@@ -13,7 +13,7 @@ public class CUpgradeButton : CUIComponent
 
     public UpgradeButtonView view;
 
-    private Button button;
+    protected Button button;
     
     protected CText header;
     protected CText description;
@@ -29,6 +29,9 @@ public class CUpgradeButton : CUIComponent
         description = view.containerLeftBottom.GetComponentInChildren<CText>();
         price = view.containerRightTop.GetComponentInChildren<CText>();
         bought = view.containerRightBottom.GetComponentInChildren<CText>();
+
+        //subscribe to button click once
+        // button.onClick.AddListener(OnClick);
 
         view.Setup();
         header.Setup();
@@ -55,5 +58,10 @@ public class CUpgradeButton : CUIComponent
         price.Configure();
         bought.Configure();
         view.Configure();
+    }
+
+    public virtual void OnClick()
+    {
+        onClick.Invoke();
     }
 }

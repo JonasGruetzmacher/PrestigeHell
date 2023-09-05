@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1059647659948527810}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1059647660210497353}
+        m_TargetAssemblyTypeName: CUpgradeButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1059647660210497359
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +170,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 70}
+  m_SizeDelta: {x: 230, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059647660210497353
 MonoBehaviour:
@@ -1030,12 +1042,12 @@ PrefabInstance:
     - target: {fileID: 7905816493019767191, guid: 3afd84466c4b44441acdf0a4f3d4ffe7,
         type: 3}
       propertyPath: m_Padding.m_Left
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7905816493019767191, guid: 3afd84466c4b44441acdf0a4f3d4ffe7,
         type: 3}
       propertyPath: m_Padding.m_Right
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3afd84466c4b44441acdf0a4f3d4ffe7, type: 3}

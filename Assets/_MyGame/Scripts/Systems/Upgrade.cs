@@ -16,6 +16,8 @@ public abstract class Upgrade : SerializedScriptableObject
     // public MMSerializableDictionary<ResourceType, AnimationCurve> upgradeCostCurve = new MMSerializableDictionary<ResourceType, AnimationCurve>();
     public int upgradeLimit = 1;
     public event Action<Upgrade, bool> upgradeStateChanged;
+    public event Action<Upgrade> upgradeCompleted;
+    public event Action<Upgrade> upgradeApplied;
     public int currentUpgradeCount { get; set; }
     public Dictionary<ResourceType, float> GetNextUpgradeCost()
     {
@@ -39,6 +41,21 @@ public abstract class Upgrade : SerializedScriptableObject
         Debug.Log("Unlocking " + upgradeName);
         isUnlocked = unlock;
         upgradeStateChanged?.Invoke(this, unlock);
+    }
+
+    public virtual void ApplyUpgrade()
+    {
+        currentUpgradeCount++;
+        upgradeApplied?.Invoke(this);
+        if (currentUpgradeCount >= upgradeLimit)
+        {
+            Completed();
+        }
+    }
+
+    public virtual void Completed()
+    {
+        upgradeCompleted?.Invoke(this);
     }
 
     public virtual String GetNextUpgradeCosts()

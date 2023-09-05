@@ -74,7 +74,6 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
         if (ResourcesManager.Instance.GetResourceAmount(ResourceType.Level) >= levelRequirement)
         {
             if(!alreadyGotUnlocked)
-                Debug.Log("Unlocked");
                 SetButtonState(LevelUpgradeState.Unlocked);
         }
     }

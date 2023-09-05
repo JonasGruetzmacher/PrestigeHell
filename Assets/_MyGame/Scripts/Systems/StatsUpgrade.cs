@@ -27,7 +27,7 @@ public class StatsUpgrade : Upgrade
         }
         PayUpgrade();
         Debug.Log("Upgrade purchased");
-        currentUpgradeCount++;
+        ApplyUpgrade();
         foreach (var unitToUpgrade in unitsToUpgrade)
         {
             unitToUpgrade.UnlockUpgrade(this);
