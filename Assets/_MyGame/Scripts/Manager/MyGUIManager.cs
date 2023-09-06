@@ -7,9 +7,10 @@ using TMPro;
 using System.Resources;
 using UnityEngine.EventSystems;
 
-public class MyGUIManager : GUIManager
+public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 {
 	public GameObject levelUpPanel;
+	public GameObject levelUpButton;
 
 	public MMProgressBar XPBar;
 	public MMProgressBar dangerBar;
@@ -26,6 +27,7 @@ public class MyGUIManager : GUIManager
 		base.Start();
 		StartCoroutine(UpdateResourceBarCoroutine(ResourceType.Danger));
 		SetLevelUpPanel(false);
+		levelUpButton.SetActive(false);
 	}
 
     public virtual void UpdateBar(MMProgressBar bar, float currentXP,float minXP,float maxXP,string playerID)
@@ -58,7 +60,6 @@ public class MyGUIManager : GUIManager
 				UpdateBar(dangerBar, DangerManager.Instance.GetDangerProgress(),0,100,"Player1");
 				break;
 			case ResourceType.LevelPoints:
-			 	Debug.Log(ResourcesManager.Instance.GetResourceAmount(resourceType) + " " + ResourcesManager.Instance.GetNextLevelRequirement());
 				UpdateBar(XPBar, ResourcesManager.Instance.GetResourceAmount(resourceType),0,ResourcesManager.Instance.GetNextLevelRequirement(),"Player1");
 				break;
 		}
@@ -98,9 +99,31 @@ public class MyGUIManager : GUIManager
 			}
 	}
 
-	// protected void OnEnable()
-	// {
-	// 	this.MMEventStartListening<ResourceEvent>();
-	// }
+	public virtual void SetLevelUpButton(bool state)
+	{
+		if (levelUpButton != null)
+		{
+			levelUpButton.SetActive(state);
+		}
+	}
+
+	public virtual void OnMMEvent(GameEvent eventType)
+	{
+		if (eventType.eventName == Eventname.LevelUp)
+		{
+			Debug.Log("Level Up");
+			SetLevelUpButton(true);
+		}
+	}
+
+	private void OnEnable()
+	{
+		this.MMEventStartListening<GameEvent>();
+	}
+
+	private void OnDisable()
+	{
+		this.MMEventStopListening<GameEvent>();
+	}
 		
 }

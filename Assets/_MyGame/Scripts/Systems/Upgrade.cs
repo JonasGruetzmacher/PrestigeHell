@@ -18,6 +18,7 @@ public abstract class Upgrade : SerializedScriptableObject
     public event Action<Upgrade, bool> upgradeStateChanged;
     public event Action<Upgrade> upgradeCompleted;
     public event Action<Upgrade> upgradeApplied;
+    public event Action<Upgrade> upgradeReset;
     public int currentUpgradeCount { get; set; }
     public Dictionary<ResourceType, float> GetNextUpgradeCost()
     {
@@ -34,8 +35,6 @@ public abstract class Upgrade : SerializedScriptableObject
     [Button]
     public abstract void DoUpgrade();
 
-    public abstract void ResetUpgrade();
-
     public virtual void Unlock(bool unlock = true)
     {
         Debug.Log("Unlocking " + upgradeName);
@@ -51,6 +50,13 @@ public abstract class Upgrade : SerializedScriptableObject
         {
             Completed();
         }
+    }
+
+    public virtual void ResetUpgrade()
+    {
+        currentUpgradeCount = 0;
+        isUnlocked = false;
+        upgradeReset?.Invoke(this);
     }
 
     public virtual void Completed()

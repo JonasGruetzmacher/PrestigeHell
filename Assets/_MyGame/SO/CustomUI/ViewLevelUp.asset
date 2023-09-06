@@ -23,8 +23,8 @@ MonoBehaviour:
     SerializationNodes: []
   themeSO: {fileID: 11400000, guid: 3f7aca7c8a4390c438cb49e454d30265, type: 2}
   padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 500
+    m_Right: 500
+    m_Top: 100
+    m_Bottom: 100
   spacing: 0

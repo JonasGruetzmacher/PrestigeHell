@@ -24,6 +24,12 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
     [ShowInInspector, ReadOnly]
     private List<Upgrade> allUpgrades = new List<Upgrade>();
 
+    [ShowInInspector, ReadOnly]
+    private List<Upgrade> levelUpgrades = new List<Upgrade>();
+
+    [ShowInInspector, ReadOnly]
+    private List<Upgrade> activeUpgrades = new List<Upgrade>();
+
     protected void Start()
     {
         Initialize();
@@ -32,6 +38,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
     private void Initialize()
     {
         allUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades");
+        levelUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades/LevelUpgrades");
 
         foreach (var upgrade in permanentUpgradeList)
         {
@@ -78,7 +85,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
 
     private void ResetLevelUpgrades()
     {
-        foreach (var upgrade in allUpgrades)
+        foreach (var upgrade in levelUpgrades)
         {
             upgrade.ResetUpgrade();
         }
@@ -90,5 +97,15 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
         {
             ResetLevelUpgrades();
         }
+    }
+
+    private void OnEnable()
+    {
+        this.MMEventStartListening<TopDownEngineEvent>();
+    }
+
+    private void OnDisable()
+    {
+        this.MMEventStopListening<TopDownEngineEvent>();
     }
 }

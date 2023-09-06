@@ -53,6 +53,11 @@ public class Stats : SerializedScriptableObject
         upgradeApplied?.Invoke(this, upgrade);
     }
 
+    public void RemoveUpgrade(StatsUpgrade upgrade)
+    {
+        appliedUpgrades.Remove(upgrade);
+    }
+
     public float GetUpgradedValue(Stat stat, float baseValue)
     {
         baseValue = AddScaling(baseValue, stat);

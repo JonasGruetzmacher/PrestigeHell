@@ -66,7 +66,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 
@@ -75,7 +75,19 @@ MonoBehaviour:
       Data: 6
     - Name: $v
       Entry: 4
-      Data: 500
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 4
+      Data: -50
     - Name: 
       Entry: 8
       Data: 
@@ -86,11 +98,12 @@ MonoBehaviour:
       Entry: 8
       Data: 
   upgradeName: B
-  description: test
+  description: -50% Dmg +100% XP
   blockedUpgrades:
   - {fileID: 11400000, guid: 5008defdb143a244498ae333667835b6, type: 2}
   isUnlocked: 0
   upgradeLimit: 1
   unitsToUpgrade:
   - {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
-  isPercentageUpgrade: 0
+  - {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
+  isPercentageUpgrade: 1

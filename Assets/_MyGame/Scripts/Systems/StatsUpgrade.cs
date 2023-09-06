@@ -38,6 +38,15 @@ public class StatsUpgrade : Upgrade
         }
     }
 
+    public override void ResetUpgrade()
+    {
+        base.ResetUpgrade();
+        foreach (var unitToUpgrade in unitsToUpgrade)
+        {
+            unitToUpgrade.RemoveUpgrade(this);
+        }
+    }
+
     private bool CanPurchase()
     {
         if(GetNextUpgradeCost() == null)
@@ -64,11 +73,5 @@ public class StatsUpgrade : Upgrade
         {
             ResourceEvent.Trigger(ResourceMethods.Remove, new ResourceAmount(resourceAmount.Key, (int)resourceAmount.Value));
         }
-    }
-
-    public override void ResetUpgrade()
-    {
-        currentUpgradeCount = 0;
-        isUnlocked = false;
     }
 }

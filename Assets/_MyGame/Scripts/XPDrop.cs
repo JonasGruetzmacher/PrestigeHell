@@ -11,7 +11,6 @@ public class XPDrop : PickableItem
     {
         // we send a new points event for the GameManager to catch (and other classes that may listen to it too)
         ResourceEvent.Trigger(ResourceMethods.Add, new ResourceAmount(ResourceType.XP, XPAmount));
-        Debug.Log("XP Drop");
     }
 }
 

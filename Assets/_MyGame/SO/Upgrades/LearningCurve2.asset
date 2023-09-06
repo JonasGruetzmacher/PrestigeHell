@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 575ffb728fdffc340a7f26b13535bdf6, type: 3}
-  m_Name: Player
+  m_Script: {fileID: 11500000, guid: 49bf55faac9e80d4a9f83622382db1de, type: 3}
+  m_Name: LearningCurve2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,13 +21,13 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: instanceStats
+    - Name: upgradeCost
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
+      Data: 0|System.Collections.Generic.Dictionary`2[[ResourceType, Assembly-CSharp],[System.Single,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ResourceType, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 10
+      Data: 200
     - Name: 
       Entry: 8
       Data: 
@@ -59,40 +59,26 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: stats
+    - Name: upgradeToApply
       Entry: 7
       Data: 2|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
         mscorlib]], mscorlib
     - Name: comparer
-      Entry: 9
-      Data: 1
+      Entry: 7
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 1
-    - Name: $v
-      Entry: 4
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 5
-    - Name: $v
-      Entry: 4
       Data: 0
     - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
@@ -111,29 +97,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: statCurves
-      Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[ScalingStat,
-        Assembly-CSharp]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 4|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+  upgradeName: +1 Base XP Gain
+  description: Increases XP Gain
+  blockedUpgrades: []
+  isUnlocked: 0
+  upgradeLimit: 1
+  unitsToUpgrade:
+  - {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
+  isPercentageUpgrade: 0

@@ -57,8 +57,6 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
 
     private void OnUpgradeStateChanged(Upgrade upgrade, bool unlock)
     {
-        Debug.Log("Upgrade state changed");
-        Debug.Log(this.upgrade.upgradeName + " " + upgrade.upgradeName + " " + unlock);
         if (unlock)
         {
             SetButtonState(LevelUpgradeState.Unlocked);
@@ -67,6 +65,11 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
         {
             SetButtonState(LevelUpgradeState.Disabled);
         }
+    }
+
+    private void ResetUpgrade(Upgrade upgrade)
+    {
+        SetButtonState(LevelUpgradeState.Locked);
     }
     
     private void CheckIfUnlocked()
@@ -89,12 +92,14 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
     private void OnEnable()
     {
         upgrade.upgradeStateChanged += OnUpgradeStateChanged;
+        upgrade.upgradeReset += ResetUpgrade;
         this.MMEventStartListening<GameEvent>();
     }
 
     private void OnDisable()
     {
         upgrade.upgradeStateChanged -= OnUpgradeStateChanged;
+        upgrade.upgradeReset -= ResetUpgrade;
         this.MMEventStopListening<GameEvent>();
     }
 

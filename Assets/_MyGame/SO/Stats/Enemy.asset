@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 8
+      Data: 6
     - Name: 
       Entry: 8
       Data: 
@@ -214,13 +214,13 @@ MonoBehaviour:
       Data: 6
     - Name: m_Value
       Entry: 4
-      Data: 50
+      Data: 100
     - Name: m_InTangent
       Entry: 4
-      Data: 9.366271
+      Data: 11.5212984
     - Name: m_OutTangent
       Entry: 4
-      Data: 9.366271
+      Data: 11.5212984
     - Name: m_TangentMode
       Entry: 3
       Data: 136

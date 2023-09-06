@@ -75,7 +75,7 @@ MonoBehaviour:
       Data: 3
     - Name: $v
       Entry: 4
-      Data: 500
+      Data: 100
     - Name: 
       Entry: 8
       Data: 
@@ -86,7 +86,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   upgradeName: A
-  description: test
+  description: +100% AS
   blockedUpgrades:
   - {fileID: 11400000, guid: d6cd0346296adb649b944b50e5b4fefd, type: 2}
   isUnlocked: 0
