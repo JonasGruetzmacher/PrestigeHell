@@ -40,7 +40,7 @@ public class Tooltip : MonoBehaviour
 
         layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
 
-        Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 position = Input.mousePosition;
 
         float pivotX = position.x / Screen.width;
         float pivotY = position.y / Screen.height;
