@@ -5122,8 +5122,7 @@ MonoBehaviour:
   PreventAllMovementWhileInUse: 0
   PreventAllAimWhileInUse: 0
   RecoilForce: 10
-  Animators:
-  - {fileID: 95036209968351816}
+  Animators: []
   PerformAnimatorSanityChecks: 0
   MirrorCharacterAnimatorParameters: 0
   WeaponAnimationID: 0

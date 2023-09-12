@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49bf55faac9e80d4a9f83622382db1de, type: 3}
-  m_Name: BasicWeaponTraining
+  m_Name: LearningCurve 2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 5
+      Data: 200
     - Name: 
       Entry: 8
       Data: 
@@ -84,10 +84,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 6
     - Name: $v
       Entry: 4
-      Data: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -97,9 +97,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeName: +10% Dmg
-  description: Increases Damage
-  upgradeLimit: 10
+  upgradeName: +1 Base XP Gain
+  description: Increases XP Gain
+  blockedUpgrades: []
+  isUnlocked: 0
+  upgradeLimit: 1
   unitsToUpgrade:
-  - {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
-  isPercentageUpgrade: 1
+  - {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
+  isPercentageUpgrade: 0

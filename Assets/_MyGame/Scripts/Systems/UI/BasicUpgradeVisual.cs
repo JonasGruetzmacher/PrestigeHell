@@ -11,7 +11,9 @@ public class BasicUpgradeVisual : CUpgradeButton
     {
         base.Configure();
 
-        header.SetText(upgrade.name);
+        if (upgrade == null)
+            return;
+        header.SetText(upgrade.upgradeName);
         description.SetText(upgrade.description);
         price.SetText(upgrade.GetNextUpgradeCosts());
         bought.SetText(upgrade.currentUpgradeCount.ToString() + "/" + upgrade.upgradeLimit.ToString());

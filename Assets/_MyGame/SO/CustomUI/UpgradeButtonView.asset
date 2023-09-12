@@ -25,6 +25,6 @@ MonoBehaviour:
   padding:
     m_Left: 5
     m_Right: 5
-    m_Top: 0
-    m_Bottom: 0
+    m_Top: 5
+    m_Bottom: 5
   spacing: 15

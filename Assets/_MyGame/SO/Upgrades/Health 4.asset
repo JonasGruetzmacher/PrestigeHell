@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49bf55faac9e80d4a9f83622382db1de, type: 3}
-  m_Name: LearningCurve
+  m_Name: Health 4
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: 0
     - Name: $v
       Entry: 4
-      Data: 50
+      Data: 1300
     - Name: 
       Entry: 8
       Data: 
@@ -84,10 +84,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 6
+      Data: 0
     - Name: $v
       Entry: 4
-      Data: 1
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -97,11 +97,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeName: +1 Base XP Gain
-  description: Increases XP Gain
+  upgradeName: Health
+  description: +10 Max Health
   blockedUpgrades: []
   isUnlocked: 0
-  upgradeLimit: 1
+  upgradeLimit: 10
   unitsToUpgrade:
-  - {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
+  - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   isPercentageUpgrade: 0
