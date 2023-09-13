@@ -181,13 +181,13 @@ MonoBehaviour:
       Data: 1
     - Name: m_Value
       Entry: 4
-      Data: 7
+      Data: 15
     - Name: m_InTangent
       Entry: 4
-      Data: 7.55755424
+      Data: 20.0647678
     - Name: m_OutTangent
       Entry: 4
-      Data: 7.55755424
+      Data: 20.0647678
     - Name: m_TangentMode
       Entry: 3
       Data: 136
@@ -214,13 +214,13 @@ MonoBehaviour:
       Data: 1.9935441
     - Name: m_Value
       Entry: 4
-      Data: 15.0663176
+      Data: 40
     - Name: m_InTangent
       Entry: 4
-      Data: 6.45305443
+      Data: 17
     - Name: m_OutTangent
       Entry: 4
-      Data: 6.45305443
+      Data: 17
     - Name: m_TangentMode
       Entry: 3
       Data: 136
@@ -250,10 +250,10 @@ MonoBehaviour:
       Data: 100
     - Name: m_InTangent
       Entry: 4
-      Data: 11.5970535
+      Data: 13.1691923
     - Name: m_OutTangent
       Entry: 4
-      Data: 11.5970535
+      Data: 13.1691923
     - Name: m_TangentMode
       Entry: 3
       Data: 136
@@ -280,7 +280,7 @@ MonoBehaviour:
       Data: 20.2178955
     - Name: m_Value
       Entry: 4
-      Data: 226.4151
+      Data: 400
     - Name: m_InTangent
       Entry: 4
       Data: 22.0279713
