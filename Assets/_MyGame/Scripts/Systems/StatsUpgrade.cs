@@ -26,7 +26,6 @@ public class StatsUpgrade : Upgrade
             return;
         }
         PayUpgrade();
-        Debug.Log("Upgrade purchased");
         ApplyUpgrade();
         foreach (var unitToUpgrade in unitsToUpgrade)
         {

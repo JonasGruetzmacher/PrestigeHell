@@ -12,7 +12,7 @@ public class CButton : CUIComponent
     public UnityEvent onClick;
 
     private Button button;
-    private TextMeshProUGUI buttonText;
+    protected TextMeshProUGUI buttonText;
 
     public override void Setup()
     {
@@ -29,7 +29,22 @@ public class CButton : CUIComponent
         buttonText.color = theme.GetTextColor(style);
     }
 
-    public void OnClick()
+    public virtual void Dissable()
+    {
+        button.interactable = false;
+    }
+
+    public virtual void Enable()
+    {
+        button.interactable = true;
+    }
+
+    public virtual void Selected()
+    {
+        button.interactable = false;
+    }
+
+    public virtual void OnClick()
     {
         onClick.Invoke();
     }

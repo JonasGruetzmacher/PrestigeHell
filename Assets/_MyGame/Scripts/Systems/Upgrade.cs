@@ -37,7 +37,6 @@ public abstract class Upgrade : SerializedScriptableObject
 
     public virtual void Unlock(bool unlock = true)
     {
-        Debug.Log("Unlocking " + upgradeName);
         isUnlocked = unlock;
         upgradeStateChanged?.Invoke(this, unlock);
     }

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 
 public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
 {
     [field: SerializeField] public Upgrade upgrade {get; private set;}
 
-
-    [SerializeField] private GameObject upgradeButton;
+    public LevelUpgradeState state { get; private set; }
+    public UnityEvent upgradeStateChanged;
 
     [SerializeField] private int levelRequirement;
     
@@ -24,29 +25,8 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
 
     public void SetButtonState(LevelUpgradeState state)
     {
-        switch (state)
-        {
-            case LevelUpgradeState.Locked:
-                upgradeButton.SetActive(false);
-                break;
-            case LevelUpgradeState.Unlocked:
-                upgradeButton.SetActive(true);
-                break;
-            case LevelUpgradeState.Selected:
-                upgradeButton.SetActive(true);
-                upgradeButton.GetComponentInChildren<MMTouchButton>().DisabledColor = Color.green;
-                upgradeButton.GetComponentInChildren<MMTouchButton>().DisableButton();
-                break;
-            case LevelUpgradeState.Disabled:
-                upgradeButton.SetActive(true);
-                upgradeButton.GetComponentInChildren<MMTouchButton>().DisableButton();
-                break;
-        }
-    }
-
-    public int GetLevelRequirement()
-    {
-        return levelRequirement;
+        this.state = state;
+        upgradeStateChanged?.Invoke();
     }
 
     public void OnClick()
