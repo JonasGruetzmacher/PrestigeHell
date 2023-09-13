@@ -9826,6 +9826,7 @@ GameObject:
   - component: {fileID: -6224061936224525526}
   - component: {fileID: -5258126964115623124}
   - component: {fileID: 3679480068751948616}
+  - component: {fileID: 9156600887440837936}
   m_Layer: 10
   m_Name: Koala
   m_TagString: Player
@@ -10345,6 +10346,18 @@ MonoBehaviour:
   MaximumBufferDuration: 0.25
   RequiresPerfectTile: 0
   CurrentWeapon: {fileID: 0}
+--- !u!114 &9156600887440837936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1fa97fc7f9bb7498eaa18f43b00746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1561075265052736
 GameObject:
   m_ObjectHideFlags: 0

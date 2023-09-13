@@ -41,10 +41,12 @@ public class LevelUpgradeVisual : CButton
                 buttonText.SetText(levelUpgrade.upgrade.upgradeName);
                 break;
             case LevelUpgradeState.Disabled:
+                buttonText.SetText("Locked");
                 Dissable();
                 break;
             case LevelUpgradeState.Selected:
                 buttonText.SetText("Selected");
+                Dissable();
                 break;
         }
     }

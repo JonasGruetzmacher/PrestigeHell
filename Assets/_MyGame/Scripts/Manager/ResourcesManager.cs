@@ -27,6 +27,8 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     public float GetResourceAmount(ResourceType type)
     {
+        if (!resources.ContainsKey(type))
+            return 0;
         return resources[type];
     }
 
