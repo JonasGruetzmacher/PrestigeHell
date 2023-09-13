@@ -8,6 +8,13 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
 {
     [SerializeField] private List<MMMultipleObjectPooler> enemyPoolers;
 
+	[SerializeField] private MMSerializableDictionary<string, CharacterInformationSO> _enemyInformations;
+	// [SerializeField] private List<CharacterInformationSO> enemyInformations = new List<CharacterInformationSO>();
+
+	public List<CharacterInformationSO> GetEnemyInformations()
+	{
+		return new List<CharacterInformationSO>(_enemyInformations.Values);
+	}
 
     public virtual void Reset()
     {
