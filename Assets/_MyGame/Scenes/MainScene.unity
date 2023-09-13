@@ -3255,8 +3255,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361533558}
-  - component: {fileID: 361533559}
-  - component: {fileID: 361533560}
   m_Layer: 0
   m_Name: Spawnpoint
   m_TagString: Untagged
@@ -3279,46 +3277,6 @@ Transform:
   m_Father: {fileID: 2125786058}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &361533559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361533557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a281bd70fc9480448850980ffb0ef08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanSpawn: 1
-  MinFrequency: 5
-  MaxFrequency: 10
-  CanSpawnButton: 0
---- !u!114 &361533560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361533557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73098ca8f002adc4f9debdbe47a78c9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MutualizeWaitingPools: 1
-  NestWaitingPool: 1
-  NestUnderThis: 1
-  Pool:
-  - GameObjectToPool: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
-      type: 3}
-    PoolSize: 20
-    PoolCanExpand: 1
-    Enabled: 1
-  PoolingMethod: 3
-  CanPoolSameObjectTwice: 1
-  MutualizedPoolName: Enemies
 --- !u!1 &364257452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,7 +3322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPoolers:
-  - {fileID: 361533560}
+  - {fileID: 0}
   _enemyInformations:
     _keys:
     - Circle
@@ -6468,8 +6426,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 797140162}
-  - component: {fileID: 797140164}
-  - component: {fileID: 797140163}
   m_Layer: 0
   m_Name: Spawnpoint (3)
   m_TagString: Untagged
@@ -6492,46 +6448,6 @@ Transform:
   m_Father: {fileID: 2125786058}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &797140163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797140161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73098ca8f002adc4f9debdbe47a78c9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MutualizeWaitingPools: 1
-  NestWaitingPool: 1
-  NestUnderThis: 1
-  Pool:
-  - GameObjectToPool: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
-      type: 3}
-    PoolSize: 20
-    PoolCanExpand: 1
-    Enabled: 1
-  PoolingMethod: 3
-  CanPoolSameObjectTwice: 1
-  MutualizedPoolName: Enemies
---- !u!114 &797140164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797140161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a281bd70fc9480448850980ffb0ef08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanSpawn: 1
-  MinFrequency: 5
-  MaxFrequency: 10
-  CanSpawnButton: 0
 --- !u!1001 &806779425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6734,8 +6650,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 826327936}
-  - component: {fileID: 826327938}
-  - component: {fileID: 826327937}
   m_Layer: 0
   m_Name: Spawnpoint (1)
   m_TagString: Untagged
@@ -6758,46 +6672,6 @@ Transform:
   m_Father: {fileID: 2125786058}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &826327937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826327935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73098ca8f002adc4f9debdbe47a78c9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MutualizeWaitingPools: 1
-  NestWaitingPool: 1
-  NestUnderThis: 1
-  Pool:
-  - GameObjectToPool: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
-      type: 3}
-    PoolSize: 20
-    PoolCanExpand: 1
-    Enabled: 1
-  PoolingMethod: 3
-  CanPoolSameObjectTwice: 1
-  MutualizedPoolName: Enemies
---- !u!114 &826327938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826327935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a281bd70fc9480448850980ffb0ef08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanSpawn: 1
-  MinFrequency: 5
-  MaxFrequency: 10
-  CanSpawnButton: 0
 --- !u!1001 &829029282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13270,8 +13144,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1741743384}
-  - component: {fileID: 1741743386}
-  - component: {fileID: 1741743385}
   m_Layer: 0
   m_Name: Spawnpoint (2)
   m_TagString: Untagged
@@ -13294,46 +13166,6 @@ Transform:
   m_Father: {fileID: 2125786058}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1741743385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741743383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73098ca8f002adc4f9debdbe47a78c9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MutualizeWaitingPools: 1
-  NestWaitingPool: 1
-  NestUnderThis: 1
-  Pool:
-  - GameObjectToPool: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
-      type: 3}
-    PoolSize: 20
-    PoolCanExpand: 1
-    Enabled: 1
-  PoolingMethod: 3
-  CanPoolSameObjectTwice: 1
-  MutualizedPoolName: Enemies
---- !u!114 &1741743386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741743383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a281bd70fc9480448850980ffb0ef08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanSpawn: 1
-  MinFrequency: 5
-  MaxFrequency: 10
-  CanSpawnButton: 0
 --- !u!1001 &1763473951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15694,13 +15526,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125786058}
+  - component: {fileID: 2125786060}
+  - component: {fileID: 2125786059}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2125786058
 Transform:
   m_ObjectHideFlags: 0
@@ -15720,6 +15554,51 @@ Transform:
   m_Father: {fileID: 71771402}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2125786059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125786056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73098ca8f002adc4f9debdbe47a78c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 1
+  NestWaitingPool: 1
+  NestUnderThis: 0
+  Pool:
+  - GameObjectToPool: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
+      type: 3}
+    PoolSize: 20
+    PoolCanExpand: 1
+    Enabled: 1
+  - GameObjectToPool: {fileID: 1020061562776848954, guid: 7014c72f55230bd40804e78847b35338,
+      type: 3}
+    PoolSize: 5
+    PoolCanExpand: 1
+    Enabled: 1
+  PoolingMethod: 3
+  CanPoolSameObjectTwice: 1
+  MutualizedPoolName: Enemies
+--- !u!114 &2125786060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125786056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bad2a937ce523141b8831b34a1bbe3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanSpawn: 1
+  MinFrequency: 2
+  MaxFrequency: 4
+  CanSpawnButton: 0
 --- !u!4 &2126071623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4798570233257244, guid: 581ea2e7a3383fa4eac2d162354979b5,
