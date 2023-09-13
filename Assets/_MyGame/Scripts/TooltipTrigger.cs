@@ -18,8 +18,6 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
         TooltipManager.Show(content, header);
-
-
     }
 
     public virtual void OnPointerExit(PointerEventData eventData)

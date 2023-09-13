@@ -13,7 +13,8 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
     {
         foreach(var obj in FindObjectsOfType<MMPoolableObject>())
         {
-            obj.Destroy();
+            if (obj.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+				obj.Destroy();
         }
     }
 

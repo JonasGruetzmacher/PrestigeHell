@@ -17,11 +17,6 @@ public class UpgradeTooltipTrigger : TooltipTrigger
         base.OnPointerEnter(eventData);
     }
 
-    public override void OnPointerExit(PointerEventData eventData)
-    {
-        base.OnPointerExit(eventData);
-    }
-
     private void GetUpgrade()
     {
         upgrade = GetComponent<IUpgrade>()?.upgrade;
