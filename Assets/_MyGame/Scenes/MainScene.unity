@@ -3321,13 +3321,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c7756a8b9a7504899018d970cf9628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPoolers:
-  - {fileID: 0}
-  _enemyInformations:
+  enemyPooler: {fileID: 2125786059}
+  allEnemyInformations:
     _keys:
     - Circle
+    - Square
     _values:
     - {fileID: 11400000, guid: ba0cee0d70c957140a9626958f81d723, type: 2}
+    - {fileID: 11400000, guid: 202d858f62b1c9040b77adceb7a91e21, type: 2}
+  spawnableEnemyInformations:
+    _keys:
+    - Square
+    _values:
+    - {fileID: 11400000, guid: 202d858f62b1c9040b77adceb7a91e21, type: 2}
 --- !u!1001 &367136714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15569,17 +15575,7 @@ MonoBehaviour:
   MutualizeWaitingPools: 1
   NestWaitingPool: 1
   NestUnderThis: 0
-  Pool:
-  - GameObjectToPool: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
-      type: 3}
-    PoolSize: 20
-    PoolCanExpand: 1
-    Enabled: 1
-  - GameObjectToPool: {fileID: 1020061562776848954, guid: 7014c72f55230bd40804e78847b35338,
-      type: 3}
-    PoolSize: 5
-    PoolCanExpand: 1
-    Enabled: 1
+  Pool: []
   PoolingMethod: 3
   CanPoolSameObjectTwice: 1
   MutualizedPoolName: Enemies

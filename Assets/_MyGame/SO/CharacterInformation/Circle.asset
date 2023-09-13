@@ -21,7 +21,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  stats: {fileID: 11400000, guid: 923ab69f260be2949a903a2b905e8dd9, type: 2}
+  stats: {fileID: 11400000, guid: b230869abb61d6e4fb99713bdc7b78b6, type: 2}
   characterName: Circle
   characterSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
     type: 3}
+  characterPrefab: {fileID: 1020061562776848954, guid: 7014c72f55230bd40804e78847b35338,
+    type: 3}
+  poolSize: 20

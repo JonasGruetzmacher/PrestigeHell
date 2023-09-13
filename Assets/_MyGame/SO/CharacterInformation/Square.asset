@@ -25,3 +25,6 @@ MonoBehaviour:
   characterName: Square
   characterSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
     type: 3}
+  characterPrefab: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
+    type: 3}
+  poolSize: 20
