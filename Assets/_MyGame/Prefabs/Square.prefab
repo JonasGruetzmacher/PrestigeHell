@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 2601082488289567673}
   - component: {fileID: -4211347996037370572}
   - component: {fileID: 6449525493181960736}
+  - component: {fileID: -4303536738690914001}
   m_Layer: 13
   m_Name: Square
   m_TagString: Untagged
@@ -868,6 +869,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   LifeTime: 0
+--- !u!114 &-4303536738690914001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020061562776848954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f19c30b9c377243911a410ce201f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statisticEvent:
+    type: 1
+    attribute: square
+    value: 1
+  triggerType: 1
 --- !u!1 &5376448862748656275
 GameObject:
   m_ObjectHideFlags: 0

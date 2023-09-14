@@ -139,6 +139,35 @@ public struct GameEvent
     }
 }
 
+[System.Serializable]
+public struct StatisticEvent
+{
+    public StatisticType type;
+    public string attribute;
+    public float value;
+    public StatisticEvent(StatisticType type, string attribute = "", float value = 0)
+    {
+        this.type = type;
+        this.attribute = attribute;
+        this.value = value;
+    }
+
+    static StatisticEvent e;
+
+    public static void Trigger(StatisticType type, string attribute = "", float value = 0)
+    {
+        e.type = type;
+        e.attribute = attribute;
+        e.value = value;
+        MMEventManager.TriggerEvent(e);
+    }
+
+    public void Trigger()
+    {
+        MMEventManager.TriggerEvent(this);
+    }
+}
+
 public enum Eventname
 {
     DangerChanged = 0,
@@ -159,4 +188,12 @@ public enum Style
     Primary = 1,
     Secondary = 2,
     Tertiary = 3,
+}
+
+public enum StatisticType
+{
+    None = 0,
+    Kill = 1,
+    Collect = 2,
+    Death = 3,
 }
