@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d99a39aedf2e9442a66f9b9ee3c764c, type: 3}
   m_Name: SquaresKilled
   m_EditorClassIdentifier: 
-  value: 0
-  statisticName: Enemies Killed
-  description: Enemies Killed
+  value: 4
+  statisticName: Squares Killed
+  description: Squares Killed
   statisticType: 1
   toggleAdditionalAttribute: 0
   additionalAttribute: 

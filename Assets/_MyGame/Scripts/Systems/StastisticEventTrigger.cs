@@ -17,7 +17,7 @@ public class StastisticEventTrigger : MonoBehaviour
     public StatisticEvent statisticEvent;
     public TriggerType triggerType;
 
-    private void start()
+    private void Start()
     {
         if (triggerType == TriggerType.onStart)
         {

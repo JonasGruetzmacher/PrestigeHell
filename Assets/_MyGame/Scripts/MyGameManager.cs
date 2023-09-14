@@ -6,11 +6,12 @@ using MoreMountains.Tools;
 
 public class MyGameManager : GameManager
 {
-    public bool levelUpPanelActive = false;
+    public bool panelActive = false;
+    public string activePanelName = "";
 
     public override void Pause(PauseMethods method = PauseMethods.PauseMenu, bool pause = true)
     {
-        if (levelUpPanelActive)
+        if (panelActive)
         {
             return;
         }
@@ -18,9 +19,36 @@ public class MyGameManager : GameManager
         
     }
 
+    public virtual void OpenStatistics()
+    {
+        if (_pauseMenuOpen || panelActive)
+        {
+            return;
+        }
+
+        Pause(PauseMethods.NoPauseMenu, false);
+        if (GUIManager.HasInstance)
+        {
+            (GUIManager.Instance as MyGUIManager).SetStatisticPanel(true);
+            panelActive = true;
+            activePanelName = "Statistics";
+        }
+    }
+
+    public virtual void CloseStatistics()
+    {
+        UnPause(PauseMethods.NoPauseMenu);
+        if (GUIManager.HasInstance)
+        {
+            (GUIManager.Instance as MyGUIManager).SetStatisticPanel(false);
+            panelActive = false;
+            activePanelName = "";
+        }
+    }
+
     public virtual void OpenLevelUpgrades()
     {
-        if (levelUpPanelActive || _pauseMenuOpen)
+        if (panelActive || _pauseMenuOpen)
         { 
             return; 
         }
@@ -29,7 +57,8 @@ public class MyGameManager : GameManager
         if (GUIManager.HasInstance)
         {
             (GUIManager.Instance  as MyGUIManager).SetLevelUpPanel(true);
-            levelUpPanelActive = true;
+            panelActive = true;
+            activePanelName = "LevelUpgrades";
         }
     }
 
@@ -39,7 +68,8 @@ public class MyGameManager : GameManager
         if (GUIManager.HasInstance)
         {
             (GUIManager.Instance as MyGUIManager).SetLevelUpPanel(false);
-            levelUpPanelActive = false;
+            panelActive = false;
+            activePanelName = "";
         }
     }
 
@@ -48,7 +78,7 @@ public class MyGameManager : GameManager
         base.OnMMEvent(gameEvent);
         if (gameEvent.EventName == "ToggleLevelUpgrades")
         {
-            if (levelUpPanelActive) 
+            if (panelActive && activePanelName == "LevelUpgrades") 
             {
                 MMGameEvent.Trigger("LevelUpgradesClosed");
             }
@@ -65,6 +95,26 @@ public class MyGameManager : GameManager
         if (gameEvent.EventName == "LevelUpgradesClosed")
         {
             CloseLevelUpgrades();
+        }
+
+        if (gameEvent.EventName == "ToggleStatistics")
+        {
+            if (panelActive && activePanelName == "Statistics")
+            {
+                MMGameEvent.Trigger("StatisticsClosed");
+            }
+            else
+            {
+                MMGameEvent.Trigger("StatisticsOpened");
+            }
+        }
+        if (gameEvent.EventName == "StatisticsOpened")
+        {
+            OpenStatistics();
+        }
+        if (gameEvent.EventName == "StatisticsClosed")
+        {
+            CloseStatistics();
         }
     }
 }

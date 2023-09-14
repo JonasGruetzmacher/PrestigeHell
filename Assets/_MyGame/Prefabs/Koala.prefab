@@ -9827,6 +9827,7 @@ GameObject:
   - component: {fileID: -5258126964115623124}
   - component: {fileID: 3679480068751948616}
   - component: {fileID: 9156600887440837936}
+  - component: {fileID: -5738589257591276862}
   m_Layer: 10
   m_Name: Koala
   m_TagString: Player
@@ -10356,6 +10357,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f1fa97fc7f9bb7498eaa18f43b00746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartSfx: {fileID: 0}
+  AbilityInProgressSfx: {fileID: 0}
+  AbilityStopSfx: {fileID: 0}
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+--- !u!114 &-5738589257591276862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63bddf78acc451a41aab907f7d761226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1561075265052736

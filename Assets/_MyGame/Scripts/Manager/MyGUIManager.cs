@@ -12,6 +12,8 @@ public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 	public GameObject levelUpPanel;
 	public GameObject levelUpButton;
 
+	public GameObject statisticPanel;
+
 	public MMProgressBar XPBar;
 	public MMProgressBar dangerBar;
 	[SerializeField] private MMSerializableDictionary<ResourceType, MMProgressBar> resourceBars = new MMSerializableDictionary<ResourceType, MMProgressBar>();
@@ -27,6 +29,7 @@ public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 		base.Start();
 		StartCoroutine(UpdateResourceBarCoroutine(ResourceType.Danger));
 		SetLevelUpPanel(false);
+		SetStatisticPanel(false);
 		levelUpButton.SetActive(false);
 	}
 
@@ -97,6 +100,15 @@ public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 				levelUpPanel.SetActive(state);
 				EventSystem.current.sendNavigationEvents = state;
 			}
+	}
+
+	public virtual void SetStatisticPanel(bool state)
+	{
+		if (statisticPanel != null)
+		{
+			statisticPanel.SetActive(state);
+			EventSystem.current.sendNavigationEvents = state;
+		}
 	}
 
 	public virtual void SetLevelUpButton(bool state)
