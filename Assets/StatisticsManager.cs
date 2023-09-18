@@ -18,12 +18,12 @@ public class StatisticsManager : MMSingleton<StatisticsManager>, MMEventListener
                 {
                     if (statistic.additionalAttribute == statisticEvent.attribute)
                     {
-                        statistic.value += statisticEvent.value;
+                        statistic.InreaseValue(statisticEvent.value);
                     }
                 }
                 else
                 {
-                    statistic.value += statisticEvent.value;
+                    statistic.InreaseValue(statisticEvent.value);
                 }
             }
         }
@@ -33,7 +33,7 @@ public class StatisticsManager : MMSingleton<StatisticsManager>, MMEventListener
     {
         foreach (var statistic in statistics)
         {
-            statistic.value = 0;
+            statistic.Reset();
         }
     }
 
