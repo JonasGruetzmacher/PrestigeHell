@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using System.Resources;
 
-[CreateAssetMenu(menuName = "Stats")]
+[CreateAssetMenu(menuName = "Character/StatsSO")]
 public class Stats : SerializedScriptableObject
 {
     public Dictionary<Stat, float> instanceStats = new Dictionary<Stat, float>();
