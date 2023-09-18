@@ -23,4 +23,4 @@ MonoBehaviour:
     SerializationNodes: []
   theme: {fileID: 11400000, guid: 3f7aca7c8a4390c438cb49e454d30265, type: 2}
   font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  fontSize: 35
+  fontSize: 45
