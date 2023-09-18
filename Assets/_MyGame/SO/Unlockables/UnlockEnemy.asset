@@ -20,4 +20,8 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: unlocked
+      Entry: 5
+      Data: false
+  enemyInformation: {fileID: 11400000, guid: ba0cee0d70c957140a9626958f81d723, type: 2}

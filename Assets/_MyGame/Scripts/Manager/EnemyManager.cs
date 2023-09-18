@@ -49,6 +49,14 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
 		return new List<CharacterInformationSO>(spawnableEnemyInformations.Values);
 	}
 
+	public void AddSpawnableEnemy(CharacterInformationSO enemyInformation)
+	{
+		if (enemyInformation == null) { return; }
+		if (spawnableEnemyInformations.ContainsKey(enemyInformation.characterName)) { return; }
+		spawnableEnemyInformations.Add(enemyInformation.characterName, enemyInformation);
+		enemyPoolerObjects[enemyInformation.name].Enabled = true;
+	}
+
     public virtual void Reset()
     {
         foreach(var obj in FindObjectsOfType<MMPoolableObject>())

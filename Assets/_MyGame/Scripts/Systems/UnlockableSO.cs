@@ -5,7 +5,12 @@ using Sirenix.OdinInspector;
 
 public abstract class UnlockableSO : SerializedScriptableObject
 {
-    public bool unlocked { get; protected set; }
+    [SerializeField] public bool unlocked { get; protected set; }
     public abstract void Unlock();
+
+    public virtual void Reset()
+    {
+        unlocked = false;
+    }
 
 }

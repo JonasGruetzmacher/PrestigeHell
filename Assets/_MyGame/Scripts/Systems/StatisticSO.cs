@@ -53,5 +53,9 @@ public class StatisticSO : SerializedScriptableObject
     {
         value = 0;
         currentGoalIndex = 0;
+        foreach (var unlockable in unlockablesList)
+        {
+            unlockable.Item1.Reset();
+        }
     }
 }

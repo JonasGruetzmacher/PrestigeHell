@@ -4,11 +4,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "UnlockEnemy", menuName = "Unlockables/UnlockEnemySO")]
 public class UnlockEnemySO : UnlockableSO
 {
-    // public EnemySO enemySO;
+    public CharacterInformationSO enemyInformation;
 
     public override void Unlock()
     {
+        if (enemyInformation == null)
+        {
+            return;
+        }
+        if (unlocked)
+        {
+            return;
+        }
         unlocked = true;
-        Debug.Log("Unlock Enemy");
+        
+        EnemyManager.Instance.AddSpawnableEnemy(enemyInformation);
     }
 }
