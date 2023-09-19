@@ -36,13 +36,10 @@ public class StatisticSO : SerializedScriptableObject
     public void InreaseValue(float value)
     {
         this.value += value;
-        Debug.Log("Value: " + this.value);
         if (currentGoalIndex < unlockablesList.Count)
         {
-            Debug.Log("Current Goal Index: " + currentGoalIndex);
             if (this.value >= unlockablesList[currentGoalIndex].Item2)
             {
-                Debug.Log("Unlock");
                 unlockablesList[currentGoalIndex].Item1.Unlock();
                 currentGoalIndex++;
             }
