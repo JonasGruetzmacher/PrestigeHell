@@ -16,8 +16,26 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 638285725766888146
+  lastScan: 638307202932866769
   supportSerializedTypes:
+  - TypeName: System.Boolean, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[UnlockableSO, Assembly-CSharp],[System.Single,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[UnlockableSO, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.ObjectEqualityComparer`1[[UnlockableSO,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnlockableSO, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
   - TypeName: UnityEngine.AnimationCurve, UnityEngine.CoreModule
     IsCustom: 0
     Emit: 1

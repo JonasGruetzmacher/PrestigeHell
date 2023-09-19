@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Sirenix.Serialization;
 
 [CreateAssetMenu(fileName = "Statistic", menuName = "StatisticSO")]
 public class StatisticSO : SerializedScriptableObject
@@ -19,8 +20,9 @@ public class StatisticSO : SerializedScriptableObject
     public string additionalAttribute;
 
     [Header("Unlockables")]
-    [SerializeField]
     public Dictionary<UnlockableSO, float> unlockables = new Dictionary<UnlockableSO, float>();
+    
+    [OdinSerialize]
     private List<(UnlockableSO, float)> unlockablesList = new List<(UnlockableSO, float)>();
     private int currentGoalIndex = 0;
 
