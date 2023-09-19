@@ -33,6 +33,30 @@ public class StatisticSO : SerializedScriptableObject
         }
     }
 
+    public float GetNextGoalValue()
+    {
+        if (currentGoalIndex < unlockablesList.Count)
+        {
+            return unlockablesList[currentGoalIndex].Item2;
+        }
+        return 100000f;
+    }
+
+    public string GetTextDescription()
+    {
+        string text = "";
+        if (currentGoalIndex < unlockablesList.Count)
+        {
+            text = value + "/" + unlockablesList[currentGoalIndex].Item2;
+            text += " --- " + unlockablesList[currentGoalIndex].Item1.GetTextDescription();
+        }
+        else
+        {
+            text = value + " --- No more goals.";
+        }
+        return text;
+    }
+
     public void InreaseValue(float value)
     {
         this.value += value;

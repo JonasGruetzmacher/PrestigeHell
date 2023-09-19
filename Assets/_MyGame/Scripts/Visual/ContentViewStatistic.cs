@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using MoreMountains.Tools;
 
 public class ContentViewStatistic : ContentView
 {
@@ -9,6 +10,7 @@ public class ContentViewStatistic : ContentView
 
     private TextMeshProUGUI leftText;
     private TextMeshProUGUI rightText;
+    private MMProgressBar progressBar;
 
     public override void Setup()
     {
@@ -16,6 +18,7 @@ public class ContentViewStatistic : ContentView
 
         leftText = containerLeft.GetComponentInChildren<TextMeshProUGUI>();
         rightText = containerRight.GetComponentInChildren<TextMeshProUGUI>();
+        progressBar = containerRight.GetComponentInChildren<MMProgressBar>();
     }
 
     public override void Configure()
@@ -27,7 +30,8 @@ public class ContentViewStatistic : ContentView
             return;
         }
         leftText.text = statisticSO.statisticName;
-        rightText.text = statisticSO.value.ToString();
+        progressBar.SetBar(statisticSO.value, 0f, statisticSO.GetNextGoalValue());
+        rightText.text = statisticSO.GetTextDescription();
     }
 
     private void OnEnable()

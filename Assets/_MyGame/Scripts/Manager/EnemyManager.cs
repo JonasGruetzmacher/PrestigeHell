@@ -54,7 +54,7 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
 		if (enemyInformation == null) { return; }
 		if (spawnableEnemyInformations.ContainsKey(enemyInformation.characterName)) { return; }
 		spawnableEnemyInformations.Add(enemyInformation.characterName, enemyInformation);
-		enemyPoolerObjects[enemyInformation.name].Enabled = true;
+		// enemyPoolerObjects[enemyInformation.name].Enabled = true;
 	}
 
     public virtual void Reset()

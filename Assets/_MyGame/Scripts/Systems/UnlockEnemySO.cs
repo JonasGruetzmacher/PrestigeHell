@@ -20,4 +20,9 @@ public class UnlockEnemySO : UnlockableSO
         
         EnemyManager.Instance.AddSpawnableEnemy(enemyInformation);
     }
+
+    public override string GetTextDescription()
+    {
+        return "Unlock new enemy: " + enemyInformation.characterName;
+    }
 }
