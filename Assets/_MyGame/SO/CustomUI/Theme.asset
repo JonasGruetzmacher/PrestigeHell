@@ -21,10 +21,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  primary_bg: {r: 1, g: 1, b: 1, a: 1}
+  primary_bg: {r: 0.9647059, g: 0.8392157, b: 0.7411765, a: 1}
   primary_text: {r: 0, g: 0, b: 0, a: 1}
-  secondary_bg: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  secondary_bg: {r: 0.6, g: 0.45882353, b: 0.46666667, a: 1}
   secondary_text: {r: 0, g: 0, b: 0, a: 1}
-  tertiary_bg: {r: 0.3160377, g: 0.3756754, b: 1, a: 1}
-  tertiary_text: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+  tertiary_bg: {r: 0.03137255, g: 0.078431375, b: 0.11764706, a: 1}
+  tertiary_text: {r: 0.96470594, g: 0.83921576, b: 0.7411765, a: 1}
   disable: {r: 0, g: 0, b: 0, a: 1}

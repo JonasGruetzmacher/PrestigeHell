@@ -541,15 +541,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9647059, g: 0.8392157, b: 0.7411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300006, guid: a2420309b344fe34f9cdfaba2389fdbe, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.30588236, g: 0.28627452, b: 0.37254903, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  m_Color: {r: 0.6, g: 0.45882353, b: 0.46666667, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  m_Color: {r: 0.6, g: 0.45882353, b: 0.46666667, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -945,7 +945,7 @@ PrefabInstance:
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
       propertyPath: m_fontSize
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
@@ -961,6 +961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
@@ -985,7 +990,7 @@ PrefabInstance:
     - target: {fileID: 150508663197462796, guid: 305b3fa42582c5f43ae259a91313fe3e,
         type: 3}
       propertyPath: m_text
-      value: '0/10 --- Unlock new enemy: Circle'
+      value: '0/50 --- Unlock new enemy: Circle'
       objectReference: {fileID: 0}
     - target: {fileID: 150508663197462796, guid: 305b3fa42582c5f43ae259a91313fe3e,
         type: 3}

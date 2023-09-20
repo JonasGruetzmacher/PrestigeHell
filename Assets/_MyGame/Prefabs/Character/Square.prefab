@@ -98,7 +98,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9647059, g: 0.8392157, b: 0.7411765, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gravity: -30
-  GravityActive: 1
+  GravityActive: 0
   CrouchedRaycastLengthMultiplier: 1
   PerformCardinalObstacleRaycastDetection: 0
   Speed: {x: 0, y: 0, z: 0}
@@ -323,13 +323,13 @@ MonoBehaviour:
   ImmuneToKnockbackIfZeroDamage: 0
   KnockbackForceMultiplier: 1
   DestroyOnDeath: 1
-  DelayBeforeDestruction: 0.3
+  DelayBeforeDestruction: 0.5
   PointsWhenDestroyed: 0
   RespawnAtInitialLocation: 0
   DisableControllerOnDeath: 1
   DisableModelOnDeath: 1
   DisableCollisionsOnDeath: 1
-  DisableChildCollisionsOnDeath: 0
+  DisableChildCollisionsOnDeath: 1
   ChangeLayerOnDeath: 0
   ChangeLayersRecursivelyOnDeath: 0
   LayerOnDeath:
@@ -517,7 +517,7 @@ MonoBehaviour:
   AlwaysVisible: 0
   DisplayDurationOnHit: 1
   HideBarAtZero: 1
-  HideBarAtZeroDelay: 1
+  HideBarAtZeroDelay: 0.1
 --- !u!114 &1020061562776848910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020061562776848954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bbbe51f9806750489b5fe08d7a19729, type: 3}
   m_Name: 
