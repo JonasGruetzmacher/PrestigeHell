@@ -4,50 +4,102 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
+using UnityEngine.EventSystems;
 
-public class Tooltip : MonoBehaviour
+public class Tooltip : CUIComponent
 {
-    public TextMeshProUGUI headerField;
-    public TextMeshProUGUI contentField;
+    public CViewSO viewSO;
 
-    public LayoutElement layoutElement;
-
+    public GameObject containerHeader;
+    public GameObject containerContent;
     public int characterWrapLimit;
 
-    public RectTransform rectTransform;
+    private LayoutElement layoutElement;
+    private VerticalLayoutGroup verticalLayoutGroup;
+    private RectTransform rectTransform;
 
-    private void Awake()
+    private TextMeshProUGUI headerText;
+    private TextMeshProUGUI contentText;
+
+    private Canvas canvas;
+
+    private Image imageHeader;
+    private Image imageContent;
+
+    [SerializeField] private string header;
+    [SerializeField] private string content;
+
+
+    public override void Setup()
     {
+
+        headerText = containerHeader.GetComponentInChildren<TextMeshProUGUI>();
+        contentText = containerContent.GetComponentInChildren<TextMeshProUGUI>();
+
+        imageHeader = containerHeader.GetComponent<Image>();
+        imageContent = containerContent.GetComponent<Image>();
+
         rectTransform = GetComponent<RectTransform>();
-    }
+        layoutElement = GetComponent<LayoutElement>();
+        verticalLayoutGroup = GetComponent<VerticalLayoutGroup>();
 
-    public void SetText(string content, string header = "")
+        canvas = GetComponentInParent<Canvas>();
+
+
+    } 
+
+    public override void Configure()
     {
+        verticalLayoutGroup.padding = viewSO.padding;
+        verticalLayoutGroup.spacing = viewSO.spacing;
+
+        imageHeader.color = viewSO.themeSO.secondary_bg;
+        imageContent.color = viewSO.themeSO.primary_bg;
+
         if (string.IsNullOrEmpty(header))
         {
-            headerField.gameObject.SetActive(false);
+            containerHeader.SetActive(false);
         }
         else
         {
-            headerField.gameObject.SetActive(true);
-            headerField.text = header;
+            containerHeader.SetActive(true);
+            headerText.text = header;
         }
 
-        contentField.text = content;
+        contentText.text = content;
 
-        int headerLength = headerField.text.Length;
-        int contentLength = contentField.text.Length;
+        int headerLength = headerText.text.Length;
+        int contentLength = contentText.text.Length;
 
-        layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
+        // layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
+        if (!Application.isPlaying)
+        {
+            return;
+        }
 
-        Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        float pivotX = position.x / Screen.width;
-        float pivotY = position.y / Screen.height;
+        Vector2 movePos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+        canvas.transform as RectTransform,
+        Input.mousePosition, canvas.worldCamera,
+        out movePos);
 
-        rectTransform.pivot = new Vector2(pivotX, pivotY);
 
-        transform.position = new Vector3(position.x, position.y, transform.position.z);
+        transform.position = canvas.transform.TransformPoint(movePos);
+
+
+
+
+    }
+
+    [Button]
+    public void SetText(string content, string header = "")
+    {
+        this.header = header;
+        this.content = content;
+
+        Configure();   
     }
 
 }
