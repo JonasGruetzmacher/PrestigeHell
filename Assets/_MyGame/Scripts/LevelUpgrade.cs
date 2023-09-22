@@ -17,11 +17,6 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade,
     
     private bool alreadyGotUnlocked = false;
 
-    private void Start()
-    {
-        SetButtonState(LevelUpgradeState.Locked);
-    }
-
     public void SetButtonState(LevelUpgradeState state)
     {
         if (state == LevelUpgradeState.Unlocked && !alreadyGotUnlocked)
@@ -58,9 +53,13 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade,
     private void CheckIfUnlocked()
     {
         if (alreadyGotUnlocked)
+        {
             return;
+        }
         if (!ResourcesManager.Instance)
+        {
             return;
+        }
         if (ResourcesManager.Instance.GetResourceAmount(ResourceType.Level) >= levelRequirement)
         {
             SetButtonState(LevelUpgradeState.Unlocked);

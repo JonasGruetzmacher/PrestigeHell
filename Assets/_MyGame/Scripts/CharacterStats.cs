@@ -57,8 +57,15 @@ public class CharacterStats : CharacterAbility
         }
         if (stats.IncludesStat(Stat.health))
         {
-            _health.MaximumHealth = stats.GetStat(Stat.health);
-            _health.InitialHealth = stats.GetStat(Stat.health);
+            float health = stats.GetStat(Stat.health);
+            if (stats.IncludesStat(Stat.healthVariance))
+            {
+                float healthVariance = Random.Range(-stats.GetStat(Stat.healthVariance), stats.GetStat(Stat.healthVariance));
+                health = health * (1 + healthVariance);
+            }
+            _health.MaximumHealth = health;
+
+            _health.InitialHealth = health;
             _health.UpdateHealthBar(true);
         }
         if (stats.IncludesStat(Stat.touchDamage))
@@ -67,10 +74,6 @@ public class CharacterStats : CharacterAbility
             {
                 touchDamage.MinDamageCaused = stats.GetStat(Stat.touchDamage);
                 touchDamage.MaxDamageCaused = stats.GetStat(Stat.touchDamage);
-            }
-            else
-            {
-                Debug.LogError("No touch damage component found");
             }
         }
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Circle
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -27,4 +27,4 @@ MonoBehaviour:
     type: 3}
   characterPrefab: {fileID: 1020061562776848954, guid: 7014c72f55230bd40804e78847b35338,
     type: 3}
-  poolSize: 20
+  poolSize: 5

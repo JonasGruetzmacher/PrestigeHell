@@ -88,6 +88,19 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
 		spawnableEnemyInformations.Remove(enemyInformation.name);
 	}
 
+	public virtual float GetSpawnChance(CharacterInformationSO enemyInformation)
+	{
+		if (enemyInformation == null) { return 0f; }
+		if (!spawnableEnemyInformations.ContainsKey(enemyInformation.name)) { return 0f; }
+		int totalPoolSize = 0;
+		foreach (var enemyPool in spawnableEnemyInformations.Values)
+		{
+			totalPoolSize += enemyPool.poolSize;
+		}
+
+		return (float)enemyInformation.poolSize / (float)totalPoolSize;
+	}
+
     public virtual void OnMMEvent(TopDownEngineEvent engineEvent)
 	{
 		switch (engineEvent.EventType)

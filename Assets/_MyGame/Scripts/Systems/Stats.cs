@@ -88,11 +88,22 @@ public class Stats : SerializedScriptableObject, ITooltipInformation
         infoRight = "";
         foreach (var stat in stats)
         {
+            if (stat.Key == Stat.healthVariance)
+                continue;
             infoLeft += string.Format("{0}: {1}\n", stat.Key.ToMarkedString(), GetStat(stat.Key).ToString("0.00"));
         }
 
         foreach (var instanceStat in instanceStats)
         {
+            if (instanceStat.Key == Stat.healthVariance)
+                continue;
+            if (instanceStat.Key == Stat.health && IncludesStat(Stat.healthVariance))
+            {
+                float minHealth = GetStat(instanceStat.Key) * (1f - GetStat(Stat.healthVariance));
+                float maxHealth = GetStat(instanceStat.Key) * (1f + GetStat(Stat.healthVariance));
+                infoLeft += string.Format("{0}: {1} - {2}\n", instanceStat.Key.ToMarkedString(), minHealth.ToString("0.00"), maxHealth.ToString("0.00"));
+                continue;
+            }
             infoLeft += string.Format("{0}: {1}\n", instanceStat.Key.ToMarkedString(), GetStat(instanceStat.Key).ToString("0.00"));
         }
     }

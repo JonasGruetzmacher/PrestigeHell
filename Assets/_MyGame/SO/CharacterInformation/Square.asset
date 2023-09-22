@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Square
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -27,4 +27,4 @@ MonoBehaviour:
     type: 3}
   characterPrefab: {fileID: 1020061562776848954, guid: 592812fef8253834c90cb512debd2b77,
     type: 3}
-  poolSize: 20
+  poolSize: 30

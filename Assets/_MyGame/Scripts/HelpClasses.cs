@@ -137,6 +137,7 @@ public enum Stat
     damageReduction = 4,
     collectRange = 5,
     xPGain = 6,
+    healthVariance = 7,
 }
 
 public struct ScalingStat

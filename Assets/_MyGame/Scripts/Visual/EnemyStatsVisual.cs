@@ -33,6 +33,7 @@ public class EnemyStatsVisual : CUIComponent, ICharacterInformation, ITooltipInf
     public void GetTooltipInformation(out string infoLeft, out string infoRight)
     {
         characterInformation.GetTooltipInformation(out infoLeft, out infoRight);
+        infoLeft += string.Format("!Spawn Chance`: {0}\n", EnemyManager.Instance.GetSpawnChance(characterInformation).ToString("0.00"));
         infoRight += string.Format("Danger: {0}", ResourcesManager.Instance.GetResourceAmount(ResourceType.Danger));
     }
 }

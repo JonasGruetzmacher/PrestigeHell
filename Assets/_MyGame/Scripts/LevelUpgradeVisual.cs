@@ -51,12 +51,13 @@ public class LevelUpgradeVisual : CButton
         }
     }
 
-    private void OnEnable()
+
+    private void Awake()
     {
         levelUpgrade.upgradeStateChanged.AddListener(OnUpgradeStateChanged);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         levelUpgrade.upgradeStateChanged.RemoveListener(OnUpgradeStateChanged);
     }
