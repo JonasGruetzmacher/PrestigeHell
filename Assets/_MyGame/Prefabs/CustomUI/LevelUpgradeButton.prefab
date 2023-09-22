@@ -234,7 +234,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.9647059, g: 0.8392157, b: 0.7411765, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -279,7 +279,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5568879662620135744}
   - component: {fileID: 1827178924192200978}
-  - component: {fileID: 1827178924192200976}
   - component: {fileID: 1827178924192200977}
   m_Layer: 0
   m_Name: LevelUpgradeButton
@@ -326,20 +325,6 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1827178924192200976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5568879662620135751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79a124ffb53cf84f99ff3a40e806476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: 
-  content: 
 --- !u!114 &1827178924192200977
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -104,4 +104,5 @@ MonoBehaviour:
   upgradeLimit: 10
   unitsToUpgrade:
   - {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
+  - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   isPercentageUpgrade: 0

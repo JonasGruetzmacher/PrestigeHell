@@ -55,6 +55,30 @@ public static class HelperFunctions
         return $"{pair.Key}: {pair.Value}";
     }
 
+    public static string ToMarkedString(this Stat stat)
+    {
+
+        switch (stat)
+        {
+            case Stat.health:
+                return "!Max Health`";
+            case Stat.speed:
+                return "!Move Speed`";
+            case Stat.touchDamage:
+                return "!Damage`";
+            case Stat.attackSpeed:
+                return "!Attack Speed`";
+            case Stat.damageReduction:
+                return "!Damage Reduction`";
+            case Stat.collectRange:
+                return "!Collect Range`";
+            case Stat.xPGain:
+                return "!XP Gain`";
+            default:
+                return stat.ToString();
+        }
+    }
+
 }
 
 [System.Serializable]

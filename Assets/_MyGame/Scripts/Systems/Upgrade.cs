@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using System;
 
-public abstract class Upgrade : SerializedScriptableObject
+public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
 {
     public string upgradeName;
     public string description;
@@ -71,6 +71,20 @@ public abstract class Upgrade : SerializedScriptableObject
             costs += resource.Value.ToString() + " " + resource.Key.ToString() + "\n";
         }
         return costs;
+    }
+
+    public virtual void GetTooltipInformation(out string infoLeft, out string infoRight)
+    {
+        infoLeft = "";
+        infoRight = "";
+
+        infoLeft += string.Format("!{0}`\n", upgradeName);
+        infoLeft += string.Format("{0}`\n", description);
+
+        if (GetNextUpgradeCost().Count > 0)
+        {
+            infoRight += string.Format("{0}`\n", GetNextUpgradeCosts());
+        }
     }
 
 }
