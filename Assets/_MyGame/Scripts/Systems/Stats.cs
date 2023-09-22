@@ -88,7 +88,12 @@ public class Stats : SerializedScriptableObject, ITooltipInformation
         infoRight = "";
         foreach (var stat in stats)
         {
-            infoLeft += string.Format("!{0}`: {1}\n", stat.Key, GetStat(stat.Key).ToString("0.00"));
+            infoLeft += string.Format("{0}: {1}\n", stat.Key.ToMarkedString(), GetStat(stat.Key).ToString("0.00"));
+        }
+
+        foreach (var instanceStat in instanceStats)
+        {
+            infoLeft += string.Format("{0}: {1}\n", instanceStat.Key.ToMarkedString(), GetStat(instanceStat.Key).ToString("0.00"));
         }
     }
 

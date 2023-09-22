@@ -81,7 +81,6 @@ public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
         infoLeft += string.Format("!{0}`\n", upgradeName);
         infoLeft += string.Format("{0}`\n", description);
 
-        Debug.Log(GetNextUpgradeCost());
         if (GetNextUpgradeCost().Count > 0)
         {
             infoRight += string.Format("{0}`\n", GetNextUpgradeCosts());
