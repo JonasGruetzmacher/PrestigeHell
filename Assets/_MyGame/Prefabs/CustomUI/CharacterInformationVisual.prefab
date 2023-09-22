@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7410677145167924413}
   - component: {fileID: 7410677145167924414}
   - component: {fileID: 7410677145167924415}
-  - component: {fileID: 6510309247826836940}
+  - component: {fileID: -4819045695624300499}
   m_Layer: 0
   m_Name: CharacterInformationVisual
   m_TagString: Untagged
@@ -91,9 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfc5a73d36ce5e43bbe13a9484f0640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterInformationSO: {fileID: 11400000, guid: 202d858f62b1c9040b77adceb7a91e21,
-    type: 2}
---- !u!114 &6510309247826836940
+  <characterInformation>k__BackingField: {fileID: 0}
+--- !u!114 &-4819045695624300499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,6 +101,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7410677145167924409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d64f0353d63b74e8d600356ebbaa8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  simpleTooltipStyle: {fileID: 11400000, guid: ddf4c39a3aa72ee499f48ca1d91f8bfd, type: 2}
+  infoLeft: Hello
+  infoRight: 

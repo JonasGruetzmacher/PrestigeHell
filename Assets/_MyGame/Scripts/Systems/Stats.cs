@@ -7,7 +7,7 @@ using System.Linq;
 using System.Resources;
 
 [CreateAssetMenu(menuName = "Character/StatsSO")]
-public class Stats : SerializedScriptableObject
+public class Stats : SerializedScriptableObject, ITooltipInformation
 {
     public Dictionary<Stat, float> instanceStats = new Dictionary<Stat, float>();
     public Dictionary<Stat, float> stats = new Dictionary<Stat, float>();
@@ -80,6 +80,16 @@ public class Stats : SerializedScriptableObject
         if(!statCurves.TryGetValue(stat, out var curve))
             return baseValue;
         return baseValue + curve.curve.Evaluate(ResourcesManager.Instance.GetResourceAmount(ResourceType.Danger));
+    }
+
+    public void GetTooltipInformation(out string infoLeft, out string infoRight)
+    {
+        infoLeft = "";
+        infoRight = "";
+        foreach (var stat in stats)
+        {
+            infoLeft += string.Format("!{0}`: {1}\n", stat.Key, GetStat(stat.Key).ToString("0.00"));
+        }
     }
 
     [Button]

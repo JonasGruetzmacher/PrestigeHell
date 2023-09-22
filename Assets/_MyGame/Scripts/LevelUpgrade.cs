@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 
-public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
+public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade, ITooltipInformation
 {
     [field: SerializeField] public Upgrade upgrade {get; private set;}
 
@@ -73,6 +73,12 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade
         {
             CheckIfUnlocked();
         }
+    }
+
+    public void GetTooltipInformation(out string infoLeft, out string infoRight)
+    {
+        upgrade.GetTooltipInformation(out infoLeft, out infoRight);
+        infoRight += string.Format("Level {0}", levelRequirement);
     }
 
     private void OnEnable()
