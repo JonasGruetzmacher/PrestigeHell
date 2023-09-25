@@ -29,8 +29,9 @@ public class LevelUpgradeVisual : CButton
     }
 
 
-    public void OnUpgradeStateChanged()
+    public void SetButtonState()
     {
+        Debug.Log("OnUpgradeStateChanged");
         switch (levelUpgrade.state)
         {
             case LevelUpgradeState.Locked:
@@ -38,6 +39,7 @@ public class LevelUpgradeVisual : CButton
                 buttonText.SetText(levelUpgrade.upgrade.upgradeName);
                 break;
             case LevelUpgradeState.Unlocked:
+                Debug.Log("Unlocked");
                 Enable();
                 buttonText.SetText(levelUpgrade.upgrade.upgradeName);
                 break;
@@ -53,13 +55,14 @@ public class LevelUpgradeVisual : CButton
     }
 
 
-    private void Awake()
+    private void OnEnable()
     {
-        levelUpgrade.upgradeStateChanged.AddListener(OnUpgradeStateChanged);
+        SetButtonState();
+        levelUpgrade.upgradeStateChanged.AddListener(SetButtonState);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        levelUpgrade.upgradeStateChanged.RemoveListener(OnUpgradeStateChanged);
+        levelUpgrade.upgradeStateChanged.RemoveListener(SetButtonState);
     }
 }   

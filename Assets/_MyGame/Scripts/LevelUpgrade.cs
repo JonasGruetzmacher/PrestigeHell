@@ -42,18 +42,22 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade,
     {
         if (upgrade.isUnlocked)
         {
+            Debug.Log("Upgrade is unlocked");
             return;
         }
         if (upgrade.isBlocked)
         {
+            Debug.Log("Upgrade is blocked");
             SetButtonState(LevelUpgradeState.Disabled);
             return;
         }
         if (ResourcesManager.Instance.GetResourceAmount(ResourceType.Level) >= levelRequirement)
         {
+            Debug.Log("Level requirement met");
             SetButtonState(LevelUpgradeState.Unlocked);
             return;
         }
+        Debug.Log("Level requirement not met");
         SetButtonState(LevelUpgradeState.Locked);
 
     }

@@ -1141,7 +1141,7 @@ PrefabInstance:
     - target: {fileID: 1443955642081186390, guid: 0f3af82b5ad3a5e44859fd80141d4408,
         type: 3}
       propertyPath: m_Name
-      value: EnemiesDisplay (1)
+      value: EnemiesDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 1443955642081186391, guid: 0f3af82b5ad3a5e44859fd80141d4408,
         type: 3}
@@ -1246,11 +1246,6 @@ PrefabInstance:
     - target: {fileID: 1443955642081186391, guid: 0f3af82b5ad3a5e44859fd80141d4408,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443955642859585869, guid: 0f3af82b5ad3a5e44859fd80141d4408,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
