@@ -69,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1443955642859586226
 RectTransform:
   m_ObjectHideFlags: 0
@@ -207,6 +207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ChildAlignment
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237673762979479523, guid: ff71b5db475666640b326490a90474d9,
+        type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5476326555596611751, guid: ff71b5db475666640b326490a90474d9,
         type: 3}
@@ -362,7 +367,7 @@ PrefabInstance:
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
       propertyPath: m_fontSize
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
@@ -387,7 +392,7 @@ PrefabInstance:
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
       propertyPath: m_fontSizeBase
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3bb27a025533445baa3d4b598bdf9e, type: 3}
