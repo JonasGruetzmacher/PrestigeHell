@@ -883,7 +883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statisticEvent:
     type: 1
-    attribute: square
+    attribute: Square
     value: 1
   triggerType: 1
 --- !u!1 &5376448862748656275

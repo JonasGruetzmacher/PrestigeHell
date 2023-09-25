@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d99a39aedf2e9442a66f9b9ee3c764c, type: 3}
-  m_Name: EnemiesKilled
+  m_Name: HexagonsKilled
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -54,8 +54,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  statisticName: Enemies Killed
-  description: Enemies Killed
+  statisticName: Hexagons Killed
+  description: Hexagons Killed
   statisticType: 1
-  toggleAdditionalAttribute: 0
-  additionalAttribute: 
+  toggleAdditionalAttribute: 1
+  additionalAttribute: Hexagon

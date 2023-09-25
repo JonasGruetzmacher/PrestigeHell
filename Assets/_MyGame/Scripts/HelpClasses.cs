@@ -74,6 +74,14 @@ public static class HelperFunctions
                 return "!Collect Range`";
             case Stat.xPGain:
                 return "!XP Gain`";
+            case Stat.healthVariance:
+                return null;
+            case Stat.groupSize:
+                return "!Group Size`";
+            case Stat.groupSizeVariance:
+                return null;
+            case Stat.groupSpawnRadius:
+                return null;
             default:
                 return stat.ToString();
         }
@@ -138,6 +146,9 @@ public enum Stat
     collectRange = 5,
     xPGain = 6,
     healthVariance = 7,
+    groupSize = 8,
+    groupSizeVariance = 9,
+    groupSpawnRadius = 10,
 }
 
 public struct ScalingStat

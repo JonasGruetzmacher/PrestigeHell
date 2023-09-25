@@ -54,8 +54,34 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: unlockablesList
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[System.ValueTuple`2[[UnlockableSO,
+        Assembly-CSharp],[System.Single, mscorlib]], mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: System.ValueTuple`2[[UnlockableSO, Assembly-CSharp],[System.Single, mscorlib]],
+        mscorlib
+    - Name: Item1
+      Entry: 10
+      Data: 0
+    - Name: Item2
+      Entry: 4
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   statisticName: Squares Killed
   description: Squares Killed
   statisticType: 1
-  toggleAdditionalAttribute: 0
-  additionalAttribute: 
+  toggleAdditionalAttribute: 1
+  additionalAttribute: Square

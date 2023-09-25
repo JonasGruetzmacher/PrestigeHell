@@ -88,14 +88,14 @@ public class Stats : SerializedScriptableObject, ITooltipInformation
         infoRight = "";
         foreach (var stat in stats)
         {
-            if (stat.Key == Stat.healthVariance)
+            if (stat.Key.ToMarkedString() == null)
                 continue;
             infoLeft += string.Format("{0}: {1}\n", stat.Key.ToMarkedString(), GetStat(stat.Key).ToString("0.00"));
         }
 
         foreach (var instanceStat in instanceStats)
         {
-            if (instanceStat.Key == Stat.healthVariance)
+            if (instanceStat.Key.ToMarkedString() == null)
                 continue;
             if (instanceStat.Key == Stat.health && IncludesStat(Stat.healthVariance))
             {

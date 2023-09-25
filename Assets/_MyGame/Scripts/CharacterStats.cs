@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CharacterStats : CharacterAbility
 {
-    [SerializeField] private Stats stats;
+    public Stats stats;
 
     private Dictionary<Stat, float> localStats = new Dictionary<Stat, float>();
 

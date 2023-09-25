@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class StatisticsPanel : MonoBehaviour
 {
@@ -10,14 +11,19 @@ public class StatisticsPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        
-        foreach (var statistic in StatisticsManager.Instance.statistics)
+        List <StatisticSO> statistics = new List<StatisticSO>(StatisticsManager.Instance.statistics);
+        statistics = statistics.Reverse<StatisticSO>().ToList();
+
+        foreach (var statistic in statistics)
         {
             if (statisticContentViews.ContainsKey(statistic))
             {
                 continue;
             }
-            Debug.Log("StatisticsPanel OnEnable");
+            if (statistic.value == 0)
+            {
+                continue;
+            }
             var contentView = Instantiate(contentViewPrefab, contentParent).GetComponent<ContentViewStatistic>();
             contentView.statisticSO = statistic;
             contentView.Init();

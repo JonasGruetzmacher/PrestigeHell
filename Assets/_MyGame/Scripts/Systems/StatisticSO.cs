@@ -29,9 +29,13 @@ public class StatisticSO : SerializedScriptableObject
 
     public void OnValidate()
     {
+        unlockablesList.Clear();
         foreach (var unlockable in unlockables)
         {
-            unlockablesList.Add((unlockable.Key, unlockable.Value));
+            if (!unlockablesList.Contains((unlockable.Key, unlockable.Value)))
+            {
+                unlockablesList.Add((unlockable.Key, unlockable.Value));
+            }
         }
     }
 

@@ -940,7 +940,7 @@ PrefabInstance:
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
       propertyPath: m_text
-      value: Squares Killed
+      value: Circle Killed
       objectReference: {fileID: 0}
     - target: {fileID: 6871949081734045029, guid: 5c3bb27a025533445baa3d4b598bdf9e,
         type: 3}
@@ -990,7 +990,7 @@ PrefabInstance:
     - target: {fileID: 150508663197462796, guid: 305b3fa42582c5f43ae259a91313fe3e,
         type: 3}
       propertyPath: m_text
-      value: '0/50 --- Unlock new enemy: Circle'
+      value: '0/50 --- Unlock new enemy: Hexagon'
       objectReference: {fileID: 0}
     - target: {fileID: 150508663197462796, guid: 305b3fa42582c5f43ae259a91313fe3e,
         type: 3}
