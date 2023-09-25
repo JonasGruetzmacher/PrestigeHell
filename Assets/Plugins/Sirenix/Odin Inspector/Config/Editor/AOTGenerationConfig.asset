@@ -16,27 +16,12 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 638307202932866769
+  lastScan: 638310668828107236
   supportSerializedTypes:
-  - TypeName: System.Boolean, mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.Dictionary`2[[UnlockableSO, Assembly-CSharp],[System.Single,
-      mscorlib]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.IEqualityComparer`1[[UnlockableSO, Assembly-CSharp]],
-      mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: System.Collections.Generic.ObjectEqualityComparer`1[[UnlockableSO,
-      Assembly-CSharp]], mscorlib
-    IsCustom: 0
-    Emit: 1
-  - TypeName: UnlockableSO, Assembly-CSharp
-    IsCustom: 0
-    Emit: 1
   - TypeName: UnityEngine.AnimationCurve, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Boolean, mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[ResourceType, Assembly-CSharp],[System.Single,
@@ -49,6 +34,10 @@ MonoBehaviour:
     Emit: 1
   - TypeName: System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[ScalingStat,
       Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[UnlockableSO, Assembly-CSharp],[System.Single,
+      mscorlib]], mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[ResourceType, Assembly-CSharp]],
@@ -70,6 +59,10 @@ MonoBehaviour:
       mscorlib
     IsCustom: 0
     Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[UnlockableSO, Assembly-CSharp]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: System.Int32, mscorlib
     IsCustom: 0
     Emit: 1
@@ -79,6 +72,14 @@ MonoBehaviour:
   - TypeName: UnityEngine.Keyframe[], UnityEngine.CoreModule
     IsCustom: 0
     Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[System.ValueTuple`2[[UnlockableSO,
+      Assembly-CSharp],[System.Single, mscorlib]], mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.ObjectEqualityComparer`1[[UnlockableSO,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
   - TypeName: ResourceType, Assembly-CSharp
     IsCustom: 0
     Emit: 1
@@ -86,6 +87,13 @@ MonoBehaviour:
     IsCustom: 0
     Emit: 1
   - TypeName: Stat, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnlockableSO, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.ValueTuple`2[[UnlockableSO, Assembly-CSharp],[System.Single,
+      mscorlib]], mscorlib
     IsCustom: 0
     Emit: 1
   - TypeName: UnityEngine.WrapMode, UnityEngine.CoreModule

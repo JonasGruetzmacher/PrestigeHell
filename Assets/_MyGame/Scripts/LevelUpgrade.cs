@@ -15,7 +15,7 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade,
 
     [SerializeField] private int levelRequirement;
     
-    private bool alreadyGotUnlocked = false;
+    [SerializeField] private bool alreadyGotUnlocked = false;
 
     public void SetButtonState(LevelUpgradeState state)
     {
@@ -33,44 +33,36 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade,
         SetButtonState(LevelUpgradeState.Selected);
     }
 
-    private void OnUpgradeStateChanged(Upgrade upgrade, bool unlock)
+    private void OnUpgradeStateChanged(Upgrade upgrade)
     {
-        if (unlock)
-        {
-            SetButtonState(LevelUpgradeState.Unlocked);
-        }
-        else
-        {
-            SetButtonState(LevelUpgradeState.Disabled);
-        }
-    }
-
-    private void ResetUpgrade(Upgrade upgrade)
-    {
-        SetButtonState(LevelUpgradeState.Locked);
+        CheckState();
     }
     
-    private void CheckIfUnlocked()
+    private void CheckState()
     {
-        if (alreadyGotUnlocked)
+        if (upgrade.isUnlocked)
         {
             return;
         }
-        if (!ResourcesManager.Instance)
+        if (upgrade.isBlocked)
         {
+            SetButtonState(LevelUpgradeState.Disabled);
             return;
         }
         if (ResourcesManager.Instance.GetResourceAmount(ResourceType.Level) >= levelRequirement)
         {
             SetButtonState(LevelUpgradeState.Unlocked);
+            return;
         }
+        SetButtonState(LevelUpgradeState.Locked);
+
     }
 
     public void OnMMEvent(GameEvent eventType)
     {
         if (eventType.eventName == Eventname.LevelUp)
         {
-            CheckIfUnlocked();
+            CheckState();
         }
     }
 
@@ -82,16 +74,16 @@ public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade,
 
     private void OnEnable()
     {
-        CheckIfUnlocked();
+        CheckState();
         upgrade.upgradeStateChanged += OnUpgradeStateChanged;
-        upgrade.upgradeReset += ResetUpgrade;
+        // upgrade.upgradeReset += ResetUpgrade;
         this.MMEventStartListening<GameEvent>();
     }
 
     private void OnDisable()
     {
         upgrade.upgradeStateChanged -= OnUpgradeStateChanged;
-        upgrade.upgradeReset -= ResetUpgrade;
+        // upgrade.upgradeReset -= ResetUpgrade;
         this.MMEventStopListening<GameEvent>();
     }
 

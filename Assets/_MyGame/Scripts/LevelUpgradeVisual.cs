@@ -35,6 +35,7 @@ public class LevelUpgradeVisual : CButton
         {
             case LevelUpgradeState.Locked:
                 Dissable();
+                buttonText.SetText(levelUpgrade.upgrade.upgradeName);
                 break;
             case LevelUpgradeState.Unlocked:
                 Enable();

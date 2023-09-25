@@ -33,8 +33,9 @@ public class StatsUpgrade : Upgrade
         }
         foreach (var blockUpgrade in blockedUpgrades)
         {
-            blockUpgrade.Unlock(false);
+            blockUpgrade.BlockUpgrade();
         }
+        isUnlocked = true;
     }
 
     public override void ResetUpgrade()

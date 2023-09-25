@@ -12,14 +12,15 @@ public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
     public Dictionary<ResourceType, float> upgradeCost = new Dictionary<ResourceType, float>();
     public List<Upgrade> blockedUpgrades = new List<Upgrade>();
     public bool isUnlocked = false;
+    public bool isBlocked = false;
     // public MMSerializableDictionary<ResourceType, float> upgradeCost = new MMSerializableDictionary<ResourceType, float>();
     // public MMSerializableDictionary<ResourceType, AnimationCurve> upgradeCostCurve = new MMSerializableDictionary<ResourceType, AnimationCurve>();
     public int upgradeLimit = 1;
-    public event Action<Upgrade, bool> upgradeStateChanged;
+    public event Action<Upgrade> upgradeStateChanged;
     public event Action<Upgrade> upgradeCompleted;
     public event Action<Upgrade> upgradeApplied;
     public event Action<Upgrade> upgradeReset;
-    public int currentUpgradeCount { get; set; }
+    public int currentUpgradeCount = 0;
     public Dictionary<ResourceType, float> GetNextUpgradeCost()
     {
         // List<ResourceAmount> nextUpgradeCost = new List<ResourceAmount>();
@@ -38,7 +39,13 @@ public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
     public virtual void Unlock(bool unlock = true)
     {
         isUnlocked = unlock;
-        upgradeStateChanged?.Invoke(this, unlock);
+        upgradeStateChanged?.Invoke(this);
+    }
+
+    public virtual void BlockUpgrade()
+    {
+        isBlocked = true;
+        upgradeStateChanged?.Invoke(this);
     }
 
     public virtual void ApplyUpgrade()
@@ -55,6 +62,7 @@ public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
     {
         currentUpgradeCount = 0;
         isUnlocked = false;
+        isBlocked = false;
         upgradeReset?.Invoke(this);
     }
 

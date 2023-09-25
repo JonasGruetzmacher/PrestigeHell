@@ -21,10 +21,10 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
     [ShowInInspector, ReadOnly]
     private List<Upgrade> currentUpgrades = new List<Upgrade>();
 
-    [ShowInInspector, ReadOnly]
+    [ShowInInspector, ReadOnly, SerializeField]
     private List<Upgrade> allUpgrades = new List<Upgrade>();
 
-    [ShowInInspector, ReadOnly]
+    [ShowInInspector, ReadOnly, SerializeField]
     private List<Upgrade> levelUpgrades = new List<Upgrade>();
 
     [ShowInInspector, ReadOnly]
@@ -37,9 +37,6 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
 
     private void Initialize()
     {
-        allUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades");
-        levelUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades/LevelUpgrades");
-
         foreach (var upgrade in permanentUpgradeList)
         {
             upgrades.Enqueue(upgrade);
@@ -107,5 +104,11 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
     private void OnDisable()
     {
         this.MMEventStopListening<TopDownEngineEvent>();
+    }
+
+    private void OnValidate()
+    {
+        allUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades");
+        levelUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades/LevelUpgrades");
     }
 }
