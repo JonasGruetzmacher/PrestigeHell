@@ -8,6 +8,7 @@ using Sirenix.OdinInspector;
 
 public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEngineEvent>
 {
+	[SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private MMMultipleObjectPooler enemyPooler;
 
 	[SerializeField] private MMSerializableDictionary<string, CharacterInformationSO> allEnemyInformations;
@@ -15,7 +16,6 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
 
 	[ShowInInspector]
 	private MMSerializableDictionary<string, MMMultipleObjectPoolerObject> enemyPoolerObjects = new MMSerializableDictionary<string, MMMultipleObjectPoolerObject>();
-
 
 	private void Start()
 	{
@@ -99,6 +99,11 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
 		}
 
 		return (float)enemyInformation.poolSize / (float)totalPoolSize;
+	}
+
+	public virtual EnemySpawner GetEnemySpawner()
+	{
+		return enemySpawner;
 	}
 
     public virtual void OnMMEvent(TopDownEngineEvent engineEvent)

@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d99a39aedf2e9442a66f9b9ee3c764c, type: 3}
-  m_Name: TrianglesKilled
+  m_Name: DiamondsKilled
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 5247471472f726d43b2e881b8c19c460, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -35,19 +34,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 10
       Data: 0
-    - Name: $v
-      Entry: 4
-      Data: 50
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -60,28 +47,15 @@ MonoBehaviour:
         Assembly-CSharp],[System.Single, mscorlib]], mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: System.ValueTuple`2[[UnlockableSO, Assembly-CSharp],[System.Single, mscorlib]],
-        mscorlib
-    - Name: Item1
-      Entry: 10
       Data: 0
-    - Name: Item2
-      Entry: 4
-      Data: 50
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  statisticName: Triangles  Killed
-  description: Triangles Killed
+  statisticName: Diamonds Killed
+  description: Diamonds Killed
   statisticType: 1
   toggleAdditionalAttribute: 1
-  additionalAttribute: Triangle
+  additionalAttribute: Diamond

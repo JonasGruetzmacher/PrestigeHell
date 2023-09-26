@@ -1358,14 +1358,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c7756a8b9a7504899018d970cf9628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 1971950521}
   enemyPooler: {fileID: 1971950519}
   allEnemyInformations:
     _keys:
     - Square
     - Circle
+    - Diamond
+    - Hexagon
+    - Triangle
     _values:
     - {fileID: 11400000, guid: 202d858f62b1c9040b77adceb7a91e21, type: 2}
     - {fileID: 11400000, guid: ba0cee0d70c957140a9626958f81d723, type: 2}
+    - {fileID: 11400000, guid: 3d2dcdf6ee6610842a0b753cc348644d, type: 2}
+    - {fileID: 11400000, guid: f8a2813d68b575442af3cfdb641171da, type: 2}
+    - {fileID: 11400000, guid: 0149b189f7e2be845a9dc0858c466fa3, type: 2}
   spawnableEnemyInformations:
     _keys:
     - Square
@@ -2123,6 +2130,11 @@ PrefabInstance:
     - target: {fileID: 6519700788982722984, guid: 0c00158e14c6cf64b854d4ee31793863,
         type: 3}
       propertyPath: MinFrequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6519700788982722988, guid: 0c00158e14c6cf64b854d4ee31793863,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6519700789967322989, guid: 0c00158e14c6cf64b854d4ee31793863,

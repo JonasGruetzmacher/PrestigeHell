@@ -20,7 +20,7 @@ public class EnemySpawner : TimedSpawner
         spawnPoints.Remove(transform);
     }
 
-    public virtual void Spawn(Vector2 position, GameObject nextGameObject)
+    public virtual void Spawn(Vector2 position, GameObject nextGameObject, float spawnRadius = 0f)
     {
         // mandatory checks
         if (nextGameObject==null) { return; }
@@ -41,7 +41,7 @@ public class EnemySpawner : TimedSpawner
         }
 
         // we position the object
-        nextGameObject.transform.position = position;
+        nextGameObject.transform.position = new Vector2(position.x + UnityEngine.Random.Range(-spawnRadius, spawnRadius), position.y + UnityEngine.Random.Range(-spawnRadius, spawnRadius));
 
         // we reset our timer and determine the next frequency
         _lastSpawnTimestamp = Time.time;
@@ -88,7 +88,7 @@ public class EnemySpawner : TimedSpawner
         Spawn(position, nextGameObject);
     }
 
-    public virtual void Spawn(Vector2 position, string searchedName)
+    public virtual void Spawn(Vector2 position, string searchedName, float spawnRadius = 0f)
     {
         if (ObjectPooler is MMMultipleObjectPooler)
         {
@@ -99,7 +99,7 @@ public class EnemySpawner : TimedSpawner
                 Debug.LogError("No object with name "+searchedName+" was found in the object pooler.");
                 return;
             }
-            Spawn(position, nextGameObject);
+            Spawn(position, nextGameObject, spawnRadius);
         }
         else
         {
