@@ -90,7 +90,13 @@ public class Stats : SerializedScriptableObject, ITooltipInformation
         {
             if (stat.Key.ToMarkedString() == null)
                 continue;
-            infoLeft += string.Format("{0}: {1}\n", stat.Key.ToMarkedString(), GetStat(stat.Key).ToString("0.00"));
+
+            if (stat.Key == Stat.groupSize && IncludesStat(Stat.groupSizeVariance))
+            {
+                infoLeft += string.Format("{0}: {1} - {2}\n", stat.Key.ToMarkedString(), GetStat(stat.Key) - GetStat(Stat.groupSizeVariance), GetStat(stat.Key) + GetStat(Stat.groupSizeVariance));
+                continue;
+            }
+            infoLeft += string.Format("{0}: {1}\n", stat.Key.ToMarkedString(), GetStat(stat.Key).ToString("F2"));
         }
 
         foreach (var instanceStat in instanceStats)
@@ -101,10 +107,10 @@ public class Stats : SerializedScriptableObject, ITooltipInformation
             {
                 float minHealth = GetStat(instanceStat.Key) * (1f - GetStat(Stat.healthVariance));
                 float maxHealth = GetStat(instanceStat.Key) * (1f + GetStat(Stat.healthVariance));
-                infoLeft += string.Format("{0}: {1} - {2}\n", instanceStat.Key.ToMarkedString(), minHealth.ToString("0.00"), maxHealth.ToString("0.00"));
+                infoLeft += string.Format("{0}: {1} - {2}\n", instanceStat.Key.ToMarkedString(), minHealth.ToString("F2"), maxHealth.ToString("F2"));
                 continue;
             }
-            infoLeft += string.Format("{0}: {1}\n", instanceStat.Key.ToMarkedString(), GetStat(instanceStat.Key).ToString("0.00"));
+            infoLeft += string.Format("{0}: {1}\n", instanceStat.Key.ToMarkedString(), GetStat(instanceStat.Key).ToString("F2"));
         }
     }
 
