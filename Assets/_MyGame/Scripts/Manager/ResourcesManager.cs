@@ -13,8 +13,10 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
 
     public MMSerializableDictionary<ResourceType, float> resources = new MMSerializableDictionary<ResourceType, float>();
+    public CustomEventSystem.GameEvent OnResourceChangeEvent;
 
     [SerializeField] private AnimationCurve levelCurve;
+    [SerializeField] Stats resourceStats;
 
     protected override void Awake()
     {
@@ -44,6 +46,11 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     public void AddResource(ResourceType type, float amount)
     {
+        if (resourceStats != null)
+        {
+            float multiplier = Enum.TryParse(type.ToString() + "Gain", out Stat stat) ? resourceStats.GetStat(stat) : 1;
+            amount *= multiplier;
+        }
         resources[type] += amount;
         if(type == ResourceType.LevelPoints)
             CheckLevelUp();
@@ -51,6 +58,7 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
         {
             GameEvent.Trigger(Eventname.DangerChanged);
         }
+        OnResourceChangeEvent?.Raise(this, new ResourceAmount(type, (int)amount));
         UpdateResource(type);
     }
 
@@ -150,6 +158,18 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
     {
         MyGUIManager.Instance.SendMessageUpwards("UpdateResourceBar", type);
         MyGUIManager.Instance.SendMessageUpwards("UpdateResourceText", type);
+    }
+
+    public void OnResourceAdd(Component sender, object data)
+    {
+        if (data is ResourceAmount resourceAmount)
+        {
+            AddResource(resourceAmount);
+        }
+        if (data is CharacterInformationSO characterInformation)
+        {
+            AddResource(ResourceType.LevelPoints, characterInformation.stats.GetStatAsInt(Stat.XPGain) * resourceStats.GetStat(Stat.XPGain));
+        }
     }
 
 

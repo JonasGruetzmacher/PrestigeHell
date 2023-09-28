@@ -29,6 +29,29 @@ public static class HelperFunctions
 #endif
     }
 
+    public static void SetLootWeight(this MMLootTableGameObjectSO lootTable, GameObject lootDropPrefab, int weight)
+    {
+        if (lootTable == null)
+            return;
+        if (lootDropPrefab == null)
+            return;
+        foreach (var loot in lootTable.LootTable.ObjectsToLoot)
+        {
+            if (loot.Loot == lootDropPrefab)
+            {
+                loot.Weight = weight;
+                lootTable.ComputeWeights();
+                return;
+            }
+        }
+        Debug.LogError("LootDropPrefab not found in LootTable");
+    }
+
+    public static void RemoveLoot(this MMLootTableGameObjectSO lootTable, GameObject lootDropPrefab)
+    {
+        SetLootWeight(lootTable, lootDropPrefab, 0);
+    }
+
     public static int CountAllOf<T>(this List<T> list, T item)
     {
         int count = 0;
@@ -72,7 +95,7 @@ public static class HelperFunctions
                 return "!Damage Reduction`";
             case Stat.collectRange:
                 return "!Collect Range`";
-            case Stat.xPGain:
+            case Stat.XPGain:
                 return "!XP Gain`";
             case Stat.healthVariance:
                 return null;
@@ -144,7 +167,7 @@ public enum Stat
     attackSpeed = 3,
     damageReduction = 4,
     collectRange = 5,
-    xPGain = 6,
+    XPGain = 6,
     healthVariance = 7,
     groupSize = 8,
     groupSizeVariance = 9,

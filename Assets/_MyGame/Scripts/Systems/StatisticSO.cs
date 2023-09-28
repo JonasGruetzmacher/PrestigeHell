@@ -14,10 +14,11 @@ public class StatisticSO : SerializedScriptableObject
 
     [Header("Event")]
     public StatisticType statisticType;
+    [ShowIf("statisticType", StatisticType.Collect)]
+    public ResourceType resourceType;
 
-    public bool toggleAdditionalAttribute;
-    [ShowIf("toggleAdditionalAttribute")]
-    public string additionalAttribute;
+    [ShowIf("statisticType", StatisticType.Kill)]
+    public List<CharacterInformationSO> characterInformations;
 
     [Header("Unlockables")]
     public Dictionary<UnlockableSO, float> unlockables = new Dictionary<UnlockableSO, float>();

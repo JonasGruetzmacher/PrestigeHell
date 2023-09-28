@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 575ffb728fdffc340a7f26b13535bdf6, type: 3}
-  m_Name: XPOrb
+  m_Name: ResourceStats
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -62,10 +62,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 5
+      Data: 6
     - Name: $v
       Entry: 4
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -80,18 +80,8 @@ MonoBehaviour:
       Data: 3|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[ScalingStat,
         Assembly-CSharp]], mscorlib
     - Name: comparer
-      Entry: 7
-      Data: 4|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 9
+      Data: 1
     - Name: 
       Entry: 12
       Data: 0

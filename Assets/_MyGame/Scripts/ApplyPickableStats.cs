@@ -17,19 +17,21 @@ public class ApplyPickableStats : MonoBehaviour
     private void Initialization()
     {
         _pickableItem = GetComponent<PickableItem>();
+        if (stat == null)
+            return;
         ApplyStats();
     }
 
     private void ApplyStats()
     {
-        if (stat.IncludesStat(Stat.xPGain))
+        if (stat.IncludesStat(Stat.XPGain))
         {
             if (_pickableItem != null)
             {
                 if(_pickableItem is XPDrop)
                 {
                     XPDrop xpDrop = _pickableItem as XPDrop;
-                    xpDrop.XPAmount = (int)stat.GetStat(Stat.xPGain);
+                    xpDrop.XPAmount = (int)stat.GetStat(Stat.XPGain);
                 }
             }
         }
@@ -51,12 +53,16 @@ public class ApplyPickableStats : MonoBehaviour
 
     private void OnEnable()
     {
+        if (stat == null)
+            return;
         stat.upgradeApplied += OnUpgradeApplied;
         ApplyStats();
     }
 
     private void OnDisable()
     {
+        if (stat == null)
+            return;
         stat.upgradeApplied -= OnUpgradeApplied;
     }
 }

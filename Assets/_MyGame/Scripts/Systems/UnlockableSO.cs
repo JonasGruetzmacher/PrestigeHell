@@ -4,11 +4,22 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.UIElements;
 
-public abstract class UnlockableSO : SerializedScriptableObject
+public abstract class UnlockableSO : SerializedScriptableObject, ITooltipInformation
 {
     [SerializeField] public bool unlocked { get; protected set; }
+    public string shortDescription;
+    public string longDescription;
     public abstract void Unlock();
-    public abstract string GetTextDescription();
+    public virtual string GetTextDescription()
+    {
+        return shortDescription;
+    }
+    
+    public virtual void GetTooltipInformation(out string infoLeft, out string infoRight)
+    {
+        infoRight = null;
+        infoLeft = longDescription;
+    }
 
     public virtual void Reset()
     {

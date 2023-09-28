@@ -3,27 +3,36 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class StatisticsManager : MMSingleton<StatisticsManager>, MMEventListener<StatisticEvent>
+public class StatisticsManager : MMSingleton<StatisticsManager>
 {
     public List<StatisticSO> statistics = new List<StatisticSO>();
 
-
-    public void OnMMEvent(StatisticEvent statisticEvent)
+    public void OnStatisticEvent(Component sender, object data)
     {
-        foreach (var statistic in statistics)
+        if (data is ResourceAmount resourceAmount)
         {
-            if (statistic.statisticType == statisticEvent.type)
+            foreach (var statistic in statistics)
             {
-                if (statistic.toggleAdditionalAttribute)
+                if (statistic.statisticType == StatisticType.Collect)
                 {
-                    if (statistic.additionalAttribute == statisticEvent.attribute)
+                    if (statistic.resourceType == resourceAmount.type)
                     {
-                        statistic.InreaseValue(statisticEvent.value);
+                        statistic.InreaseValue(1f);
                     }
                 }
-                else
+            }
+        }
+
+        if (data is CharacterInformationSO characterInformation)
+        {
+            foreach (var statistic in statistics)
+            {
+                if (statistic.statisticType == StatisticType.Kill)
                 {
-                    statistic.InreaseValue(statisticEvent.value);
+                    if (statistic.characterInformations.Contains(characterInformation))
+                    {
+                        statistic.InreaseValue(1f);
+                    }
                 }
             }
         }
@@ -35,15 +44,5 @@ public class StatisticsManager : MMSingleton<StatisticsManager>, MMEventListener
         {
             statistic.Reset();
         }
-    }
-
-    private void OnEnable()
-    {
-        this.MMEventStartListening<StatisticEvent>();
-    }
-
-    private void OnDisable()
-    {
-        this.MMEventStopListening<StatisticEvent>();
     }
 }

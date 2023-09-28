@@ -9,13 +9,17 @@ public enum TriggerType
     onDisable = 1,
     onStart = 2,
     onDestroy = 3,
+    OnKilled = 4,
 
 }
 
-public class StastisticEventTrigger : MonoBehaviour
+public class EventTrigger : MonoBehaviour
 {
-    public StatisticEvent statisticEvent;
+    public CustomEventSystem.GameEvent gameEvent;
     public TriggerType triggerType;
+
+    [ShowIf("triggerType", TriggerType.OnKilled)]
+    public CharacterInformationSO killedCharacter;
 
     private void Start()
     {
@@ -48,12 +52,18 @@ public class StastisticEventTrigger : MonoBehaviour
             TriggerEvent();
         }
     }
-
-    
-
-    [Button]
-    public void TriggerEvent()
+    [ShowIf("triggerType", TriggerType.OnKilled)]
+    [Button("Trigger")]
+    public void OnKilled()
     {
-        statisticEvent.Trigger();
+        if (triggerType == TriggerType.OnKilled)
+        {
+            TriggerEvent(killedCharacter);
+        }
+    }
+
+    public void TriggerEvent(object data = null)
+    {
+        gameEvent?.Raise(this, data);
     }
 }
