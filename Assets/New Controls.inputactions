@@ -1,0 +1,74 @@
+{
+    "name": "New Controls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "91edf861-d007-4215-b13c-0b70e9ec3e2a",
+            "actions": [
+                {
+                    "name": "ToggleDebug",
+                    "type": "Button",
+                    "id": "40560bfc-015c-45f8-b07f-6d156adb1433",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Return",
+                    "type": "Button",
+                    "id": "c7b22054-c40d-47bf-8ff3-6d2a5f3e0f32",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ArrowUp",
+                    "type": "Button",
+                    "id": "05d05d31-72e0-4150-844e-d480934f76d5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2dbe5df9-d098-40f8-81c4-a14fd6a4b652",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleDebug",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3fe44a4d-37d3-4908-8977-d95270832ddf",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Return",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b3799ac-7d73-4c23-b5fa-9f8e77fefc35",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ArrowUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -175,6 +175,15 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
 		}
 	}
 
+	public virtual void KillAllEnemies()
+	{
+		foreach(var obj in FindObjectsOfType<MMPoolableObject>())
+        {
+            if (obj.gameObject.layer == LayerMask.NameToLayer("Enemies"))
+				obj.Destroy();
+        }
+	}
+
 
 	protected virtual void OnEnable()
 	{

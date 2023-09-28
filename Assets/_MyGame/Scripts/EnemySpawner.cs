@@ -114,6 +114,11 @@ public class EnemySpawner : TimedSpawner, MMEventListener<TopDownEngineEvent>
         Spawn(position);
     }
 
+    public void SpawnRandomEnemy()
+    {
+        Spawn();
+    }
+
     public virtual void SpawnGroup(Vector2 position, string searchedName, int groupSize, float groupSpawnRadius = 1f)
     {
         for (int i = 0; i < groupSize; i++)
