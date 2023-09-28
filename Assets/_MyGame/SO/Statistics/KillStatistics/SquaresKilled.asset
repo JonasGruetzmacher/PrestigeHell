@@ -83,5 +83,6 @@ MonoBehaviour:
   statisticName: Squares Killed
   description: Squares Killed
   statisticType: 1
-  toggleAdditionalAttribute: 1
-  additionalAttribute: Square
+  resourceType: 0
+  characterInformations:
+  - {fileID: 11400000, guid: 202d858f62b1c9040b77adceb7a91e21, type: 2}

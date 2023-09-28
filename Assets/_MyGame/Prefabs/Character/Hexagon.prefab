@@ -1052,7 +1052,19 @@ MonoBehaviour:
         m_CallState: 2
   ExecuteOnDisable:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4046689058493881298}
+        m_TargetAssemblyTypeName: EventTrigger, Assembly-CSharp
+        m_MethodName: OnKilled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   LifeTime: 0
 --- !u!114 &4046689058493881298
 MonoBehaviour:
@@ -1066,11 +1078,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f19c30b9c377243911a410ce201f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statisticEvent:
-    type: 1
-    attribute: Hexagon
-    value: 1
-  triggerType: 1
+  gameEvent: {fileID: 11400000, guid: 12e97b4f8c14917478fb5ff38cd7aa86, type: 2}
+  triggerType: 4
+  killedCharacter: {fileID: 11400000, guid: f8a2813d68b575442af3cfdb641171da, type: 2}
 --- !u!58 &6374450397318074695
 CircleCollider2D:
   m_ObjectHideFlags: 0

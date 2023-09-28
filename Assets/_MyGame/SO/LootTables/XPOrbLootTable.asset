@@ -14,24 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LootTable:
     ObjectsToLoot:
-    - Loot: {fileID: 5985453685250786793, guid: 2af8715e82cbd854497b7b4c4fcbe24d,
-        type: 3}
+    - Loot: {fileID: 0}
       Weight: 10000
-      ChancePercentage: 90.0009
+      ChancePercentage: 100
     - Loot: {fileID: 5985453685250786793, guid: 6801c9d65d1b5e24897f41ab3d2d2eab,
         type: 3}
-      Weight: 1000
-      ChancePercentage: 9.00009
+      Weight: 0
+      ChancePercentage: 0
     - Loot: {fileID: 5985453685250786793, guid: 2cc53c461fdac904986b4499d69d96e6,
         type: 3}
-      Weight: 100
-      ChancePercentage: 0.900009
+      Weight: 0
+      ChancePercentage: 0
     - Loot: {fileID: 5985453685250786793, guid: e8c3e2bfae9f65b4e8b447ea4609446a,
         type: 3}
-      Weight: 10
-      ChancePercentage: 0.0900009
+      Weight: 0
+      ChancePercentage: 0
     - Loot: {fileID: 5985453685250786793, guid: c7b7babb1cb3ddc4c9eb7112931aacb5,
         type: 3}
-      Weight: 1
-      ChancePercentage: 0.00900009
-    WeightsTotal: 11111
+      Weight: 0
+      ChancePercentage: 0
+    WeightsTotal: 10000

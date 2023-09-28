@@ -57,5 +57,6 @@ MonoBehaviour:
   statisticName: Diamonds Killed
   description: Diamonds Killed
   statisticType: 1
-  toggleAdditionalAttribute: 1
-  additionalAttribute: Diamond
+  resourceType: 0
+  characterInformations:
+  - {fileID: 11400000, guid: 3d2dcdf6ee6610842a0b753cc348644d, type: 2}
