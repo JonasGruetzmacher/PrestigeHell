@@ -73,6 +73,33 @@ public class MyGameManager : GameManager
         }
     }
 
+    public virtual void OpenEnemySelection()
+    {
+        if (panelActive || _pauseMenuOpen)
+        {
+            return;
+        }
+
+        Pause(PauseMethods.NoPauseMenu, false);
+        if (GUIManager.HasInstance)
+        {
+            (GUIManager.Instance as MyGUIManager).SetEnemySelectionPanel(true);
+            panelActive = true;
+            activePanelName = "EnemySelection";
+        }
+    }
+
+    public virtual void CloseEnemySelection()
+    {
+        UnPause(PauseMethods.NoPauseMenu);
+        if (GUIManager.HasInstance)
+        {
+            (GUIManager.Instance as MyGUIManager).SetEnemySelectionPanel(false);
+            panelActive = false;
+            activePanelName = "";
+        }
+    }
+
     public override void OnMMEvent(MMGameEvent gameEvent)
     {
         base.OnMMEvent(gameEvent);
@@ -115,6 +142,26 @@ public class MyGameManager : GameManager
         if (gameEvent.EventName == "StatisticsClosed")
         {
             CloseStatistics();
+        }
+
+        if (gameEvent.EventName == "ToggleEnemySelection")
+        {
+            if (panelActive && activePanelName == "EnemySelection")
+            {
+                MMGameEvent.Trigger("EnemySelectionClosed");
+            }
+            else
+            {
+                MMGameEvent.Trigger("EnemySelectionOpened");
+            }
+        }
+        if (gameEvent.EventName == "EnemySelectionOpened")
+        {
+            OpenEnemySelection();
+        }
+        if (gameEvent.EventName == "EnemySelectionClosed")
+        {
+            CloseEnemySelection();
         }
     }
 }

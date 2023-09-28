@@ -11,7 +11,7 @@ public class EnemiesDisplay : MonoBehaviour, MMEventListener<TopDownEngineEvent>
 
     private void Start()
     {
-        DisplayEnemies(EnemyManager.Instance.GetEnemyInformations());
+        DisplayEnemies(EnemyManager.Instance.GetSpawningEnemyInformations());
     }
     
     public void DisplayEnemies(List<CharacterInformationSO> characterInformations)
@@ -32,7 +32,7 @@ public class EnemiesDisplay : MonoBehaviour, MMEventListener<TopDownEngineEvent>
     {
         if (eventType.EventType == TopDownEngineEventTypes.RespawnComplete)
         {
-            DisplayEnemies(EnemyManager.Instance.GetEnemyInformations());
+            DisplayEnemies(EnemyManager.Instance.GetSpawningEnemyInformations());
         }
     }
 

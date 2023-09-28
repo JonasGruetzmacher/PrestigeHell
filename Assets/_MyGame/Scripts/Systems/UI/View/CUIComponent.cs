@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class CUIComponent : MonoBehaviour
 {
+    public CThemeSO overrideThemeSO;
     private void Awake()
     {
         Init();
@@ -23,5 +24,18 @@ public abstract class CUIComponent : MonoBehaviour
     private void OnValidate()
     {
         Init();
+    }
+
+    protected CThemeSO GetThemeSO()
+    {
+        if (overrideThemeSO != null)
+        {
+            return overrideThemeSO;
+        }
+        else if (ThemeManager.Instance != null)
+        {
+            return ThemeManager.Instance.GetMainTheme();
+        }
+        return null;
     }
 }

@@ -17,7 +17,7 @@ public class UnlockEnemySO : UnlockableSO
             return;
         }
         unlocked = true;
-        
+    
         EnemyManager.Instance.AddSpawnableEnemy(enemyInformation);
     }
 

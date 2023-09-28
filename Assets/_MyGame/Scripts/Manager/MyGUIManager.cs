@@ -9,10 +9,14 @@ using UnityEngine.EventSystems;
 
 public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 {
+	[Header("Panels")]
 	public GameObject levelUpPanel;
-	public GameObject levelUpButton;
-
 	public GameObject statisticPanel;
+	public GameObject enemySelectionPanel;
+
+	[Header("Buttons")]
+	public GameObject levelUpButton;
+	public GameObject enemySelectionButton;
 
 	public MMProgressBar XPBar;
 	public MMProgressBar dangerBar;
@@ -30,6 +34,7 @@ public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 		StartCoroutine(UpdateResourceBarCoroutine(ResourceType.Danger));
 		SetLevelUpPanel(false);
 		SetStatisticPanel(false);
+		SetEnemySelectionPanel(false);
 		levelUpButton.SetActive(false);
 	}
 
@@ -111,6 +116,15 @@ public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 		}
 	}
 
+	public virtual void SetEnemySelectionPanel(bool state)
+	{
+		if (enemySelectionPanel != null)
+		{
+			enemySelectionPanel.SetActive(state);
+			EventSystem.current.sendNavigationEvents = state;
+		}
+	}
+
 	public virtual void SetLevelUpButton(bool state)
 	{
 		if (levelUpButton != null)
@@ -119,11 +133,18 @@ public class MyGUIManager : GUIManager, MMEventListener<GameEvent>
 		}
 	}
 
+	public virtual void SetEnemySelectionButton(bool state)
+	{
+		if (enemySelectionButton != null)
+		{
+			enemySelectionButton.SetActive(state);
+		}
+	}
+
 	public virtual void OnMMEvent(GameEvent eventType)
 	{
 		if (eventType.eventName == Eventname.LevelUp)
 		{
-			Debug.Log("Level Up");
 			SetLevelUpButton(true);
 		}
 	}

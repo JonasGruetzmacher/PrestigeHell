@@ -5,56 +5,100 @@ using MoreMountains.Tools;
 using MoreMountains.TopDownEngine;
 using UnityEngine.Pool;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
+using System.Linq;
 
 public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEngineEvent>
 {
+	[Header("Events")]
+	[SerializeField] private CustomEventSystem.GameEvent enemiesUnlockedEvent;
 	[SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private MMMultipleObjectPooler enemyPooler;
+	[SerializeField] private List<CharacterInformationSO> startEnemiesList;
+	[SerializeField] private List<CharacterInformationSO> allEnemiesList;
 
-	[SerializeField] private MMSerializableDictionary<string, CharacterInformationSO> allEnemyInformations;
-	[SerializeField] private MMSerializableDictionary<string, CharacterInformationSO> spawnableEnemyInformations;
+	[ShowInInspector, ReadOnly]
+	private MMSerializableDictionary<CharacterInformationSO, bool> currentEnemiesInformation = new MMSerializableDictionary<CharacterInformationSO, bool>();
 
-	[ShowInInspector]
+	[ShowInInspector, ReadOnly]
+	private List<CharacterInformationSO> nextRoundEnemiesInformation = new List<CharacterInformationSO>();
+
+
+
+	[ShowInInspector, ReadOnly]
 	private MMSerializableDictionary<string, MMMultipleObjectPoolerObject> enemyPoolerObjects = new MMSerializableDictionary<string, MMMultipleObjectPoolerObject>();
 
-	private void Start()
+	protected override void Awake()
 	{
-		SetPooler();
+		base.Awake();
+		Initialize();
 	}
 
-	private void SetPooler()
+	private void Initialize()
 	{
-		foreach (var enemyInformation in allEnemyInformations.Values)
+		SetPoolerObjects();
+		foreach (var enemyInformation in startEnemiesList)
+		{
+			currentEnemiesInformation.Add(enemyInformation, true);
+			nextRoundEnemiesInformation.Add(enemyInformation);
+			enemyPoolerObjects[enemyInformation.characterName].Enabled = true;
+
+			enemiesUnlockedEvent.Raise(this, enemyInformation);
+		}
+	}
+
+	private void SetPoolerObjects()
+	{
+		foreach (var enemyInformation in allEnemiesList)
 		{
 			MMMultipleObjectPoolerObject poolerObject = new MMMultipleObjectPoolerObject();
 			poolerObject.GameObjectToPool = enemyInformation.characterPrefab;
 			poolerObject.PoolSize = enemyInformation.poolSize;
 			poolerObject.PoolCanExpand = true;
-			if (spawnableEnemyInformations.ContainsKey(enemyInformation.characterName))
-			{
-				poolerObject.Enabled = true;
-			}
-			else
-			{
-				poolerObject.Enabled = false;
-			}
+
+			poolerObject.Enabled = false;
+
 			enemyPooler.Pool.Add(poolerObject);
 			enemyPoolerObjects.Add(enemyInformation.characterName, poolerObject);
 		}
+
 		enemyPooler.FillObjectPool();
 	}
 
-	public List<CharacterInformationSO> GetEnemyInformations()
+	public List<CharacterInformationSO> GetSpawnableEnemyInformations()
 	{
-		return new List<CharacterInformationSO>(spawnableEnemyInformations.Values);
+		List<CharacterInformationSO> spawnableEnemyInformations = new List<CharacterInformationSO>();
+		foreach (var enemyInformation in currentEnemiesInformation)
+		{
+			spawnableEnemyInformations.Add(enemyInformation.Key);
+		}
+		return spawnableEnemyInformations;
+	}
+
+	public List<CharacterInformationSO> GetSpawningEnemyInformations()
+	{
+		List<CharacterInformationSO> spawningEnemyInformations = new List<CharacterInformationSO>();
+		foreach (var enemyInformation in currentEnemiesInformation)
+		{
+			if (enemyInformation.Value)
+			{
+				spawningEnemyInformations.Add(enemyInformation.Key);
+			}
+		}
+		return spawningEnemyInformations;
 	}
 
 	public void AddSpawnableEnemy(CharacterInformationSO enemyInformation)
 	{
-		if (enemyInformation == null) { return; }
-		if (spawnableEnemyInformations.ContainsKey(enemyInformation.characterName)) { return; }
-		spawnableEnemyInformations.Add(enemyInformation.characterName, enemyInformation);
-		// enemyPoolerObjects[enemyInformation.name].Enabled = true;
+		if (enemyInformation == null) 
+		{ 
+			return; 
+		}
+		if (!currentEnemiesInformation.ContainsKey(enemyInformation)) 
+		{
+			nextRoundEnemiesInformation.Add(enemyInformation);
+			enemiesUnlockedEvent.Raise(this, enemyInformation);	
+		}
 	}
 
     public virtual void Reset()
@@ -64,41 +108,55 @@ public class EnemyManager : MMSingleton<EnemyManager>, MMEventListener<TopDownEn
             if (obj.gameObject.layer == LayerMask.NameToLayer("Enemies"))
 				obj.Destroy();
         }
-		foreach (var enemyPool in enemyPoolerObjects.Values)
+		foreach (var enemyInformation in currentEnemiesInformation.ToArray())
 		{
-			enemyPool.Enabled = false;
+			currentEnemiesInformation[enemyInformation.Key] = false;
 		}
-		foreach (var spawnableEnemy in spawnableEnemyInformations.Keys)
+
+		foreach (var enemyInformation in nextRoundEnemiesInformation)
 		{
-			enemyPoolerObjects[spawnableEnemy].Enabled = true;
+			Debug.Log(enemyInformation.characterName);
+			currentEnemiesInformation[enemyInformation] = true;
+		}
+
+		foreach (var enemyInformation in currentEnemiesInformation)
+		{
+			enemyPoolerObjects[enemyInformation.Key.characterName].Enabled = enemyInformation.Value;
 		}
     }
 
-	public virtual void AddEnemyToPool(CharacterInformationSO enemyInformation)
-	{
-		if (enemyInformation == null) { return; }
-		if (spawnableEnemyInformations.ContainsKey(enemyInformation.name)) { return; }
-		spawnableEnemyInformations.Add(enemyInformation.name, enemyInformation);
-	}
-
-	public virtual void RemoveEnemyFromPool(CharacterInformationSO enemyInformation)
-	{
-		if (enemyInformation == null) { return; }
-		if (!spawnableEnemyInformations.ContainsKey(enemyInformation.name)) { return; }
-		spawnableEnemyInformations.Remove(enemyInformation.name);
-	}
-
 	public virtual float GetSpawnChance(CharacterInformationSO enemyInformation)
 	{
-		if (enemyInformation == null) { return 0f; }
-		if (!spawnableEnemyInformations.ContainsKey(enemyInformation.name)) { return 0f; }
+		if (enemyInformation == null) 
+		{ 
+			return 0f; 
+		}
+		if (!currentEnemiesInformation.ContainsKey(enemyInformation) || !currentEnemiesInformation[enemyInformation])
+		{ 
+			return 0f; 
+		}
 		int totalPoolSize = 0;
-		foreach (var enemyPool in spawnableEnemyInformations.Values)
+		foreach (var enemy in currentEnemiesInformation)
 		{
-			totalPoolSize += enemyPool.poolSize;
+			if (enemy.Value)
+			{
+				totalPoolSize += enemy.Key.poolSize;
+			}
 		}
 
 		return (float)enemyInformation.poolSize / (float)totalPoolSize;
+	}
+
+	public virtual void SetSpawnableEnemies(List<CharacterInformationSO> spawnableEnemiesInformation)
+	{
+		Debug.Log("SetSpawnableEnemies");
+		Debug.Log(spawnableEnemiesInformation);
+		if (spawnableEnemiesInformation == null || spawnableEnemiesInformation.Count < 3) 
+		{ 
+			throw new System.Exception("Select at least 3 enemies");
+		}
+		nextRoundEnemiesInformation = spawnableEnemiesInformation;
+
 	}
 
 	public virtual EnemySpawner GetEnemySpawner()

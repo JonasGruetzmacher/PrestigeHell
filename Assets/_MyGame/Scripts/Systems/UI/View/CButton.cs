@@ -7,7 +7,6 @@ using UnityEngine.Events;
 
 public class CButton : CUIComponent
 {
-    public CThemeSO theme;
     public Style style;
     public UnityEvent onClick;
 
@@ -22,6 +21,9 @@ public class CButton : CUIComponent
 
     public override void Configure()
     {
+        CThemeSO theme = GetThemeSO();
+        if (theme == null) { return; }
+
         ColorBlock colorBlock = button.colors;
         colorBlock.normalColor = theme.GetBackgroundColor(style);
         button.colors = colorBlock;

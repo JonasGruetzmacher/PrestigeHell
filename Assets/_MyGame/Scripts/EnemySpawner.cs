@@ -6,7 +6,7 @@ using System;
 using MoreMountains.TopDownEngine;
 using Sirenix.OdinInspector;
 
-public class EnemySpawner : TimedSpawner
+public class EnemySpawner : TimedSpawner, MMEventListener<TopDownEngineEvent>
 {
     public float groupSpawnRadius = 1f;
 
@@ -120,6 +120,32 @@ public class EnemySpawner : TimedSpawner
         {
             Spawn(new Vector2(position.x + UnityEngine.Random.Range(-groupSpawnRadius, groupSpawnRadius), position.y + UnityEngine.Random.Range(-groupSpawnRadius, groupSpawnRadius)), searchedName);
         }
+    }
+
+    public void OnMMEvent(TopDownEngineEvent engineEvent)
+    {
+        switch (engineEvent.EventType)
+        {
+            case TopDownEngineEventTypes.PlayerDeath:
+                CanSpawn = false;
+                break;
+            case TopDownEngineEventTypes.RespawnStarted:
+                CanSpawn = false;
+                break;
+            case TopDownEngineEventTypes.RespawnComplete:
+                CanSpawn = true;
+                break;
+        }
+    }
+
+    private void OnEnable()
+    {
+        this.MMEventStartListening<TopDownEngineEvent>();
+    }
+
+    private void OnDisable()
+    {
+        this.MMEventStopListening<TopDownEngineEvent>();
     }
     
 }

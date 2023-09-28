@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 638310668828107236
+  lastScan: 638314272410829630
   supportSerializedTypes:
   - TypeName: UnityEngine.AnimationCurve, UnityEngine.CoreModule
     IsCustom: 0

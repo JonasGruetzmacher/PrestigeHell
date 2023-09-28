@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b257091855f874482bad013cb9b109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  overrideThemeSO: {fileID: 0}
   viewSO: {fileID: 11400000, guid: a202ac40663030e46aae400f07f6c798, type: 2}
   containerLeft: {fileID: 6011447468583701038}
   containerRight: {fileID: 7012559639158735528}

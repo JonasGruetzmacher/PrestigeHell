@@ -20,13 +20,17 @@ public class CText : CUIComponent
 
     public override void Configure()
     {
+        CThemeSO theme = GetThemeSO();
+        if (theme == null) { return; }
+
         textMeshProUGUI.font = textSO.font;
         textMeshProUGUI.fontSize = textSO.fontSize;
-        textMeshProUGUI.color = textSO.theme.GetTextColor(style);
+        textMeshProUGUI.color = theme.GetTextColor(style);
         textMeshProUGUI.enableAutoSizing = autoSize;
         textMeshProUGUI.fontSizeMin = 5;
     }
 
+    [Button("SetText")]
     public void SetText(string text)
     {
         textMeshProUGUI.text = text;

@@ -8,6 +8,7 @@ public class MyInputManager : InputManager
 {
     public MMInput.IMButton LevelUpgradesButton;
     public MMInput.IMButton StatisticsButton;
+    public MMInput.IMButton EnemySelectionButton;
 
     protected override void Awake()
     {
@@ -29,6 +30,7 @@ public class MyInputManager : InputManager
         base.InitializeButtons();
         ButtonList.Add(LevelUpgradesButton = new MMInput.IMButton(PlayerID, "LevelUpgrades", LevelUpgradesButtonDown, LevelUpgradesButtonPressed, LevelUpgradesButtonUp));
         ButtonList.Add(StatisticsButton = new MMInput.IMButton(PlayerID, "Statistics", StatisticsButtonDown, StatisticsButtonPressed, StatisticsButtonUp));
+        ButtonList.Add(EnemySelectionButton = new MMInput.IMButton(PlayerID, "EnemySelection", EnemySelectionButtonDown, EnemySelectionButtonPressed, EnemySelectionButtonUp));
 
     }
 
@@ -39,5 +41,9 @@ public class MyInputManager : InputManager
     public virtual void StatisticsButtonDown() {StatisticsButton.State.ChangeState(MMInput.ButtonStates.ButtonDown);}
     public virtual void StatisticsButtonPressed() {StatisticsButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed);}
     public virtual void StatisticsButtonUp() {StatisticsButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);}
+
+    public virtual void EnemySelectionButtonDown() {EnemySelectionButton.State.ChangeState(MMInput.ButtonStates.ButtonDown);}
+    public virtual void EnemySelectionButtonPressed() {EnemySelectionButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed);}
+    public virtual void EnemySelectionButtonUp() {EnemySelectionButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);}
 
 }
