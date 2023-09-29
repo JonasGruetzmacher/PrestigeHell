@@ -24,7 +24,7 @@ MonoBehaviour:
     - Name: unlocked
       Entry: 5
       Data: false
-  shortDescription: Unlock Tier2 XP Orb
+  shortDescription: Unlock Tier 3 XP Orb
   longDescription: Unlock Tier XP Orb that has a small chance to drop additionaly
     and gives x10 XP
   lootTables:
