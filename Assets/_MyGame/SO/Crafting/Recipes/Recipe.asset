@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8740edc15a4d79b419d02f0e9f82719a, type: 3}
+  m_Name: Recipe
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: fb770da3cfd12704c8c3ac5d8e04a4a4, type: 2}
+    - {fileID: 11400000, guid: 1592bd12b16c62a438df214272ff2b45, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: craftGrid
+      Entry: 7
+      Data: 0|MoreMountains.InventoryEngine.InventoryItem[,], MoreMountains.InventoryEngine
+    - Name: 
+      Entry: 12
+      Data: 9
+    - Name: ranks
+      Entry: 1
+      Data: 3|3
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  recipeName: HelloWorld
+  recipeDescription: 
+  resultItem: {fileID: 11400000, guid: 23f15b9bad261b545acbe8659a1d279a, type: 2}

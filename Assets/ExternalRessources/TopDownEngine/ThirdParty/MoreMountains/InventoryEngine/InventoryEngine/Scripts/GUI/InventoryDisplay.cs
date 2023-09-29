@@ -489,7 +489,6 @@ namespace MoreMountains.InventoryEngine
 		/// <param name="i">The index.</param>
 		protected virtual void UpdateSlot(int i)
 		{
-			
 			if (SlotContainer.Count < i)
 			{
 				Debug.LogWarning ("It looks like your inventory display wasn't properly initialized. If you're not triggering any Load events, you may want to mark your inventory as non persistent in its inspector. Otherwise, you may want to reset and empty saved inventories and try again.");

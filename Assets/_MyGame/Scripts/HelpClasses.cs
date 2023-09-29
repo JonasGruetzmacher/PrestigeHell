@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using System.Linq;
 
 public static class HelperFunctions
 {
@@ -50,6 +51,24 @@ public static class HelperFunctions
     public static void RemoveLoot(this MMLootTableGameObjectSO lootTable, GameObject lootDropPrefab)
     {
         SetLootWeight(lootTable, lootDropPrefab, 0);
+    }
+
+    public static void ForEach<T>(this IEnumerable<T> source, System.Action<T> action)
+    {
+        source.ThrowIfNull("source");
+        action.ThrowIfNull("action");
+        foreach (var element in source)
+        {
+            action(element);
+        }
+    }
+
+    public static void ThrowIfNull<T>(this T argument, string name) where T : class
+    {
+        if (argument == null)
+        {
+            throw new System.ArgumentNullException(name);
+        }
     }
 
     public static int CountAllOf<T>(this List<T> list, T item)
