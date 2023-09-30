@@ -16,8 +16,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: fb770da3cfd12704c8c3ac5d8e04a4a4, type: 2}
-    - {fileID: 11400000, guid: 1592bd12b16c62a438df214272ff2b45, type: 2}
+    - {fileID: 11400000, guid: 15871505820c65b44a4f53e8cbe8eda2, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -33,20 +32,20 @@ MonoBehaviour:
       Entry: 1
       Data: 3|3
     - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
       Entry: 10
       Data: 0
-    - Name: 
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 1
     - Name: 
       Entry: 6
       Data: 
@@ -67,4 +66,4 @@ MonoBehaviour:
       Data: 
   recipeName: HelloWorld
   recipeDescription: 
-  resultItem: {fileID: 11400000, guid: 23f15b9bad261b545acbe8659a1d279a, type: 2}
+  resultItem: {fileID: 11400000, guid: 1592bd12b16c62a438df214272ff2b45, type: 2}

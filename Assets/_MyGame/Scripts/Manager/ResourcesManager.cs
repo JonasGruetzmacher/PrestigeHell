@@ -156,6 +156,7 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     private void UpdateResource(ResourceType type)
     {
+        if (!Application.isPlaying) { return;}
         MyGUIManager.Instance.SendMessageUpwards("UpdateResourceBar", type);
         MyGUIManager.Instance.SendMessageUpwards("UpdateResourceText", type);
     }

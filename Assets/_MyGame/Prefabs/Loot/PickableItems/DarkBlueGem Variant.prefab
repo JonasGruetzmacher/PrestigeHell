@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2556096850258004169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 608711039406274872, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1129971636, guid: 1f59c56ee9145e64bb2732cf3329d0c3,
+        type: 3}
+    - target: {fileID: 608711039406274872, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274873, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274877, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkBlueGem
+      objectReference: {fileID: 0}
+    - target: {fileID: 608711039406274878, guid: 6e9b7796edc455e469cf2da9077d2530,
+        type: 3}
+      propertyPath: Item
+      value: 
+      objectReference: {fileID: 11400000, guid: 92026c3b25ef7fa49882f42dcd8b2bb1,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e9b7796edc455e469cf2da9077d2530, type: 3}

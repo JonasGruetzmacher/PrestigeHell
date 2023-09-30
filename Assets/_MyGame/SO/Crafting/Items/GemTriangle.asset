@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48417c356aa393b48a91d187acc3198e, type: 3}
-  m_Name: HealthBonusItem
+  m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
+  m_Name: GemTriangle
   m_EditorClassIdentifier: 
-  ItemID: 
+  ItemID: GemTriangle
   TargetInventoryName: MainInventory
   ForceSlotIndex: 0
   TargetIndex: 0
@@ -22,22 +22,22 @@ MonoBehaviour:
   Equippable: 0
   EquippableIfInventoryIsFull: 1
   MoveWhenEquipped: 1
-  Droppable: 1
+  Droppable: 0
   CanMoveObject: 1
   CanSwapObject: 1
   DisplayProperties:
-    DisplayEquipUseButton: 1
+    DisplayEquipUseButton: 0
     DisplayMoveButton: 1
-    DisplayDropButton: 1
-    DisplayEquipButton: 1
-    DisplayUseButton: 1
-    DisplayUnequipButton: 1
+    DisplayDropButton: 0
+    DisplayEquipButton: 0
+    DisplayUseButton: 0
+    DisplayUnequipButton: 0
   Quantity: 1
-  ItemName: 
+  ItemName: Triangle Gem
   ShortDescription: 
   Description: 
-  Icon: {fileID: 0}
-  Prefab: {fileID: 0}
+  Icon: {fileID: -1129971636, guid: 1f59c56ee9145e64bb2732cf3329d0c3, type: 3}
+  Prefab: {fileID: 3101722293260579316, guid: c2f0fbbfab4547345953f1bb80ec9036, type: 3}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
   DropProperties:
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 1
+  MaximumStack: 9999
   ItemClass: 0
   TargetEquipmentInventoryName: 
   EquippedSound: {fileID: 0}
@@ -89,4 +89,3 @@ MonoBehaviour:
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
   UseDefaultSoundsIfNull: 1
-  HealthBonus: 0
