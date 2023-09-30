@@ -5005,6 +5005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showConsole: 0
   showHelp: 0
+  mainInventory: {fileID: 820939801}
 --- !u!114 &479868560
 MonoBehaviour:
   m_ObjectHideFlags: 0

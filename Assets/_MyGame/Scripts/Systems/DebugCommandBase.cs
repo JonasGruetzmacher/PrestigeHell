@@ -33,6 +33,7 @@ public class DebugCommand : DebugCommandBase
 
     public void Invoke()
     {
+        Debug.Log("Invoking command: " + commandId);
         command.Invoke();
     }
 }
@@ -48,6 +49,7 @@ public class DebugCommand<T1> : DebugCommandBase
 
     public void Invoke(T1 value)
     {
+        Debug.Log("Invoking command: " + commandId);
         command.Invoke(value);
     }
 }
@@ -63,6 +65,7 @@ public class DebugCommand<T1, T2> : DebugCommandBase
 
     public void Invoke(T1 value1, T2 value2)
     {
+        Debug.Log("Invoking command: " + commandId);
         command.Invoke(value1, value2);
     }
 }

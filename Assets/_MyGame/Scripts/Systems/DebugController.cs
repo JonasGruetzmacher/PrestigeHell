@@ -6,6 +6,8 @@ using UnityEngine.XR;
 using MoreMountains.Tools;
 using MoreMountains.TopDownEngine;
 using UnityEditor;
+using MoreMountains.InventoryEngine;
+using System.Linq;
 
 public class DebugController : MonoBehaviour
 {
@@ -21,9 +23,11 @@ public class DebugController : MonoBehaviour
     public static DebugCommand HELP;
     public static DebugCommand<ResourceType, int> SET_RESOURCE;
     public static DebugCommand IRONWOOD;
+    public static DebugCommand<string, int> ADD_ITEM;
 
     public List<object> commandList;
 
+    [SerializeField] Inventory mainInventory;
     private Vector2 scroll;
 
 
@@ -34,11 +38,9 @@ public class DebugController : MonoBehaviour
 
     public void OnReturn(InputValue value)
     {
-        Debug.Log("Return");
         if (showConsole)
         {
             HandleInput();
-            Debug.Log(input);
             lastInput = input;
             input = "";
         }
@@ -64,9 +66,21 @@ public class DebugController : MonoBehaviour
             LevelManager.Instance.Players[0].GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>("Characters/Ironwood");
             LevelManager.Instance.Players[0].GetComponentInChildren<Animator>().enabled = false;
             Debug.Log("Exalted forever number 1");
-            Debug.Log(Resources.Load<Sprite>("Characters/Ironwood"));
-            Debug.Log(LevelManager.Instance.Players[0].GetComponentInChildren<SpriteRenderer>().sprite);
         });
+        ADD_ITEM = new DebugCommand<string, int>("add_item", "Add item to inventory", "add_item [item name] [quantity]", (itemID, quantity) => 
+        {
+            List<InventoryItem> items = Resources.LoadAll<InventoryItem>("Items/").ToList();
+            foreach (InventoryItem item in items)
+            {
+                if (item.ItemID == itemID)
+                {
+                    mainInventory.AddItem(item, quantity);
+                    return;
+                }
+            }
+            Debug.Log("Item not found");
+        });
+
 
         commandList = new List<object>
         {
@@ -76,6 +90,7 @@ public class DebugController : MonoBehaviour
             HELP,
             SET_RESOURCE,
             IRONWOOD,
+            ADD_ITEM
         };
     }
 
@@ -124,30 +139,37 @@ public class DebugController : MonoBehaviour
 
             if (input.Contains(commandBase.commandId))
             {
-                if((commandList[i] as DebugCommand).commandId == commandBase.commandId)
+                if((commandList[i] as DebugCommand) != null)
                 {
                     (commandList[i] as DebugCommand).Invoke();
                     return;
                 }
                 else if(commandList[i] as DebugCommand<int> != null)
                 {
+                    if (properties.Length < 2) { Debug.Log("Invalid command format"); return; }
                     int value = int.Parse(properties[1]);
                     (commandList[i] as DebugCommand<int>).Invoke(value);
                     return;
                 }
                 else if(commandList[i] as DebugCommand<ResourceType, int> != null)
                 {
+                    if (properties.Length < 3) { Debug.Log("Invalid command format"); return; }
                     ResourceType resource = (ResourceType)System.Enum.Parse(typeof(ResourceType), properties[1]);
                     int value = int.Parse(properties[2]);
                     (commandList[i] as DebugCommand<ResourceType, int>).Invoke(resource, value);
                     return;
                 }
-                else
+                else if(commandList[i] as DebugCommand<string, int> != null)
                 {
-                    Debug.Log("Command not found");
+                    if (properties.Length < 3) { Debug.Log("Invalid command format"); return; }
+                    string itemName = properties[1];
+                    int quantity = int.Parse(properties[2]);
+                    (commandList[i] as DebugCommand<string, int>).Invoke(itemName, quantity);
                     return;
                 }
             }
         }
+        Debug.Log("Command not found");
+        return;
     }
 }
