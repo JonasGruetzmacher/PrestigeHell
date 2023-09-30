@@ -70,6 +70,7 @@ public class CraftingInventory : MonoBehaviour, MMEventListener<MMInventoryEvent
                 grid.RemoveItem(i, 1);
             }
         }
+        TryGetOutput();
     }
 
     public void OnMMEvent(MMInventoryEvent inventoryEvent)
@@ -79,8 +80,6 @@ public class CraftingInventory : MonoBehaviour, MMEventListener<MMInventoryEvent
             if (inventoryEvent.InventoryEventType == MMInventoryEventType.ContentChanged)
             {
                 bool test = TryGetOutput();
-                Debug.Log("Content Changed");
-                Debug.Log(test);
             }
         }
         if (inventoryEvent.TargetInventoryName == output.name)

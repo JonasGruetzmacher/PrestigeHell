@@ -24,32 +24,6 @@ public class OutputInventory : Inventory
         }
 
         List<int> list = InventoryContains(itemToOutput.ItemID);
-        // if there's at least one item like this already in the inventory and it's stackable
-        // if (list.Count > 0 && itemToOutput.MaximumStack > 1)
-        // {
-        //     // we store items that match the one we want to add
-        //     for (int i = 0; i < list.Count; i++)
-        //     {
-        //         // if there's still room in one of these items of this kind in the inventory, we add to it
-        //         if (Content[list[i]].Quantity < itemToOutput.MaximumStack)
-        //         {
-        //             // we increase the quantity of our item
-        //             Content[list[i]].Quantity += quantity;
-        //             // if this exceeds the maximum stack
-        //             if (Content[list[i]].Quantity > Content[list[i]].MaximumStack)
-        //             {
-        //                 InventoryItem restToAdd = itemToOutput;
-        //                 int restToAddQuantity = Content[list[i]].Quantity - Content[list[i]].MaximumStack;
-        //                 // we clamp the quantity and add the rest as a new item
-        //                 Content[list[i]].Quantity = Content[list[i]].MaximumStack;
-        //                 AddItem(restToAdd, restToAddQuantity);
-        //             }
-        //             MMInventoryEvent.Trigger(MMInventoryEventType.ContentChanged, null, this.name, null, 0, 0, PlayerID);
-        //             return true;
-        //         }
-        //     }
-        // }
-        // if we've reached the max size of our inventory, we don't add the item
         if (NumberOfFilledSlots >= Content.Length)
         {
             return false;
@@ -78,8 +52,9 @@ public class OutputInventory : Inventory
         {
             return false;
         }
+        bool v = base.MoveItemToInventory(sourceIndex, targetInventory, targetIndex);
         MMInventoryEvent.Trigger(MMInventoryEventType.UseRequest, null, this.name, null, 0, 0, PlayerID);
-        return base.MoveItemToInventory(sourceIndex, targetInventory, targetIndex);
+        return v;
 
     }
 }
