@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
-  m_Name: GemDiamond
+  m_Script: {fileID: 11500000, guid: fb9f355f19269e1448483303fd335a0b, type: 3}
+  m_Name: XPOrb
   m_EditorClassIdentifier: 
-  ItemID: GemDiamond
+  ItemID: XPOrb
   TargetInventoryName: MainInventory
   ForceSlotIndex: 0
   TargetIndex: 0
-  Usable: 0
+  Usable: 1
   Consumable: 1
   ConsumeQuantity: 1
   Equippable: 0
@@ -27,17 +27,17 @@ MonoBehaviour:
   CanSwapObject: 1
   DisplayProperties:
     DisplayEquipUseButton: 0
-    DisplayMoveButton: 1
-    DisplayDropButton: 0
+    DisplayMoveButton: 0
+    DisplayDropButton: 1
     DisplayEquipButton: 0
-    DisplayUseButton: 0
+    DisplayUseButton: 1
     DisplayUnequipButton: 0
   Quantity: 1
-  ItemName: Diamond Gem
-  ShortDescription: 
-  Description: 
-  Icon: {fileID: 1618938464, guid: 1f59c56ee9145e64bb2732cf3329d0c3, type: 3}
-  Prefab: {fileID: 8163466914310592369, guid: 251e199f761087c4e9e38351ebaeaaa5, type: 3}
+  ItemName: XP Orb
+  ShortDescription: XP Orb
+  Description: Use to get 100 XP
+  Icon: {fileID: -511779204, guid: 1f59c56ee9145e64bb2732cf3329d0c3, type: 3}
+  Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
   DropProperties:
@@ -81,7 +81,7 @@ MonoBehaviour:
     MaximumRotation: {x: 0, y: 0, z: 0}
     MinimumScale: {x: 1, y: 1, z: 1}
     MaximumScale: {x: 1, y: 1, z: 1}
-  MaximumStack: 999
+  MaximumStack: 999999
   ItemClass: 0
   TargetEquipmentInventoryName: 
   EquippedSound: {fileID: 0}
@@ -89,3 +89,6 @@ MonoBehaviour:
   MovedSound: {fileID: 0}
   DroppedSound: {fileID: 0}
   UseDefaultSoundsIfNull: 1
+  resourceAmount:
+    type: 0
+    amount: 100

@@ -21,7 +21,7 @@ public class CraftingInventory : MonoBehaviour, MMEventListener<MMInventoryEvent
         {
             if (CheckRecipe(recipe))
             {
-                output.OutputItem(recipe.resultItem, 1);
+                output.OutputItem(recipe.resultItem, recipe.resultQuantity);
                 return true;
             }
         }

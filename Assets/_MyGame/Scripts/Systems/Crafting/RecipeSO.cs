@@ -11,6 +11,7 @@ public class RecipeSO : SerializedScriptableObject
     public string recipeDescription;
 
     public InventoryItem resultItem;
+    public int resultQuantity;
 
     [TableMatrix(HorizontalTitle = "Crafting Grid", VerticalTitle = "")]
     public InventoryItem[,] craftGrid;

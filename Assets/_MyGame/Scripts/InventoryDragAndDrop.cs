@@ -75,7 +75,19 @@ namespace InventoryDragAndDrop
                 var destinationItem = destinationInventory.Content[destinationSlot.Index];
                 var isDestinationEmpty = InventoryItem.IsNull(destinationItem);
                 if (_inventory == destinationInventory && (_item.CanMoveObject && isDestinationEmpty || _item.CanSwapObject && !isDestinationEmpty && destinationItem.CanSwapObject))
+                {
+                    if (!isDestinationEmpty && destinationItem.ItemID == _item.ItemID)
+                    {
+                        var quantityToAdd = Mathf.Min(_item.Quantity, destinationItem.MaximumStack - destinationItem.Quantity);
+                        _inventory.RemoveItem(_slot.Index, quantityToAdd);
+                        _inventory.AddItem(_item, quantityToAdd);
+                        MMInventoryEvent.Trigger(MMInventoryEventType.ContentChanged, null, _inventory.name, null, 0, 0, _playerID);
+                    }
+                    else
+                    {
                     _inventory.MoveItem(_slot.Index, destinationSlot.Index);
+                    }
+                }
                 else if (_item.IsEquippable && _item.TargetEquipmentInventoryName == destinationInventory.name)
                 {
                     if (isDestinationEmpty)
