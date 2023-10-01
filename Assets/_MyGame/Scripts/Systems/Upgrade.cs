@@ -7,8 +7,10 @@ using System;
 
 public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
 {
+    public string upgradeID;
     public string upgradeName;
-    public string description;
+    public string shortDescription;
+    public string longDescription;
     public Dictionary<ResourceType, float> upgradeCost = new Dictionary<ResourceType, float>();
     public List<Upgrade> blockedUpgrades = new List<Upgrade>();
     public bool isUnlocked = false;
@@ -87,7 +89,7 @@ public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
         infoRight = "";
 
         infoLeft += string.Format("!{0}`\n", upgradeName);
-        infoLeft += string.Format("{0}`\n", description);
+        infoLeft += string.Format("{0}`\n", shortDescription);
 
         if (GetNextUpgradeCost().Count > 0)
         {

@@ -45,7 +45,7 @@ public static class HelperFunctions
                 return;
             }
         }
-        Debug.LogError("LootDropPrefab not found in LootTable");
+        // Debug.LogError("LootDropPrefab not found in LootTable");
     }
 
     public static void RemoveLoot(this MMLootTableGameObjectSO lootTable, GameObject lootDropPrefab)

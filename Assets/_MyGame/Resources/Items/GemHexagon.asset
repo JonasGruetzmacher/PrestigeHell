@@ -33,7 +33,7 @@ MonoBehaviour:
     DisplayUseButton: 0
     DisplayUnequipButton: 0
   Quantity: 1
-  ItemName: Hexagon Gem
+  ItemName: Pink Gem
   ShortDescription: 
   Description: 
   Icon: {fileID: 315368083, guid: 1f59c56ee9145e64bb2732cf3329d0c3, type: 3}

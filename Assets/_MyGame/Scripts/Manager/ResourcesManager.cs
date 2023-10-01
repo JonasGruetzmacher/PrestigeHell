@@ -18,6 +18,8 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
     [SerializeField] private AnimationCurve levelCurve;
     [SerializeField] Stats resourceStats;
 
+    private bool isQuitting = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -25,6 +27,7 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
         {
             resources.Add((ResourceType)resource, 0);
         }
+        isQuitting = false;
     }
 
     public float GetResourceAmount(ResourceType type)
@@ -156,7 +159,7 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     private void UpdateResource(ResourceType type)
     {
-        if (!Application.isPlaying) { return;}
+        if (isQuitting) { return;}
         MyGUIManager.Instance.SendMessageUpwards("UpdateResourceBar", type);
         MyGUIManager.Instance.SendMessageUpwards("UpdateResourceText", type);
     }
@@ -184,6 +187,11 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
     {
         this.MMEventStopListening<ResourceEvent>();
         this.MMEventStopListening<TopDownEngineEvent>();
+    }
+
+    private void OnApplicationQuit()
+    {
+        isQuitting = true;
     }
 
 

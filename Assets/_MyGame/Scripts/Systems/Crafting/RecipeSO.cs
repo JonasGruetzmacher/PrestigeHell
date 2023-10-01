@@ -7,8 +7,10 @@ using MoreMountains.InventoryEngine;
 [CreateAssetMenu(fileName = "Recipe", menuName = "Crafting/RecipeSO")]
 public class RecipeSO : SerializedScriptableObject
 {
+    public string recipeID;
     public string recipeName;
-    public string recipeDescription;
+    public string shortDescription;
+    public string longDescription;
 
     public InventoryItem resultItem;
     public int resultQuantity;

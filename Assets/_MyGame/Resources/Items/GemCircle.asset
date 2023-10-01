@@ -33,7 +33,7 @@ MonoBehaviour:
     DisplayUseButton: 0
     DisplayUnequipButton: 0
   Quantity: 1
-  ItemName: Circle Gem
+  ItemName: Light Green Gem
   ShortDescription: 
   Description: 
   Icon: {fileID: 1643149446, guid: 1f59c56ee9145e64bb2732cf3329d0c3, type: 3}

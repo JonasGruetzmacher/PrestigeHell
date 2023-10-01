@@ -100,6 +100,11 @@ public class MyGameManager : GameManager
         }
     }
 
+    public virtual void KillPlayer()
+    {
+        LevelManager.Instance.Players[0].CharacterHealth.Kill();
+    }
+
     public override void OnMMEvent(MMGameEvent gameEvent)
     {
         base.OnMMEvent(gameEvent);

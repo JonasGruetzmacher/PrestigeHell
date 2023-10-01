@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c0291976cec3e469932f07c92feed1, type: 3}
+  m_Name: UnlockGemCircle
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: unlocked
+      Entry: 5
+      Data: false
+  unlockID: unlockGemCircle
+  shortDescription: Unlock Circle Loot
+  longDescription: 
+  lootTables:
+  - {fileID: 11400000, guid: feb0e519601f90a4a8d2225c7c083893, type: 2}
+  lootDropPrefab: {fileID: 100617101322566770, guid: cdc15169cc4ba164ebef32f64d99705d,
+    type: 3}
+  weight: 10

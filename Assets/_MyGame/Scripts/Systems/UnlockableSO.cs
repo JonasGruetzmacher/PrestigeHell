@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public abstract class UnlockableSO : SerializedScriptableObject, ITooltipInformation
 {
     [SerializeField] public bool unlocked { get; protected set; }
+    public string unlockID;
     public string shortDescription;
     public string longDescription;
     public abstract void Unlock();

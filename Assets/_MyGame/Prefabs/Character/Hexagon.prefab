@@ -1,5 +1,289 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2364623786923985460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9030244908138446549}
+  - component: {fileID: 8543300682701211899}
+  - component: {fileID: 1305856744024406218}
+  - component: {fileID: 3615409028866818101}
+  m_Layer: 0
+  m_Name: Loot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9030244908138446549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364623786923985460}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.507865, y: -1.2506433, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8235257391962716358}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8543300682701211899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364623786923985460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9bf1ac07f3659498e89157301c9746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootMode: 0
+  GameObjectToLoot: {fileID: 5985453685250786793, guid: 2af8715e82cbd854497b7b4c4fcbe24d,
+    type: 3}
+  LootTable:
+    ObjectsToLoot: []
+    WeightsTotal: 0
+  LootTableSO: {fileID: 0}
+  SpawnLootOnDeath: 1
+  SpawnLootOnDamage: 0
+  PoolLoot: 1
+  PoolSize: 50
+  MutualizedPoolName: XPOrb
+  CanSpawn: 1
+  Delay: 0
+  Quantity: {x: 1, y: 1}
+  SpawnProperties:
+    Shape: 0
+    NormalToSpawnPlane: {x: 0, y: 0, z: 1}
+    MinimumSphereRadius: 0
+    MaximumSphereRadius: 1
+    MinimumCubeBaseSize: {x: 1, y: 1, z: 1}
+    MaximumCubeBaseSize: {x: 2, y: 2, z: 2}
+    MinimumNormalAxisOffset: 0
+    MaximumNormalAxisOffset: 0
+    UseNormalAxisOffsetCurve: 0
+    NormalOffsetCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    NormalOffsetCurveRemapZero: 0
+    NormalOffsetCurveRemapOne: 1
+    InvertNormalOffsetCurve: 0
+    MinimumRotation: {x: 0, y: 0, z: 0}
+    MaximumRotation: {x: 0, y: 0, z: 0}
+    MinimumScale: {x: 0.2, y: 0.2, z: 1}
+    MaximumScale: {x: 0.2, y: 0.2, z: 1}
+  LimitedLootQuantity: 0
+  MaximumQuantity: 100
+  RemainingQuantity: 99
+  AvoidObstacles: 1
+  DimensionMode: 0
+  AvoidObstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  AvoidRadius: 0.25
+  MaxAvoidAttempts: 5
+  LootFeedback: {fileID: 0}
+  DrawGizmos: 1
+  GizmosQuantity: 10
+  GizmosColor: {r: 0.827451, g: 0.827451, b: 0.827451, a: 1}
+  GimosSize: 0.3
+  SpawnLootButton: 0
+--- !u!114 &1305856744024406218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364623786923985460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9bf1ac07f3659498e89157301c9746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootMode: 2
+  GameObjectToLoot: {fileID: 0}
+  LootTable:
+    ObjectsToLoot: []
+    WeightsTotal: 0
+  LootTableSO: {fileID: 11400000, guid: 873d6690a9fbf1f4aa2f864433a677f5, type: 2}
+  SpawnLootOnDeath: 1
+  SpawnLootOnDamage: 0
+  PoolLoot: 0
+  PoolSize: 20
+  MutualizedPoolName: Loot
+  CanSpawn: 1
+  Delay: 0
+  Quantity: {x: 1, y: 1}
+  SpawnProperties:
+    Shape: 0
+    NormalToSpawnPlane: {x: 0, y: 0, z: 1}
+    MinimumSphereRadius: 0
+    MaximumSphereRadius: 1
+    MinimumCubeBaseSize: {x: 1, y: 1, z: 1}
+    MaximumCubeBaseSize: {x: 2, y: 2, z: 2}
+    MinimumNormalAxisOffset: 0
+    MaximumNormalAxisOffset: 0
+    UseNormalAxisOffsetCurve: 0
+    NormalOffsetCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    NormalOffsetCurveRemapZero: 0
+    NormalOffsetCurveRemapOne: 1
+    InvertNormalOffsetCurve: 0
+    MinimumRotation: {x: 0, y: 0, z: 0}
+    MaximumRotation: {x: 0, y: 0, z: 0}
+    MinimumScale: {x: 0.2, y: 0.2, z: 1}
+    MaximumScale: {x: 0.2, y: 0.2, z: 1}
+  LimitedLootQuantity: 0
+  MaximumQuantity: 100
+  RemainingQuantity: 100
+  AvoidObstacles: 1
+  DimensionMode: 0
+  AvoidObstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  AvoidRadius: 0.25
+  MaxAvoidAttempts: 5
+  LootFeedback: {fileID: 0}
+  DrawGizmos: 0
+  GizmosQuantity: 1000
+  GizmosColor: {r: 0.827451, g: 0.827451, b: 0.827451, a: 1}
+  GimosSize: 1
+  SpawnLootButton: 0
+--- !u!114 &3615409028866818101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2364623786923985460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9bf1ac07f3659498e89157301c9746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LootMode: 2
+  GameObjectToLoot: {fileID: 0}
+  LootTable:
+    ObjectsToLoot: []
+    WeightsTotal: 0
+  LootTableSO: {fileID: 11400000, guid: 37d6e3bb3f7c71c4a829f44b35499f72, type: 2}
+  SpawnLootOnDeath: 1
+  SpawnLootOnDamage: 0
+  PoolLoot: 0
+  PoolSize: 20
+  MutualizedPoolName: Loot
+  CanSpawn: 1
+  Delay: 0
+  Quantity: {x: 1, y: 1}
+  SpawnProperties:
+    Shape: 0
+    NormalToSpawnPlane: {x: 0, y: 0, z: 1}
+    MinimumSphereRadius: 0
+    MaximumSphereRadius: 1
+    MinimumCubeBaseSize: {x: 1, y: 1, z: 1}
+    MaximumCubeBaseSize: {x: 2, y: 2, z: 2}
+    MinimumNormalAxisOffset: 0
+    MaximumNormalAxisOffset: 0
+    UseNormalAxisOffsetCurve: 0
+    NormalOffsetCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    NormalOffsetCurveRemapZero: 0
+    NormalOffsetCurveRemapOne: 1
+    InvertNormalOffsetCurve: 0
+    MinimumRotation: {x: 0, y: 0, z: 0}
+    MaximumRotation: {x: 0, y: 0, z: 0}
+    MinimumScale: {x: 1, y: 1, z: 1}
+    MaximumScale: {x: 1, y: 1, z: 1}
+  LimitedLootQuantity: 0
+  MaximumQuantity: 100
+  RemainingQuantity: 100
+  AvoidObstacles: 1
+  DimensionMode: 0
+  AvoidObstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  AvoidRadius: 0.25
+  MaxAvoidAttempts: 5
+  LootFeedback: {fileID: 0}
+  DrawGizmos: 0
+  GizmosQuantity: 1000
+  GizmosColor: {r: 0.827451, g: 0.827451, b: 0.827451, a: 1}
+  GimosSize: 1
+  SpawnLootButton: 0
 --- !u!1 &3959373945906344046
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,11 +544,9 @@ GameObject:
   - component: {fileID: 8235257391962716404}
   - component: {fileID: 8235257391962716402}
   - component: {fileID: 1837019927025062577}
-  - component: {fileID: 6374450397318074692}
   - component: {fileID: 2733455325493403869}
   - component: {fileID: 4046689058493881298}
   - component: {fileID: 6374450397318074695}
-  - component: {fileID: -3099992061588959858}
   m_Layer: 13
   m_Name: Hexagon
   m_TagString: Untagged
@@ -286,6 +568,7 @@ Transform:
   m_Children:
   - {fileID: 2221223824172165883}
   - {fileID: 687297583823454261}
+  - {fileID: 9030244908138446549}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -926,90 +1209,6 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   stats: {fileID: 11400000, guid: 0f21a6e0292a0d14e853b55f642fd6a3, type: 2}
---- !u!114 &6374450397318074692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235257391962716359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d9bf1ac07f3659498e89157301c9746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LootMode: 0
-  GameObjectToLoot: {fileID: 5985453685250786793, guid: 2af8715e82cbd854497b7b4c4fcbe24d,
-    type: 3}
-  LootTable:
-    ObjectsToLoot: []
-    WeightsTotal: 0
-  LootTableSO: {fileID: 0}
-  SpawnLootOnDeath: 1
-  SpawnLootOnDamage: 0
-  PoolLoot: 1
-  PoolSize: 50
-  MutualizedPoolName: XPOrb
-  CanSpawn: 1
-  Delay: 0
-  Quantity: {x: 1, y: 1}
-  SpawnProperties:
-    Shape: 0
-    NormalToSpawnPlane: {x: 0, y: 0, z: 1}
-    MinimumSphereRadius: 0
-    MaximumSphereRadius: 1
-    MinimumCubeBaseSize: {x: 1, y: 1, z: 1}
-    MaximumCubeBaseSize: {x: 2, y: 2, z: 2}
-    MinimumNormalAxisOffset: 0
-    MaximumNormalAxisOffset: 0
-    UseNormalAxisOffsetCurve: 0
-    NormalOffsetCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    NormalOffsetCurveRemapZero: 0
-    NormalOffsetCurveRemapOne: 1
-    InvertNormalOffsetCurve: 0
-    MinimumRotation: {x: 0, y: 0, z: 0}
-    MaximumRotation: {x: 0, y: 0, z: 0}
-    MinimumScale: {x: 0.2, y: 0.2, z: 1}
-    MaximumScale: {x: 0.2, y: 0.2, z: 1}
-  LimitedLootQuantity: 0
-  MaximumQuantity: 100
-  RemainingQuantity: 99
-  AvoidObstacles: 1
-  DimensionMode: 0
-  AvoidObstaclesLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  AvoidRadius: 0.25
-  MaxAvoidAttempts: 5
-  LootFeedback: {fileID: 0}
-  DrawGizmos: 1
-  GizmosQuantity: 10
-  GizmosColor: {r: 0.827451, g: 0.827451, b: 0.827451, a: 1}
-  GimosSize: 0.3
-  SpawnLootButton: 0
 --- !u!114 &2733455325493403869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,86 +1296,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!114 &-3099992061588959858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235257391962716359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d9bf1ac07f3659498e89157301c9746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LootMode: 2
-  GameObjectToLoot: {fileID: 0}
-  LootTable:
-    ObjectsToLoot: []
-    WeightsTotal: 0
-  LootTableSO: {fileID: 11400000, guid: 873d6690a9fbf1f4aa2f864433a677f5, type: 2}
-  SpawnLootOnDeath: 1
-  SpawnLootOnDamage: 0
-  PoolLoot: 0
-  PoolSize: 20
-  MutualizedPoolName: Loot
-  CanSpawn: 1
-  Delay: 0
-  Quantity: {x: 1, y: 1}
-  SpawnProperties:
-    Shape: 0
-    NormalToSpawnPlane: {x: 0, y: 0, z: 1}
-    MinimumSphereRadius: 0
-    MaximumSphereRadius: 1
-    MinimumCubeBaseSize: {x: 1, y: 1, z: 1}
-    MaximumCubeBaseSize: {x: 2, y: 2, z: 2}
-    MinimumNormalAxisOffset: 0
-    MaximumNormalAxisOffset: 0
-    UseNormalAxisOffsetCurve: 0
-    NormalOffsetCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    NormalOffsetCurveRemapZero: 0
-    NormalOffsetCurveRemapOne: 1
-    InvertNormalOffsetCurve: 0
-    MinimumRotation: {x: 0, y: 0, z: 0}
-    MaximumRotation: {x: 0, y: 0, z: 0}
-    MinimumScale: {x: 0.2, y: 0.2, z: 1}
-    MaximumScale: {x: 0.2, y: 0.2, z: 1}
-  LimitedLootQuantity: 0
-  MaximumQuantity: 100
-  RemainingQuantity: 100
-  AvoidObstacles: 1
-  DimensionMode: 0
-  AvoidObstaclesLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  AvoidRadius: 0.25
-  MaxAvoidAttempts: 5
-  LootFeedback: {fileID: 0}
-  DrawGizmos: 0
-  GizmosQuantity: 1000
-  GizmosColor: {r: 0.827451, g: 0.827451, b: 0.827451, a: 1}
-  GimosSize: 1
-  SpawnLootButton: 0

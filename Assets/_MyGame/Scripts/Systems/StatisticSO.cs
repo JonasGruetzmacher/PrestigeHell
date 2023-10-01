@@ -9,8 +9,10 @@ public class StatisticSO : SerializedScriptableObject
 {
     [ShowInInspector]
     public float value{ get; private set;}
+    public string statisticID;
     public string statisticName;
-    public string description;
+    public string shortDescription;
+    public string longDescription;
 
     [Header("Event")]
     public StatisticType statisticType;
@@ -85,5 +87,10 @@ public class StatisticSO : SerializedScriptableObject
         {
             unlockable.Item1.Reset();
         }
+    }
+
+    private void OnEnable()
+    {
+        GetTextDescription();
     }
 }

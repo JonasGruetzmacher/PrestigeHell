@@ -24,6 +24,7 @@ public class DebugController : MonoBehaviour
     public static DebugCommand<ResourceType, int> SET_RESOURCE;
     public static DebugCommand IRONWOOD;
     public static DebugCommand<string, int> ADD_ITEM;
+    public static DebugCommand<string> UNLOCK;
 
     public List<object> commandList;
 
@@ -80,6 +81,19 @@ public class DebugController : MonoBehaviour
             }
             Debug.Log("Item not found");
         });
+        UNLOCK = new DebugCommand<string>("unlock", "Unlock item", "unlock [unlock name]", (unlockID) =>
+        {
+            List<UnlockableSO> unlocks = Resources.LoadAll<UnlockableSO>("Unlockables/").ToList();
+            foreach (UnlockableSO unlock in unlocks)
+            {
+                if (unlock.unlockID == unlockID)
+                {
+                    unlock.Unlock();
+                    return;
+                }
+            }
+            Debug.Log("Unlock not found");
+        });
 
 
         commandList = new List<object>
@@ -90,7 +104,8 @@ public class DebugController : MonoBehaviour
             HELP,
             SET_RESOURCE,
             IRONWOOD,
-            ADD_ITEM
+            ADD_ITEM,
+            UNLOCK,
         };
     }
 
@@ -149,6 +164,13 @@ public class DebugController : MonoBehaviour
                     if (properties.Length < 2) { Debug.Log("Invalid command format"); return; }
                     int value = int.Parse(properties[1]);
                     (commandList[i] as DebugCommand<int>).Invoke(value);
+                    return;
+                }
+                else if(commandList[i] as DebugCommand<string> != null)
+                {
+                    if (properties.Length < 2) { Debug.Log("Invalid command format"); return; }
+                    string value = properties[1];
+                    (commandList[i] as DebugCommand<string>).Invoke(value);
                     return;
                 }
                 else if(commandList[i] as DebugCommand<ResourceType, int> != null)
