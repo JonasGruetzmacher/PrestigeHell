@@ -99,7 +99,7 @@ MonoBehaviour:
       Data: 
   upgradeID: upgradeBaseDamage1
   upgradeName: Base Damage
-  shortDescription: 
+  shortDescription: +1 Base Damage
   longDescription: 
   blockedUpgrades: []
   isUnlocked: 0
