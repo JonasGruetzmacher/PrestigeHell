@@ -80,8 +80,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  statisticID: statisticKilledEnemies
   statisticName: Enemies Killed
-  description: Enemies Killed
+  shortDescription: 
+  longDescription: 
   statisticType: 1
   resourceType: 0
   characterInformations:

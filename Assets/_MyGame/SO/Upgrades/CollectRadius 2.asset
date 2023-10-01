@@ -87,7 +87,7 @@ MonoBehaviour:
       Data: 5
     - Name: $v
       Entry: 4
-      Data: 50
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -97,11 +97,15 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  upgradeID: upgradeCollectRadius2
   upgradeName: Collect Radius
-  description: +50% collect Radius
+  shortDescription: +20% Collect Radius
+  longDescription: 
   blockedUpgrades: []
   isUnlocked: 0
+  isBlocked: 0
   upgradeLimit: 5
+  currentUpgradeCount: 0
   unitsToUpgrade:
   - {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}

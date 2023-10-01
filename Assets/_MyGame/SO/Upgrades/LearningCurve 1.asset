@@ -97,8 +97,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeName: +1 Base XP Gain
-  description: Increases XP Gain
+  upgradeID: upgradeXpGain1
+  upgradeName: Base XP Gain
+  shortDescription: +1 Base XP Gain
+  longDescription: 
   blockedUpgrades: []
   isUnlocked: 0
   isBlocked: 0

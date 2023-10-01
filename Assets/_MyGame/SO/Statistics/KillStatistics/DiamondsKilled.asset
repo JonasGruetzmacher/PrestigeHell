@@ -80,8 +80,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  statisticID: statisticKilledDiamonds
   statisticName: Diamonds Killed
-  description: Diamonds Killed
+  shortDescription: 
+  longDescription: 
   statisticType: 1
   resourceType: 0
   characterInformations:

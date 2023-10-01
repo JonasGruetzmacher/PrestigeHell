@@ -97,11 +97,15 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeName: Weapon Training
-  description: +50% Dmg
+  upgradeID: upgradeDamageMultiplier3
+  upgradeName: Damage Multiplier
+  shortDescription: +50% Damage
+  longDescription: 
   blockedUpgrades: []
   isUnlocked: 0
+  isBlocked: 0
   upgradeLimit: 1
+  currentUpgradeCount: 0
   unitsToUpgrade:
   - {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}

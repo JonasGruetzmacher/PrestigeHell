@@ -158,9 +158,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  statisticID: statisticTotalXpOrbsCollected
   statisticName: XP Orbs Collected
-  description: 
+  shortDescription: 
+  longDescription: 
   statisticType: 2
   resourceType: 0
-  toggleAdditionalAttribute: 0
-  additionalAttribute: 
+  characterInformations: []

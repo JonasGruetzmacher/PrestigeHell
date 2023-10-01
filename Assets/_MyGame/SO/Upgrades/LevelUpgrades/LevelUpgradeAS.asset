@@ -85,11 +85,14 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  upgradeID: upgradeLevel1A
   upgradeName: A
-  description: +100% AS
+  shortDescription: +100% Attack Speed
+  longDescription: 
   blockedUpgrades:
   - {fileID: 11400000, guid: d6cd0346296adb649b944b50e5b4fefd, type: 2}
   isUnlocked: 0
+  isBlocked: 0
   upgradeLimit: 1
   currentUpgradeCount: 0
   unitsToUpgrade:

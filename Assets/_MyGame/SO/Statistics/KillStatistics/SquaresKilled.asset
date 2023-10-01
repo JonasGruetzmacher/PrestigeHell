@@ -106,8 +106,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  statisticID: statisticKilledSquares
   statisticName: Squares Killed
-  description: Squares Killed
+  shortDescription: 
+  longDescription: 
   statisticType: 1
   resourceType: 0
   characterInformations:

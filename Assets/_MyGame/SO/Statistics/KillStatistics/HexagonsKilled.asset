@@ -106,8 +106,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  statisticID: statisticKilledHexagons
   statisticName: Hexagons Killed
-  description: Hexagons Killed
+  shortDescription: 
+  longDescription: 
   statisticType: 1
   resourceType: 0
   characterInformations:

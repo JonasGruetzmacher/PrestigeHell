@@ -97,11 +97,15 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  upgradeID: upgradeMoveSpeed2
   upgradeName: Move Speed
-  description: +10% MS
+  shortDescription: +10% Move Speed
+  longDescription: 
   blockedUpgrades: []
   isUnlocked: 0
+  isBlocked: 0
   upgradeLimit: 2
+  currentUpgradeCount: 0
   unitsToUpgrade:
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   isPercentageUpgrade: 1

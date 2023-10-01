@@ -106,8 +106,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  statisticName: Circle Killed
-  description: Circle Killed
+  statisticID: statisticKilledCircles
+  statisticName: Circles Killed
+  shortDescription: 
+  longDescription: 
   statisticType: 1
   resourceType: 0
   characterInformations:
