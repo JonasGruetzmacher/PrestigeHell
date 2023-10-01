@@ -3406,7 +3406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &323899675
 Transform:
   m_ObjectHideFlags: 0
@@ -23733,7 +23733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4350bf2b71c28aa4287088b021d7b576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetInventoryName: KoalaMainInventory
+  TargetInventoryName: MainInventory
   PlayerID: Player1
   Global: 0
   HideOnEmptySlot: 1

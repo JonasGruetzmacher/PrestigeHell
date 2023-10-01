@@ -29,6 +29,7 @@ namespace MoreMountains.Tools
 						GameObject obj = new GameObject ();
 						obj.name = typeof(T).Name + "_AutoCreated";
 						_instance = obj.AddComponent<T> ();
+						Debug.LogWarning ("No instance of " + typeof(T).Name + ", a temporary one was created.");
 					}
 				}
 				return _instance;
