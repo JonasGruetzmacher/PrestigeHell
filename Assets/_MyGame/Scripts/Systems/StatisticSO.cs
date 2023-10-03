@@ -7,9 +7,10 @@ using Sirenix.Serialization;
 [CreateAssetMenu(fileName = "Statistic", menuName = "StatisticSO")]
 public class StatisticSO : SerializedScriptableObject
 {
+
     [ShowInInspector]
     public float value{ get; private set;}
-    public string statisticID;
+    public string id;
     public string statisticName;
     public string shortDescription;
     public string longDescription;
@@ -25,7 +26,6 @@ public class StatisticSO : SerializedScriptableObject
     [Header("Unlockables")]
     public Dictionary<UnlockableSO, float> unlockables = new Dictionary<UnlockableSO, float>();
     
-    [OdinSerialize]
     private List<(UnlockableSO, float)> unlockablesList = new List<(UnlockableSO, float)>();
     private int currentGoalIndex = 0;
 
@@ -69,6 +69,19 @@ public class StatisticSO : SerializedScriptableObject
     public void InreaseValue(float value)
     {
         this.value += value;
+        if (currentGoalIndex < unlockablesList.Count)
+        {
+            if (this.value >= unlockablesList[currentGoalIndex].Item2)
+            {
+                unlockablesList[currentGoalIndex].Item1.Unlock();
+                currentGoalIndex++;
+            }
+        }
+    }
+
+    public void SetValue(float value)
+    {
+        this.value = value;
         if (currentGoalIndex < unlockablesList.Count)
         {
             if (this.value >= unlockablesList[currentGoalIndex].Item2)

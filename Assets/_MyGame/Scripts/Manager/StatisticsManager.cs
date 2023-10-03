@@ -2,10 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
+using System.Linq;
 
-public class StatisticsManager : MMSingleton<StatisticsManager>
+public class StatisticsManager : MMSingleton<StatisticsManager>, IDataPersistence
 {
     public List<StatisticSO> statistics = new List<StatisticSO>();
+
+
+    public void LoadData(GameData gameData)
+    {
+        foreach (var statistic in statistics)
+        {
+            if (gameData.statistics.ContainsKey(statistic.id))
+            {
+                statistic.SetValue(gameData.statistics[statistic.id]);
+            }
+        }
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        foreach (var statistic in statistics)
+        {
+            if (gameData.statistics.ContainsKey(statistic.id))
+            {
+                gameData.statistics.Remove(statistic.id);
+            }
+            gameData.statistics.Add(statistic.id, statistic.value);
+        }
+    }
 
     public void OnStatisticEvent(Component sender, object data)
     {

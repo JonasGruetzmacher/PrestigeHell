@@ -20,9 +20,9 @@ public class StatsManager : MonoBehaviour
             stats.ResetAppliedUpgrades();
         }
 
-        foreach (var upgrade in upgradeList)
-        {
-            upgrade.ResetUpgrade();
-        }
+        // foreach (var upgrade in upgradeList)
+        // {
+        //     upgrade.ResetUpgrade();
+        // }
     }
 }

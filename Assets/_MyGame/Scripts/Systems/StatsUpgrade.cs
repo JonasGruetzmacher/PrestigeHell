@@ -4,7 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using System.Resources;
 
-
+[System.Serializable]
 [CreateAssetMenu(menuName = "Upgrades/Stats Upgrade")]
 public class StatsUpgrade : Upgrade
 {
@@ -34,6 +34,24 @@ public class StatsUpgrade : Upgrade
         foreach (var blockUpgrade in blockedUpgrades)
         {
             blockUpgrade.BlockUpgrade();
+        }
+        isUnlocked = true;
+    }
+
+    public override void ForceUpgrade(int amount)
+    {
+        ResetUpgrade();
+        for (int i = 0; i < amount; i++)
+        {
+            ApplyUpgrade();
+            foreach (var unitToUpgrade in unitsToUpgrade)
+            {
+                unitToUpgrade.UnlockUpgrade(this);
+            }
+            foreach (var blockUpgrade in blockedUpgrades)
+            {
+                blockUpgrade.BlockUpgrade();
+            }
         }
         isUnlocked = true;
     }

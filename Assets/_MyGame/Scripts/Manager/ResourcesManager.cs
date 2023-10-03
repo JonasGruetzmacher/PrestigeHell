@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 using MoreMountains.TopDownEngine;
 
 
-public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<ResourceEvent>, MMEventListener<TopDownEngineEvent>
+public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<ResourceEvent>, MMEventListener<TopDownEngineEvent>, IDataPersistence
 {
 
 
@@ -28,6 +28,16 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
             resources.Add((ResourceType)resource, 0);
         }
         isQuitting = false;
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        SetResource(ResourceType.XP, gameData.xp);
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        gameData.xp = GetResourceAmount(ResourceType.XP);
     }
 
     public float GetResourceAmount(ResourceType type)

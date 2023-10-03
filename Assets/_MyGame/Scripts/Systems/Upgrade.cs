@@ -7,7 +7,7 @@ using System;
 
 public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
 {
-    public string upgradeID;
+    public string id;
     public string upgradeName;
     public string shortDescription;
     public string longDescription;
@@ -60,6 +60,17 @@ public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
         }
     }
 
+    public virtual void ForceUpgrade(int count = 1)
+    {
+        ResetUpgrade();
+        currentUpgradeCount = count;
+        upgradeApplied?.Invoke(this);
+        if (currentUpgradeCount >= upgradeLimit)
+        {
+            Completed();
+        }
+    }
+
     public virtual void ResetUpgrade()
     {
         currentUpgradeCount = 0;
@@ -71,6 +82,11 @@ public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
     public virtual void Completed()
     {
         upgradeCompleted?.Invoke(this);
+    }
+
+    public virtual bool IsCompleted()
+    {
+        return currentUpgradeCount >= upgradeLimit;
     }
 
     public virtual String GetNextUpgradeCosts()

@@ -5,9 +5,10 @@ using MoreMountains.TopDownEngine;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using static HelperFunctions;
+using System.Linq;
 
 
-public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<TopDownEngineEvent>
+public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<TopDownEngineEvent>, IDataPersistence
 {
     [SerializeField] private GameObject upgradePrefab;
     [SerializeField] private Transform upgradesParent;
@@ -32,7 +33,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
 
     protected void Start()
     {
-        Initialize();
+        // Initialize();
     }
 
     private void Initialize()
@@ -49,11 +50,43 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
                 break;
             }
             var upgrade = upgrades.Dequeue();
-            currentUpgrades.Add(upgrade);
-            
-            upgrade.upgradeCompleted += OnUpgradeCompleted;
+            if (upgrade.IsCompleted())
+            {
+                activeUpgrades.Add(upgrade);
+                i--;
+            }
+            else
+            {
+                currentUpgrades.Add(upgrade);
+                upgrade.upgradeCompleted += OnUpgradeCompleted;
+                AddUpgradeToUI(upgrade); 
+            }
 
-            AddUpgradeToUI(upgrade);
+
+        }
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        foreach (var upgrade in allUpgrades)
+        {
+            if (gameData.permanentUpgrades.ContainsKey(upgrade.id))
+            {
+                upgrade.ForceUpgrade(gameData.permanentUpgrades[upgrade.id]);
+            }
+        }
+        Initialize();
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        foreach (var upgrade in allUpgrades)
+        {
+            if (gameData.permanentUpgrades.ContainsKey(upgrade.id))
+            {
+                gameData.permanentUpgrades.Remove(upgrade.id);
+            }
+            gameData.permanentUpgrades.Add(upgrade.id, upgrade.currentUpgradeCount);
         }
     }
 
@@ -69,12 +102,21 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
         upgrade.upgradeCompleted -= OnUpgradeCompleted;
         currentUpgrades.Remove(upgrade);
 
+        GetNextUpgrade();
+    }
+
+    private void GetNextUpgrade()
+    {
         if (upgrades.Count > 0)
         {
             var newUpgrade = upgrades.Dequeue();
             currentUpgrades.Add(newUpgrade);
             newUpgrade.upgradeCompleted += OnUpgradeCompleted;
             AddUpgradeToUI(newUpgrade);
+        }
+        else
+        {
+            Debug.Log("No more upgrades");
         }
     }
 
