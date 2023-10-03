@@ -85,9 +85,15 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  id: upgradeFlatDamageReduction
   upgradeName: -1 Damage Per Hit
-  description: Decreases Damage Taken
+  shortDescription: 
+  longDescription: 
+  blockedUpgrades: []
+  isUnlocked: 1
+  isBlocked: 0
   upgradeLimit: 10
+  currentUpgradeCount: 0
   unitsToUpgrade:
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   isPercentageUpgrade: 0

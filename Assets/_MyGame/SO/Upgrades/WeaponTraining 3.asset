@@ -97,12 +97,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeID: upgradeDamageMultiplier3
+  id: upgradeDamageMultiplier3
   upgradeName: Damage Multiplier
   shortDescription: +50% Damage
   longDescription: 
   blockedUpgrades: []
-  isUnlocked: 0
+  isUnlocked: 1
   isBlocked: 0
   upgradeLimit: 1
   currentUpgradeCount: 0

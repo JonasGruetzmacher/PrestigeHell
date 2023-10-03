@@ -97,12 +97,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeID: upgradeBaseHealth2
+  id: upgradeBaseHealth2
   upgradeName: Base Health
   shortDescription: +10 Base Health
   longDescription: 
   blockedUpgrades: []
-  isUnlocked: 0
+  isUnlocked: 1
   isBlocked: 0
   upgradeLimit: 10
   currentUpgradeCount: 0

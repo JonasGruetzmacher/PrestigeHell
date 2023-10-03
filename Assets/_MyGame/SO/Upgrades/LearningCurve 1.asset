@@ -97,15 +97,15 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeID: upgradeXpGain1
+  id: upgradeXpGain1
   upgradeName: Base XP Gain
   shortDescription: +1 Base XP Gain
   longDescription: 
   blockedUpgrades: []
-  isUnlocked: 0
+  isUnlocked: 1
   isBlocked: 0
   upgradeLimit: 1
-  currentUpgradeCount: 0
+  currentUpgradeCount: 1
   unitsToUpgrade:
   - {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}

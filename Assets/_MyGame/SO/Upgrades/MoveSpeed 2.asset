@@ -97,12 +97,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  upgradeID: upgradeMoveSpeed2
+  id: upgradeMoveSpeed2
   upgradeName: Move Speed
   shortDescription: +10% Move Speed
   longDescription: 
   blockedUpgrades: []
-  isUnlocked: 0
+  isUnlocked: 1
   isBlocked: 0
   upgradeLimit: 2
   currentUpgradeCount: 0
