@@ -50,12 +50,12 @@ public class CharacterStats : CharacterAbility
     {
         if (stats == null)
             return;
-        if (stats.IncludesStat(Stat.speed))
+        if (_characterMovement != null && stats.IncludesStat(Stat.speed))
         {
             _characterMovement.WalkSpeed = stats.GetStat(Stat.speed);
             _characterMovement.ResetSpeed();
         }
-        if (stats.IncludesStat(Stat.health))
+        if (_health != null && stats.IncludesStat(Stat.health))
         {
             float health = stats.GetStat(Stat.health);
             if (stats.IncludesStat(Stat.healthVariance))
