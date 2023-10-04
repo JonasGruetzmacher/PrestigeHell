@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using System.Linq;
+using MoreMountains.Tools;
 
 public class DataPersistenceManager : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class DataPersistenceManager : MonoBehaviour
     [Button]
     public void SaveGame()
     {
+        MMGameEvent.Trigger("Save");
+        
         foreach (var dataPersistenceObject in dataPersistenceObjects)
         {
             dataPersistenceObject.SaveData(gameData);
@@ -54,6 +57,8 @@ public class DataPersistenceManager : MonoBehaviour
     [Button]
     public void LoadGame()
     {
+        MMGameEvent.Trigger("Load");
+
         this.gameData = fileDataHandler.Load();
 
         if (this.gameData == null)

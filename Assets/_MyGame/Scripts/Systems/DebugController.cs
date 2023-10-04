@@ -25,6 +25,7 @@ public class DebugController : MonoBehaviour
     public static DebugCommand IRONWOOD;
     public static DebugCommand<string, int> ADD_ITEM;
     public static DebugCommand<string> UNLOCK;
+    public static DebugCommand<string, int> SET_STATISTIC;
 
     public List<object> commandList;
 
@@ -35,6 +36,7 @@ public class DebugController : MonoBehaviour
     public void OnToggleDebug(InputValue value)
     {
         showConsole = !showConsole;
+        input = "";
     }
 
     public void OnReturn(InputValue value)
@@ -58,7 +60,7 @@ public class DebugController : MonoBehaviour
     private void Awake()
     {
         KILL_ALL = new DebugCommand("kill_all", "Kill all enemies", "kill_all", () => { EnemyManager.Instance.KillAllEnemies(); });
-        SPAWN_ENEMY = new DebugCommand("spawn_enemy", "Spawn an enemy", "spawn_enemy", () => { EnemyManager.Instance.GetEnemySpawner().SpawnRandomEnemy(); });
+        SPAWN_ENEMY = new DebugCommand("spawn_enemy", "Spawn random enemy", "spawn_enemy", () => { EnemyManager.Instance.GetEnemySpawner().SpawnRandomEnemy(); });
         SET_XP = new DebugCommand<int>("set_xp", "Set player xp", "set_xp [xp]", (xp) => { ResourcesManager.Instance.SetResource(ResourceType.XP, xp); });
         HELP = new DebugCommand("help", "Show all commands", "help", () => { showHelp = !showHelp; });
         SET_RESOURCE = new DebugCommand<ResourceType, int>("set_resource", "Set resource", "set_resource [resource type] [value]", (resource, value) => { ResourcesManager.Instance.SetResource(resource, value); });
@@ -95,6 +97,20 @@ public class DebugController : MonoBehaviour
             Debug.Log("Unlock not found");
         });
 
+        SET_STATISTIC = new DebugCommand<string, int>("set_statistic", "Set statistic", "set_statistic [statistic id] [value]", (id, value) =>
+        {
+            List<StatisticSO> statistics = Resources.LoadAll<StatisticSO>("Statistics/").ToList();
+            foreach (StatisticSO statistic in statistics)
+            {
+                if (statistic.id == id)
+                {
+                    statistic.SetValue(value);
+                    return;
+                }
+            }
+            Debug.Log("Statistic not found");
+        });
+
 
         commandList = new List<object>
         {
@@ -106,6 +122,7 @@ public class DebugController : MonoBehaviour
             IRONWOOD,
             ADD_ITEM,
             UNLOCK,
+            SET_STATISTIC,
         };
     }
 
