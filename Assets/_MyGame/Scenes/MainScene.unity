@@ -4458,6 +4458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.game
+  autoSaveInterval: 60
 --- !u!114 &386711616
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ public class DebugController : MonoBehaviour
     public static DebugCommand<string, int> ADD_ITEM;
     public static DebugCommand<string> UNLOCK;
     public static DebugCommand<string, int> SET_STATISTIC;
+    public static DebugCommand HARD_RESET;
 
     public List<object> commandList;
 
@@ -59,6 +60,7 @@ public class DebugController : MonoBehaviour
 
     private void Awake()
     {
+        HARD_RESET = new DebugCommand("hard_reset", "Hard reset game", "hard_reset", () => { DataPersistenceManager.instance.NewGame(); });
         KILL_ALL = new DebugCommand("kill_all", "Kill all enemies", "kill_all", () => { EnemyManager.Instance.KillAllEnemies(); });
         SPAWN_ENEMY = new DebugCommand("spawn_enemy", "Spawn random enemy", "spawn_enemy", () => { EnemyManager.Instance.GetEnemySpawner().SpawnRandomEnemy(); });
         SET_XP = new DebugCommand<int>("set_xp", "Set player xp", "set_xp [xp]", (xp) => { ResourcesManager.Instance.SetResource(ResourceType.XP, xp); });
@@ -123,6 +125,7 @@ public class DebugController : MonoBehaviour
             ADD_ITEM,
             UNLOCK,
             SET_STATISTIC,
+            HARD_RESET,
         };
     }
 

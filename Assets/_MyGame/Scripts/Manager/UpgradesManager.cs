@@ -42,7 +42,6 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
         currentUpgrades.Clear();
         activeUpgrades.Clear();
         upgrades.Clear();
-        upgradesParent.ClearChildren();
         foreach (var upgrade in permanentUpgradeList)
         {
             upgrades.Enqueue(upgrade);
@@ -64,11 +63,10 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
             {
                 currentUpgrades.Add(upgrade);
                 upgrade.upgradeCompleted += OnUpgradeCompleted;
-                AddUpgradeToUI(upgrade); 
             }
-
-
         }
+
+        UpdateUI();
     }
 
     public void LoadData(GameData gameData)
@@ -96,12 +94,15 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
         }
     }
 
-    private void AddUpgradeToUI(Upgrade upgrade)
+    private void UpdateUI()
     {
-        Debug.Log("AddUpgradeToUI" + upgrade.name);
-        var upgradeGO = Instantiate(upgradePrefab, upgradesParent);
-        upgradeGO.GetComponent<BasicUpgradeVisual>().upgrade = upgrade;
-        upgradeGO.GetComponent<BasicUpgradeVisual>().Init();
+        upgradesParent.ClearChildren();
+        foreach (var upgrade in currentUpgrades)
+        {
+            var upgradeGO = Instantiate(upgradePrefab, upgradesParent);
+            upgradeGO.GetComponent<BasicUpgradeVisual>().upgrade = upgrade;
+            upgradeGO.GetComponent<BasicUpgradeVisual>().Init();    
+        }
     }
 
     private void OnUpgradeCompleted(Upgrade upgrade)
@@ -110,23 +111,23 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
         upgrade.upgradeCompleted -= OnUpgradeCompleted;
         currentUpgrades.Remove(upgrade);
 
-        GetNextUpgrade();
+        FillUpgradeSlots();
     }
 
-    private void GetNextUpgrade()
+    private void FillUpgradeSlots()
     {
-        if (upgrades.Count > 0)
+        while (currentUpgrades.Count < maxUpgrades)
         {
+            if (upgrades.Count == 0)
+            {
+                Debug.Log("No more upgrades");
+                break;
+            }
             var newUpgrade = upgrades.Dequeue();
             currentUpgrades.Add(newUpgrade);
             newUpgrade.upgradeCompleted += OnUpgradeCompleted;
-            Debug.Log("GetNextUpgrade" + newUpgrade.name);
-            AddUpgradeToUI(newUpgrade);
         }
-        else
-        {
-            Debug.Log("No more upgrades");
-        }
+        UpdateUI();
     }
 
     

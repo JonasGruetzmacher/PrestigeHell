@@ -12,6 +12,7 @@ public class DataPersistenceManager : MonoBehaviour
 
 
     [SerializeField] private string fileName = "gameData.json";
+    [SerializeField] private float autoSaveInterval = 60f;
 
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
@@ -37,9 +38,13 @@ public class DataPersistenceManager : MonoBehaviour
         LoadGame();
     }
 
+    [Button]
     public void NewGame()
     {
         gameData = new GameData();
+        fileDataHandler.Save(gameData);
+        GetComponent<LevelSelector>().RestartLevel();
+        LoadGame();
     }
 
     [Button]
@@ -82,16 +87,6 @@ public class DataPersistenceManager : MonoBehaviour
         Debug.Log(string.Format("Game loaded in {0} seconds", Time.realtimeSinceStartup - temp));
     }
 
-    [Button]
-    public void DeleteGameData()
-    {
-        // System.IO.File.Delete(Application.persistentDataPath + "/gameData.json");
-        NewGame();
-        fileDataHandler.Save(gameData);
-        GetComponent<LevelSelector>().RestartLevel();
-        LoadGame();
-    }
-
     private List<IDataPersistence> FindAllDataPersistenceObjects()
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>(true).OfType<IDataPersistence>();
@@ -101,5 +96,14 @@ public class DataPersistenceManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveGame();
+    }
+
+    IEnumerator AutoSave()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(autoSaveInterval);
+            SaveGame();
+        }
     }
 }
