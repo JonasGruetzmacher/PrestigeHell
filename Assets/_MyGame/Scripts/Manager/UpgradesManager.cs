@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using static HelperFunctions;
 using System.Linq;
+using System;
 
 
 public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<TopDownEngineEvent>, IDataPersistence
@@ -38,6 +39,10 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
 
     private void Initialize()
     {
+        currentUpgrades.Clear();
+        activeUpgrades.Clear();
+        upgrades.Clear();
+        upgradesParent.ClearChildren();
         foreach (var upgrade in permanentUpgradeList)
         {
             upgrades.Enqueue(upgrade);
@@ -70,6 +75,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
     {
         foreach (var upgrade in allUpgrades)
         {
+            upgrade.ResetUpgrade();
             if (gameData.permanentUpgrades.ContainsKey(upgrade.id))
             {
                 upgrade.ForceUpgrade(gameData.permanentUpgrades[upgrade.id]);
@@ -92,6 +98,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
 
     private void AddUpgradeToUI(Upgrade upgrade)
     {
+        Debug.Log("AddUpgradeToUI" + upgrade.name);
         var upgradeGO = Instantiate(upgradePrefab, upgradesParent);
         upgradeGO.GetComponent<BasicUpgradeVisual>().upgrade = upgrade;
         upgradeGO.GetComponent<BasicUpgradeVisual>().Init();
@@ -99,6 +106,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
 
     private void OnUpgradeCompleted(Upgrade upgrade)
     {
+        Debug.Log("OnUpgradeCompleted" + upgrade.name);
         upgrade.upgradeCompleted -= OnUpgradeCompleted;
         currentUpgrades.Remove(upgrade);
 
@@ -112,6 +120,7 @@ public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<Top
             var newUpgrade = upgrades.Dequeue();
             currentUpgrades.Add(newUpgrade);
             newUpgrade.upgradeCompleted += OnUpgradeCompleted;
+            Debug.Log("GetNextUpgrade" + newUpgrade.name);
             AddUpgradeToUI(newUpgrade);
         }
         else

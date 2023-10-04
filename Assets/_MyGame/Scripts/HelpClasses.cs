@@ -82,6 +82,14 @@ public static class HelperFunctions
         return count;
     }
 
+    public static void ClearChildren(this Transform transform)
+    {
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
+
     public static string ToPrettyString<T,V>(this Dictionary<T,V> dict)
     {
         string text = "";

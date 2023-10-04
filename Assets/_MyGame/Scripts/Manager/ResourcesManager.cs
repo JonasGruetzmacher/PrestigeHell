@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using System;
 using Unity.VisualScripting;
 using MoreMountains.TopDownEngine;
+using System.Linq;
 
 
 public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<ResourceEvent>, MMEventListener<TopDownEngineEvent>, IDataPersistence
@@ -32,6 +33,11 @@ public class ResourcesManager : MMSingleton<ResourcesManager>, MMEventListener<R
 
     public void LoadData(GameData gameData)
     {
+        resources = new MMSerializableDictionary<ResourceType, float>();
+        foreach (var resource in ResourceType.GetValues(typeof(ResourceType)))
+        {
+            resources.Add((ResourceType)resource, 0);
+        }
         SetResource(ResourceType.XP, gameData.xp);
     }
 

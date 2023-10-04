@@ -24,6 +24,7 @@ public class StatisticsManager : MMSingleton<StatisticsManager>, IDataPersistenc
     {
         foreach (var statistic in statistics)
         {
+            statistic.Reset();
             if (gameData.statistics.ContainsKey(statistic.id))
             {
                 gameData.statistics.Remove(statistic.id);

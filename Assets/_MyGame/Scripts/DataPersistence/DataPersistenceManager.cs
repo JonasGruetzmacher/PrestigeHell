@@ -4,6 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using System.Linq;
 using MoreMountains.Tools;
+using MoreMountains.TopDownEngine;
 
 public class DataPersistenceManager : MonoBehaviour
 {
@@ -44,19 +45,25 @@ public class DataPersistenceManager : MonoBehaviour
     [Button]
     public void SaveGame()
     {
+        var temp = Time.realtimeSinceStartup;
+
         MMGameEvent.Trigger("Save");
-        
+
         foreach (var dataPersistenceObject in dataPersistenceObjects)
         {
             dataPersistenceObject.SaveData(gameData);
         }
  
         fileDataHandler.Save(gameData);
+
+        Debug.Log(string.Format("Game saved in {0} seconds", Time.realtimeSinceStartup - temp));
     }
 
     [Button]
     public void LoadGame()
     {
+        var temp = Time.realtimeSinceStartup;
+
         MMGameEvent.Trigger("Load");
 
         this.gameData = fileDataHandler.Load();
@@ -71,12 +78,18 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObject.LoadData(gameData);
         }
+
+        Debug.Log(string.Format("Game loaded in {0} seconds", Time.realtimeSinceStartup - temp));
     }
 
     [Button]
     public void DeleteGameData()
     {
-        System.IO.File.Delete(Application.persistentDataPath + "/gameData.json");
+        // System.IO.File.Delete(Application.persistentDataPath + "/gameData.json");
+        NewGame();
+        fileDataHandler.Save(gameData);
+        GetComponent<LevelSelector>().RestartLevel();
+        LoadGame();
     }
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()
