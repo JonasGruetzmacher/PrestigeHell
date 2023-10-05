@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.TopDownEngine;
+using LeroGames.Tools;
 
-public class ResourceLootDrop : PickableItem
+namespace LeroGames.PrestigeHell
 {
-    public ResourceAmount resourceAmount;
-    [SerializeField] private CustomEventSystem.GameEvent resourceLootEvent;
-
-    protected override void Pick(GameObject picker)
+    public class ResourceLootDrop : PickableItem
     {
-        resourceLootEvent?.Raise(this, resourceAmount);
+        public ResourceAmount resourceAmount;
+        [SerializeField] private LeroGames.Tools.GameEvent resourceLootEvent;
+
+        protected override void Pick(GameObject picker)
+        {
+            resourceLootEvent?.Raise(this, resourceAmount);
+        }
     }
 }

@@ -840,7 +840,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  stats: {fileID: 11400000, guid: b815f0fa56fd1134d80f7a5868118067, type: 2}
+  stats: {fileID: 11400000, guid: aba9b2db12c0f85469941d1d496a3bcb, type: 2}
 --- !u!114 &8887539838340013863
 MonoBehaviour:
   m_ObjectHideFlags: 0

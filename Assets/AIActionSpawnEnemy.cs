@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
 
-public class AIActionSpawnEnemy : AIAction
+namespace LeroGames.PrestigeHell
 {
-    public CharacterInformationSO enemy;
-    protected EnemySpawner enemySpawner;
-
-    public override void Initialization()
+    public class AIActionSpawnEnemy : AIAction
     {
-        if(!ShouldInitialize) return;
-        base.Initialization();
-        enemySpawner = EnemyManager.Instance.GetEnemySpawner();
-    }
+        public CharacterInformationSO enemy;
+        protected EnemySpawner enemySpawner;
 
-    public override void PerformAction()
-    {
-        Debug.Log(enemySpawner);
-        if (enemySpawner == null)
+        public override void Initialization()
         {
-            return;
+            if(!ShouldInitialize) return;
+            base.Initialization();
+            enemySpawner = EnemyManager.Instance.GetEnemySpawner();
         }
-        enemySpawner.Spawn(this.transform.position, enemy.characterName, 2f);
+
+        public override void PerformAction()
+        {
+            Debug.Log(enemySpawner);
+            if (enemySpawner == null)
+            {
+                return;
+            }
+            enemySpawner.Spawn(this.transform.position, enemy.characterName, 2f);
+        }
     }
 }

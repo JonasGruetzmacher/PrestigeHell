@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace LeroGames.PrestigeHell
 {
-    public class InventoryOutputGrid : MonoBehaviour
+    public interface ICharacterInformation
     {
-
+        CharacterInformationSO characterInformation { get; }
     }
 }

@@ -6,20 +6,20 @@ using MoreMountains.TopDownEngine;
 
 namespace LeroGames.PrestigeHell
 {
-    public class CharacterEnemySelection : CharacterAbility, MMEventListener<GameEvent>
+    public class CharacterStatistics : CharacterAbility, MMEventListener<GameEvent>
     {
         protected override void HandleInput()
         {
             if (_inputManager as MyInputManager != null)
             {
-                if ((_inputManager as MyInputManager).EnemySelectionButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+                if ((_inputManager as MyInputManager).StatisticsButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
                 {
-                    TriggerEnemySelection();
+                    TriggerStatistics();
                 }
             }
         }
 
-        protected virtual void TriggerEnemySelection()
+        protected virtual void TriggerStatistics()
         {
             if (_condition.CurrentState == CharacterStates.CharacterConditions.Dead)
             {
@@ -31,7 +31,7 @@ namespace LeroGames.PrestigeHell
                 return;
             }
             PlayAbilityStartFeedbacks();
-            MMGameEvent.Trigger("ToggleEnemySelection");
+            MMGameEvent.Trigger("ToggleStatistics");
         }
 
         protected virtual void UnlockAbility()
@@ -55,5 +55,4 @@ namespace LeroGames.PrestigeHell
         }
 
     }
-
 }

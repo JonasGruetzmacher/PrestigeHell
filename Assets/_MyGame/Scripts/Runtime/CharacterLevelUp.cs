@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.TopDownEngine;
 using UnityEngine;
 using MoreMountains.Tools;
-using MoreMountains.TopDownEngine;
 
 namespace LeroGames.PrestigeHell
-{
-    public class CharacterEnemySelection : CharacterAbility, MMEventListener<GameEvent>
+    {
+    public class CharacterLevelUp : CharacterAbility, MMEventListener<GameEvent>
     {
         protected override void HandleInput()
         {
             if (_inputManager as MyInputManager != null)
             {
-                if ((_inputManager as MyInputManager).EnemySelectionButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+                if ((_inputManager as MyInputManager).LevelUpgradesButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
                 {
-                    TriggerEnemySelection();
+                    TriggerLevelUpgrades();
                 }
             }
         }
 
-        protected virtual void TriggerEnemySelection()
+        protected virtual void TriggerLevelUpgrades()
         {
             if (_condition.CurrentState == CharacterStates.CharacterConditions.Dead)
             {
@@ -31,7 +31,7 @@ namespace LeroGames.PrestigeHell
                 return;
             }
             PlayAbilityStartFeedbacks();
-            MMGameEvent.Trigger("ToggleEnemySelection");
+            MMGameEvent.Trigger("ToggleLevelUpgrades");
         }
 
         protected virtual void UnlockAbility()
@@ -41,7 +41,13 @@ namespace LeroGames.PrestigeHell
 
         public virtual void OnMMEvent(GameEvent gameEvent)
         {
-            
+            if (gameEvent.eventName == Eventname.LevelUp)
+            {
+                if (!AbilityAuthorized)
+                {
+                    UnlockAbility();
+                }
+            }
         }
 
         protected override void OnEnable()
@@ -55,5 +61,4 @@ namespace LeroGames.PrestigeHell
         }
 
     }
-
 }
