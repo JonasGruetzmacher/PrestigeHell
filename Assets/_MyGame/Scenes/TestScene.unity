@@ -5133,7 +5133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showConsole: 0
   showHelp: 0
-  mainInventory: {fileID: 820939801}
 --- !u!114 &479868560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15166,7 +15165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1796181165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ae25ffedadce994abe397ea6d10952e, type: 3}
+  m_Script: {fileID: 11500000, guid: d3b564b0f8b23764295735f0688cb8fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1805700541

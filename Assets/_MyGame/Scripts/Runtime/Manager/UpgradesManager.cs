@@ -75,11 +75,8 @@ namespace LeroGames.PrestigeHell
             foreach (var upgrade in allUpgrades)
             {
                 upgrade.ResetUpgrade();
-                if (gameData.permanentUpgrades == null)
-                {
-                    continue;
-                }
-                if (gameData.permanentUpgrades.ContainsKey(upgrade.id))
+
+                if (gameData.permanentUpgrades != null && gameData.permanentUpgrades.ContainsKey(upgrade.id))
                 {
                     upgrade.ForceUpgrade(gameData.permanentUpgrades[upgrade.id]);
                 }
