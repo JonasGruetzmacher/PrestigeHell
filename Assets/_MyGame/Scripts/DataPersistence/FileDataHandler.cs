@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using System;
+using System.Runtime.InteropServices;
 
 public class FileDataHandler
 {
@@ -14,6 +15,11 @@ public class FileDataHandler
         this.dataDirPath = dataDirPath;
         this.dataFileName = dataFileName;
     }
+
+    #if UNITY_WEBGL && !UNITY_EDITOR
+    [DllImport("__Internal")]
+    private static extern void SyncFiles();
+    #endif
 
     public GameData Load()
     {
@@ -61,6 +67,9 @@ public class FileDataHandler
                     writer.Write(dataAsJson);
                 }
             }
+            #if UNITY_WEBGL && !UNITY_EDITOR
+            SyncFiles();
+            #endif
         }
         catch (Exception e)
         {
@@ -68,3 +77,5 @@ public class FileDataHandler
         }
     }
 }
+
+

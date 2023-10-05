@@ -10,7 +10,7 @@ public class DataPersistenceManager : MonoBehaviour
 {
     public static DataPersistenceManager instance { get; private set; }
 
-
+    public bool saveOnQuit = true;
     [SerializeField] private string fileName = "gameData.json";
     [SerializeField] private float autoSaveInterval = 60f;
 
@@ -36,6 +36,7 @@ public class DataPersistenceManager : MonoBehaviour
         this.fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
+        StartCoroutine(AutoSave());
     }
 
     [Button]
@@ -95,7 +96,10 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        SaveGame();
+        if (saveOnQuit)
+        {
+            SaveGame();
+        }
     }
 
     IEnumerator AutoSave()
