@@ -6,6 +6,7 @@ using MoreMountains.TopDownEngine;
 using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
 using System.Linq;
+using System;
 
 namespace LeroGames.PrestigeHell
 {
@@ -16,12 +17,14 @@ namespace LeroGames.PrestigeHell
         public static DebugCommand SPAWN_ENEMY;
         public static DebugCommand<int> SET_XP;
         public static DebugCommand HELP;
-        public static DebugCommand<ResourceType, int> SET_RESOURCE;
+        public static DebugCommand<string, int> SET_RESOURCE;
         public static DebugCommand IRONWOOD;
         public static DebugCommand<string, int> ADD_ITEM;
         public static DebugCommand<string> UNLOCK;
         public static DebugCommand<string, int> SET_STATISTIC;
         public static DebugCommand HARD_RESET;
+        public static DebugCommand SAVE;
+        public static DebugCommand LOAD;
 
         protected override void Awake()
         {
@@ -30,7 +33,15 @@ namespace LeroGames.PrestigeHell
             SPAWN_ENEMY = new DebugCommand("spawn_enemy", "Spawn random enemy", "spawn_enemy", () => { EnemyManager.Instance.GetEnemySpawner().SpawnRandomEnemy(); });
             SET_XP = new DebugCommand<int>("set_xp", "Set player xp", "set_xp [xp]", (xp) => { ResourcesManager.Instance.SetResource(ResourceType.XP, xp); });
             HELP = new DebugCommand("help", "Show all commands", "help", () => { showHelp = !showHelp; });
-            SET_RESOURCE = new DebugCommand<ResourceType, int>("set_resource", "Set resource", "set_resource [resource type] [value]", (resource, value) => { ResourcesManager.Instance.SetResource(resource, value); });
+            SET_RESOURCE = new DebugCommand<string, int>("set_resource", "Set resource", "set_resource [resource type] [value]", (resource, value) => 
+            { 
+                if (!Enum.TryParse(resource, out ResourceType resourceType))
+                {
+                    Debug.Log("Resource not found");
+                    return;
+                }
+                ResourcesManager.Instance.SetResource(resourceType, value); 
+            });
             IRONWOOD = new DebugCommand("ironwood", "Exalted forever number 1", "ironwood", () => 
             {
                 LevelManager.Instance.Players[0].GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>("Characters/Ironwood");
@@ -78,6 +89,9 @@ namespace LeroGames.PrestigeHell
                 Debug.Log("Statistic not found");
             });
 
+            SAVE = new DebugCommand("save", "Save game", "save", () => { DataPersistenceManager.instance.SaveGame(); });
+            LOAD = new DebugCommand("load", "Load game", "load", () => { DataPersistenceManager.instance.LoadGame(); });
+
             commandList = new List<object>
             {
                 KILL_ALL,
@@ -90,6 +104,8 @@ namespace LeroGames.PrestigeHell
                 UNLOCK,
                 SET_STATISTIC,
                 HARD_RESET,
+                SAVE,
+                LOAD,
             };
         }
     }

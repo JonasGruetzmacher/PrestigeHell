@@ -110,7 +110,7 @@ namespace LeroGames.Tools
             GUI.FocusControl("Console");
         }
 
-        private void HandleInput()
+        protected virtual void HandleInput()
         {
             string[] properties = input.Split(' ');
 
