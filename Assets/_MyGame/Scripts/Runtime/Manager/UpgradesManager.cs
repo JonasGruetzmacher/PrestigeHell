@@ -86,11 +86,12 @@ namespace LeroGames.PrestigeHell
 
         public void SaveData(GameData gameData)
         {
+            gameData.permanentUpgrades.Clear();
             foreach (var upgrade in allUpgrades)
             {
                 if (gameData.permanentUpgrades.ContainsKey(upgrade.id))
                 {
-                    gameData.permanentUpgrades.Remove(upgrade.id);
+                    continue;
                 }
                 gameData.permanentUpgrades.Add(upgrade.id, upgrade.currentUpgradeCount);
             }

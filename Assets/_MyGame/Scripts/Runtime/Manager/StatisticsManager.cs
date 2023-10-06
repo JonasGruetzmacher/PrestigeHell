@@ -25,12 +25,12 @@ namespace LeroGames.PrestigeHell
 
         public void SaveData(GameData gameData)
         {
+            gameData.statistics.Clear();
             foreach (var statistic in statistics)
             {
-                statistic.Reset();
                 if (gameData.statistics.ContainsKey(statistic.id))
                 {
-                    gameData.statistics.Remove(statistic.id);
+                    continue;
                 }
                 gameData.statistics.Add(statistic.id, statistic.value);
             }
