@@ -1913,6 +1913,7 @@ MonoBehaviour:
   DoNotUseLevelManager: 0
   DestroyPersistentCharacter: 0
   onSave: {fileID: 11400000, guid: 956bdb3049e2621439fcdb4ad45f5e7b, type: 2}
+  onRespawnStarted: {fileID: 11400000, guid: 938940794fe92c64a802e1f102a366b6, type: 2}
 --- !u!114 &159650715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7475,6 +7476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 759931061}
   - component: {fileID: 759931062}
+  - component: {fileID: 759931063}
   m_Layer: 0
   m_Name: UpgradeManager
   m_TagString: Untagged
@@ -7563,6 +7565,34 @@ MonoBehaviour:
   levelUpgrades:
   - {fileID: 11400000, guid: 5008defdb143a244498ae333667835b6, type: 2}
   - {fileID: 11400000, guid: d6cd0346296adb649b944b50e5b4fefd, type: 2}
+--- !u!114 &759931063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759931060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8843644fcb9c06f4795bbc580cb1cad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 938940794fe92c64a802e1f102a366b6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 759931062}
+        m_TargetAssemblyTypeName: LeroGames.PrestigeHell.UpgradesManager, Project
+        m_MethodName: OnRespawnStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &759998349
 GameObject:
   m_ObjectHideFlags: 0

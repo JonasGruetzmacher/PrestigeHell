@@ -10,7 +10,7 @@ using static LeroGames.Tools.HelperFunctions;
 
 namespace LeroGames.PrestigeHell
 {
-    public class UpgradesManager : MMSingleton<UpgradesManager>, MMEventListener<TopDownEngineEvent>, IDataPersistence
+    public class UpgradesManager : MMSingleton<UpgradesManager>, IDataPersistence
     {
         [SerializeField] private GameObject upgradePrefab;
         [SerializeField] private Transform upgradesParent;
@@ -143,28 +143,15 @@ namespace LeroGames.PrestigeHell
             }
         }
 
-        public void OnMMEvent(TopDownEngineEvent eventType)
-        {
-            if (eventType.EventType == TopDownEngineEventTypes.RespawnStarted)
-            {
-                ResetLevelUpgrades();
-            }
-        }
-
-        private void OnEnable()
-        {
-            this.MMEventStartListening<TopDownEngineEvent>();
-        }
-
-        private void OnDisable()
-        {
-            this.MMEventStopListening<TopDownEngineEvent>();
-        }
-
         private void OnValidate()
         {
             allUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades");
             levelUpgrades = GetScriptableObjects<Upgrade>("Assets/_MyGame/SO/Upgrades/LevelUpgrades");
+        }
+
+        public void OnRespawnStarted()
+        {
+            ResetLevelUpgrades();
         }
     }
 }

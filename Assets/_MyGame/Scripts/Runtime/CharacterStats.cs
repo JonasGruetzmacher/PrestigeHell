@@ -51,17 +51,13 @@ namespace LeroGames.PrestigeHell
 
         private void ApplyStats()
         {
-            Debug.Log("Applying stats");
             if (stats == null)
                 return;
-            Debug.Log(stats.IncludesStat(Stat.speed));
-            Debug.Log(stats.GetStat(Stat.speed));
             if (_characterMovement != null && stats.IncludesStat(Stat.speed))
             {
                 _characterMovement.WalkSpeed = stats.GetStat(Stat.speed);
                 _characterMovement.ResetSpeed();
             }
-            Debug.Log("Test");
             if (_health != null && stats.IncludesStat(Stat.health))
             {
                 float health = stats.GetStat(Stat.health);
