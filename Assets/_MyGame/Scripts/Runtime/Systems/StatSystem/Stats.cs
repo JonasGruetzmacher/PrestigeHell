@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using System;
 using LeroGames.Tools;
 using System.Resources;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 
 namespace LeroGames.PrestigeHell
 {            
@@ -15,7 +16,10 @@ namespace LeroGames.PrestigeHell
         public Dictionary<Stat, float> stats = new Dictionary<Stat, float>();
 
         [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.OneLine)]
-        public Dictionary<Stat, ScalingStat> statCurves = new Dictionary<Stat, ScalingStat>();
+        public Dictionary<Stat, ScalingStat> statCurves = new Dictionary<Stat, ScalingStat>()
+        {
+            { Stat.health, new ScalingStat(new float[] {0,20}, new float[] {0,100}) }
+        };
         private List<StatsUpgrade> appliedUpgrades = new List<StatsUpgrade>();
 
         public event Action<Stats, StatsUpgrade> upgradeApplied;
@@ -120,6 +124,16 @@ namespace LeroGames.PrestigeHell
         public void ResetAppliedUpgrades()
         {
             appliedUpgrades.Clear();
+        }
+
+        [Button]
+        public void AddScalingStat(Stat stat, (float, float)[] keyframes)
+        {
+            if (statCurves.ContainsKey(stat))
+            {
+                statCurves.Remove(stat);
+            }
+            statCurves.Add(stat, new ScalingStat(keyframes));
         }
     }
     public enum Stat

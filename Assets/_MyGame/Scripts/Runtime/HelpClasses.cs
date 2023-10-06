@@ -177,6 +177,29 @@ namespace LeroGames.PrestigeHell
     {
         [HideLabel]
         public AnimationCurve curve;
+
+        public ScalingStat(AnimationCurve curve)
+        {
+            this.curve = curve;
+        }
+
+        public ScalingStat(float[] keys, float[] values)
+        {
+            this.curve = new AnimationCurve();
+            for (int i = 0; i < keys.Length; i++)
+            {
+                this.curve.AddKey(keys[i], values[i]);
+            }
+        }
+
+        public ScalingStat((float, float)[] keyFrames)
+        {
+            this.curve = new AnimationCurve();
+            for (int i = 0; i < keyFrames.Length; i++)
+            {
+                this.curve.AddKey(keyFrames[i].Item1, keyFrames[i].Item2);
+            }
+        }
     }
 
     public struct GameEvent
