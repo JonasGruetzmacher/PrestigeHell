@@ -5,7 +5,7 @@ using static LeroGames.Tools.HelperFunctions;
 
 namespace LeroGames.PrestigeHell
 {
-    public class StatsManager : MonoBehaviour
+    public class SOManager : MonoBehaviour
     {
         private List<Stats> statsList;
         private const string statsPath = "Assets/_MyGame/SO/Stats";
@@ -23,10 +23,10 @@ namespace LeroGames.PrestigeHell
                 stats.ResetAppliedUpgrades();
             }
 
-            // foreach (var upgrade in upgradeList)
-            // {
-            //     upgrade.ResetUpgrade();
-            // }
+            foreach (var upgrade in upgradeList)
+            {
+                upgrade.ResetUpgrade();
+            }
         }
     }
 }
