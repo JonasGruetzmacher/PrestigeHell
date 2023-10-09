@@ -15317,7 +15317,7 @@ GameObject:
   - component: {fileID: 1796181166}
   - component: {fileID: 1796181167}
   m_Layer: 0
-  m_Name: StatsManager
+  m_Name: SOManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -23,12 +23,12 @@ MonoBehaviour:
     SerializationNodes:
     - Name: instanceStats
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.Stat,
+        Project],[System.Single, mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
-        mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[LeroGames.PrestigeHell.Stat,
+        Project]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -40,19 +40,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
       Data: 0
-    - Name: $v
-      Entry: 4
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -61,14 +49,14 @@ MonoBehaviour:
       Data: 
     - Name: stats
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
+      Data: 2|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.Stat,
+        Project],[System.Single, mscorlib]], mscorlib
     - Name: comparer
       Entry: 9
       Data: 1
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
@@ -130,6 +118,18 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 4
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -137,21 +137,11 @@ MonoBehaviour:
       Data: 
     - Name: statCurves
       Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[ScalingStat,
-        Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.Stat,
+        Project],[LeroGames.PrestigeHell.ScalingStat, Project]], mscorlib
     - Name: comparer
-      Entry: 7
-      Data: 4|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 9
+      Data: 1
     - Name: 
       Entry: 12
       Data: 0

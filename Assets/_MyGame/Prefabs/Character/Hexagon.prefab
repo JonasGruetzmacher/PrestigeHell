@@ -543,10 +543,10 @@ GameObject:
   - component: {fileID: 8235257391962716407}
   - component: {fileID: 8235257391962716404}
   - component: {fileID: 8235257391962716402}
-  - component: {fileID: 1837019927025062577}
   - component: {fileID: 2733455325493403869}
   - component: {fileID: 4046689058493881298}
   - component: {fileID: 6374450397318074695}
+  - component: {fileID: -3052824671249050482}
   m_Layer: 13
   m_Name: Hexagon
   m_TagString: Untagged
@@ -1187,28 +1187,6 @@ MonoBehaviour:
   HitAnythingEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1837019927025062577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8235257391962716359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac10c73c4821bc42b401b8a25633f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  stats: {fileID: 11400000, guid: 0f21a6e0292a0d14e853b55f642fd6a3, type: 2}
 --- !u!114 &2733455325493403869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,7 +1215,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1837019927025062577}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
         m_MethodName: InitWithStats
         m_Mode: 1
@@ -1296,3 +1274,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &-3052824671249050482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235257391962716359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb65402003f1e6a4e9eca4d7a8085646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 0f21a6e0292a0d14e853b55f642fd6a3, type: 2}

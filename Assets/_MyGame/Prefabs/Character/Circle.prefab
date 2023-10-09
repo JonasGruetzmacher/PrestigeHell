@@ -25,10 +25,10 @@ GameObject:
   - component: {fileID: 1020061562776848906}
   - component: {fileID: 1020061562776848905}
   - component: {fileID: 1020061562776848911}
-  - component: {fileID: -1941023380372955060}
   - component: {fileID: 6449525493181960736}
   - component: {fileID: 3538991130523731186}
   - component: {fileID: 431325397121223881}
+  - component: {fileID: 4045517633355478162}
   m_Layer: 13
   m_Name: Circle
   m_TagString: Untagged
@@ -668,28 +668,6 @@ MonoBehaviour:
   HitAnythingEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-1941023380372955060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1020061562776848954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac10c73c4821bc42b401b8a25633f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  stats: {fileID: 11400000, guid: b230869abb61d6e4fb99713bdc7b78b6, type: 2}
 --- !u!114 &6449525493181960736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +696,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -1941023380372955060}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
         m_MethodName: InitWithStats
         m_Mode: 1
@@ -777,6 +755,19 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: 12e97b4f8c14917478fb5ff38cd7aa86, type: 2}
   triggerType: 4
   killedCharacter: {fileID: 11400000, guid: ba0cee0d70c957140a9626958f81d723, type: 2}
+--- !u!114 &4045517633355478162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020061562776848954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb65402003f1e6a4e9eca4d7a8085646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: b230869abb61d6e4fb99713bdc7b78b6, type: 2}
 --- !u!1 &5376448862748656275
 GameObject:
   m_ObjectHideFlags: 0

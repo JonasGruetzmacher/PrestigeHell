@@ -9818,7 +9818,6 @@ GameObject:
   - component: {fileID: 114184457958384624}
   - component: {fileID: 114495819129293066}
   - component: {fileID: 114171358364461030}
-  - component: {fileID: 8885699076330287526}
   - component: {fileID: -6224061936224525526}
   - component: {fileID: -5258126964115623124}
   - component: {fileID: 3679480068751948616}
@@ -9826,6 +9825,7 @@ GameObject:
   - component: {fileID: -5738589257591276862}
   - component: {fileID: 205502483994725954}
   - component: {fileID: -3916115463051764612}
+  - component: {fileID: -8145701803140539431}
   m_Layer: 10
   m_Name: Koala
   m_TagString: Player
@@ -10143,28 +10143,6 @@ MonoBehaviour:
   TargetDamageResistanceProcessor: {fileID: 0}
   TargetAnimator: {fileID: 0}
   DisableAnimatorLogs: 1
---- !u!114 &8885699076330287526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498750440386690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac10c73c4821bc42b401b8a25633f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  stats: {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
 --- !u!114 &-6224061936224525526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10395,6 +10373,19 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
+--- !u!114 &-8145701803140539431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498750440386690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb65402003f1e6a4e9eca4d7a8085646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
 --- !u!1 &1561075265052736
 GameObject:
   m_ObjectHideFlags: 0

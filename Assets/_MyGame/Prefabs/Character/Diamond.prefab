@@ -303,11 +303,11 @@ GameObject:
   - component: {fileID: 3238175753234564922}
   - component: {fileID: 3238175753234564879}
   - component: {fileID: 3238175753234564872}
-  - component: {fileID: 5172290317766372683}
   - component: {fileID: 8887539838340013863}
   - component: {fileID: 7390819331110626344}
   - component: {fileID: 490705009293487805}
   - component: {fileID: 1537409446451178623}
+  - component: {fileID: -1656680359273311588}
   m_Layer: 13
   m_Name: Diamond
   m_TagString: Untagged
@@ -819,28 +819,6 @@ MonoBehaviour:
   HitAnythingEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5172290317766372683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3238175753234564925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac10c73c4821bc42b401b8a25633f21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityStartSfx: {fileID: 0}
-  AbilityInProgressSfx: {fileID: 0}
-  AbilityStopSfx: {fileID: 0}
-  AbilityStartFeedbacks: {fileID: 0}
-  AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
-  BlockingMovementStates: 
-  BlockingConditionStates: 
-  BlockingWeaponStates: 
-  stats: {fileID: 11400000, guid: aba9b2db12c0f85469941d1d496a3bcb, type: 2}
 --- !u!114 &8887539838340013863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,18 +838,6 @@ MonoBehaviour:
       - m_Target: {fileID: 385824132713618986}
         m_TargetAssemblyTypeName: DangerText, Assembly-CSharp
         m_MethodName: SetDangerText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5172290317766372683}
-        m_TargetAssemblyTypeName: CharacterStats, Assembly-CSharp
-        m_MethodName: InitWithStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -998,6 +964,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.27
+--- !u!114 &-1656680359273311588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238175753234564925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb65402003f1e6a4e9eca4d7a8085646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: aba9b2db12c0f85469941d1d496a3bcb, type: 2}
 --- !u!1 &7099212096544515890
 GameObject:
   m_ObjectHideFlags: 0

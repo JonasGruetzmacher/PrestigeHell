@@ -43,7 +43,7 @@ namespace LeroGames.PrestigeHell
                 return GetUpgradedValue(stat, value);
             else
             {
-                Debug.LogError($"Stat {stat} not found in {this.name}");
+                Debug.Log($"Stat {stat} not found in {this.name}");
                 return 0;
             }
         }
