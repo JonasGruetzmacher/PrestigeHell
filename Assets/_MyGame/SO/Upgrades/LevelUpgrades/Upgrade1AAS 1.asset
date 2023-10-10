@@ -97,7 +97,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  id: 
+  id: levelUpgradeAttackSpeed2
   upgradeName: AS
   shortDescription: 
   longDescription: 

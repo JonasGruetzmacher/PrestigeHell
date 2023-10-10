@@ -37,7 +37,6 @@ namespace LeroGames.PrestigeHell
             {
                 blockUpgrade.BlockUpgrade();
             }
-            isUnlocked = true;
         }
 
         public override void ForceUpgrade(int amount)
@@ -55,7 +54,6 @@ namespace LeroGames.PrestigeHell
                     blockUpgrade.BlockUpgrade();
                 }
             }
-            isUnlocked = true;
         }
 
         public override void ResetUpgrade()

@@ -159,10 +159,10 @@ RectTransform:
   m_Father: {fileID: 138372376}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960.00006, y: -540}
+  m_SizeDelta: {x: 920.0001, y: 628.5714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15134441
 MonoBehaviour:
@@ -449,6 +449,47 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: bcfa63b2579e30845bd1c547f280613d,
         type: 2}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClickEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ec043dbe1e746c84db4ccd960e78c4a1,
+        type: 2}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1997970532}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LeroGames.PrestigeHell.ButtonViewModel, Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495333783145173136, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2782596845690783785, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -479,6 +520,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3375099256194660620, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: tooltipInformationObject
+      value: 
+      objectReference: {fileID: 11400000, guid: f777e2b57b14a844b8f8210dcb331ea2,
+        type: 2}
     - target: {fileID: 3478361431628516264, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_fontSize
@@ -493,6 +540,53 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973000377430279890, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: tooltipInformationObject
+      value: 
+      objectReference: {fileID: 11400000, guid: bcfa63b2579e30845bd1c547f280613d,
+        type: 2}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClickEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ec043dbe1e746c84db4ccd960e78c4a1,
+        type: 2}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2086242357}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LeroGames.PrestigeHell.ButtonViewModel, Project
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292946997212426062, guid: 7593bc00af576c044928f1f2c90eaaaa,
+        type: 3}
+      propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5292946997961349317, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
@@ -542,32 +636,32 @@ PrefabInstance:
     - target: {fileID: 5979541224525725180, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5979541224525725180, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5979541224525725180, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 603.33344
       objectReference: {fileID: 0}
     - target: {fileID: 5979541224525725180, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5979541224525725180, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 618.33344
       objectReference: {fileID: 0}
     - target: {fileID: 5979541224525725180, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 5982832533489303809, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
@@ -598,38 +692,34 @@ PrefabInstance:
     - target: {fileID: 8575281912045524264, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8575281912045524264, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8575281912045524264, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 301.66672
       objectReference: {fileID: 0}
     - target: {fileID: 8575281912045524264, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8575281912045524264, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 165.83336
       objectReference: {fileID: 0}
     - target: {fileID: 8575281912045524264, guid: 7593bc00af576c044928f1f2c90eaaaa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7593bc00af576c044928f1f2c90eaaaa, type: 3}
 --- !u!1 &54800794
 GameObject:
@@ -878,6 +968,7 @@ Transform:
   m_Children:
   - {fileID: 2068642263}
   - {fileID: 479868558}
+  - {fileID: 229982567}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2594,6 +2685,147 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 54, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &229982566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229982567}
+  - component: {fileID: 229982570}
+  - component: {fileID: 229982569}
+  - component: {fileID: 229982568}
+  - component: {fileID: 229982571}
+  m_Layer: 0
+  m_Name: LevelUpController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229982567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229982566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 65866402}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229982568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229982566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8843644fcb9c06f4795bbc580cb1cad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 938940794fe92c64a802e1f102a366b6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 229982570}
+        m_TargetAssemblyTypeName: LeroGames.PrestigeHell.LevelUpPanelController,
+          Assembly-CSharp
+        m_MethodName: OnLevelReset
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &229982569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229982566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8843644fcb9c06f4795bbc580cb1cad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ec043dbe1e746c84db4ccd960e78c4a1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 229982570}
+        m_TargetAssemblyTypeName: LeroGames.PrestigeHell.LevelUpPanelController,
+          Assembly-CSharp
+        m_MethodName: OnApplyLevelUpgrade
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &229982570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229982566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eaa5eb10ac8aec489495cd8f9d1d3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelUpgradesInit:
+    keys:
+    - {fileID: 11400000, guid: f777e2b57b14a844b8f8210dcb331ea2, type: 2}
+    - {fileID: 11400000, guid: bcfa63b2579e30845bd1c547f280613d, type: 2}
+    values:
+    - {fileID: 1997970532}
+    - {fileID: 2086242357}
+--- !u!114 &229982571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229982566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8843644fcb9c06f4795bbc580cb1cad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 61d7175e9fb14154ca37fccf0ae49249, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 229982570}
+        m_TargetAssemblyTypeName: LeroGames.PrestigeHell.LevelUpPanelController,
+          Assembly-CSharp
+        m_MethodName: OnUpdateUI
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &236143753
 GameObject:
   m_ObjectHideFlags: 0
@@ -10101,10 +10333,10 @@ RectTransform:
   m_Father: {fileID: 138372376}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960.00006, y: -162.85715}
+  m_SizeDelta: {x: 920.0001, y: 125.71429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164619172
 MonoBehaviour:
@@ -10546,7 +10778,7 @@ PrefabInstance:
     - target: {fileID: 2840229993283258654, guid: ebd2934ccd188834badddaa3c38961be,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7518924327023662997, guid: ebd2934ccd188834badddaa3c38961be,
         type: 3}
@@ -17408,6 +17640,7 @@ MonoBehaviour:
   enemySelectionPanel: {fileID: 789224936025206095}
   levelUpButton: {fileID: 2782596845259976102}
   enemySelectionButton: {fileID: 2782596846063225959}
+  onUpdateUI: {fileID: 11400000, guid: 61d7175e9fb14154ca37fccf0ae49249, type: 2}
   XPBar: {fileID: 993836453}
   dangerBar: {fileID: 1346602455}
   resourceBars:
@@ -17476,10 +17709,10 @@ RectTransform:
   m_Father: {fileID: 138372376}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960.00006, y: -917.1428}
+  m_SizeDelta: {x: 920.0001, y: 125.71429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1960668231
 MonoBehaviour:
@@ -17548,27 +17781,18 @@ MonoBehaviour:
   MaxFrequency: 2.5
   CanSpawnButton: 0
   groupSpawnRadius: 1
---- !u!1 &1997970524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2782596845690783790, guid: 7593bc00af576c044928f1f2c90eaaaa,
+--- !u!114 &1997970532 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7885488896509805061, guid: 7593bc00af576c044928f1f2c90eaaaa,
     type: 3}
   m_PrefabInstance: {fileID: 35011875}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1997970528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997970524}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99634edca86565b4a96a0b7b261787f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a690ec86084969499dff983875a4186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simpleTooltipStyle: {fileID: 11400000, guid: ddf4c39a3aa72ee499f48ca1d91f8bfd, type: 2}
-  infoLeft: Hello
-  infoRight: 
 --- !u!1 &2007226368
 GameObject:
   m_ObjectHideFlags: 0
@@ -18295,6 +18519,18 @@ MonoBehaviour:
   simpleTooltipStyle: {fileID: 11400000, guid: ddf4c39a3aa72ee499f48ca1d91f8bfd, type: 2}
   infoLeft: Hello
   infoRight: 
+--- !u!114 &2086242357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 485128469239725531, guid: 7593bc00af576c044928f1f2c90eaaaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 35011875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086242348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a690ec86084969499dff983875a4186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2096357686
 GameObject:
   m_ObjectHideFlags: 0
@@ -20047,7 +20283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1648743512687996
 GameObject:
   m_ObjectHideFlags: 0
@@ -20297,8 +20533,8 @@ GameObject:
   - component: {fileID: 225936217350978422}
   - component: {fileID: 114048064583974220}
   - component: {fileID: 114801472781600414}
-  - component: {fileID: 114411659808553778}
   - component: {fileID: 114274123133497708}
+  - component: {fileID: 225936217350978423}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -21662,8 +21898,8 @@ MonoBehaviour:
   ButtonReleased:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114411659808553778}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 225936217350978423}
+        m_TargetAssemblyTypeName: LeroGames.PrestigeHell.MyLevelSelector, Project
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -23847,21 +24083,6 @@ MonoBehaviour:
   ShortDescription: {fileID: 114109875140154760}
   Description: {fileID: 114905204166870302}
   Quantity: {fileID: 114137131171153980}
---- !u!114 &114411659808553778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799005633759380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 316ab92be1a09414daadf97f5d5d2a77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelName: 
-  DoNotUseLevelManager: 0
-  DestroyPersistentCharacter: 0
 --- !u!114 &114420330946912212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29830,6 +30051,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &225936217350978423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799005633759380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0371d3dcd127846b2d7c338c51fa50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelName: 
+  DoNotUseLevelManager: 0
+  DestroyPersistentCharacter: 0
+  onSave: {fileID: 11400000, guid: 956bdb3049e2621439fcdb4ad45f5e7b, type: 2}
+  onRespawnStarted: {fileID: 11400000, guid: 938940794fe92c64a802e1f102a366b6, type: 2}
 --- !u!225 &225988283694330612
 CanvasGroup:
   m_ObjectHideFlags: 0

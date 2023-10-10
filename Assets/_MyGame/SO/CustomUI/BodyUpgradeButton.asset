@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312b5472e2c352a4db9f2dcfb37e28bf, type: 3}
-  m_Name: UpgradeButtonView
+  m_Script: {fileID: 11500000, guid: dda589c06a13cf74181f02aff666e109, type: 3}
+  m_Name: BodyUpgradeButton
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 0
@@ -21,10 +21,5 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  themeSO: {fileID: 11400000, guid: 3f7aca7c8a4390c438cb49e454d30265, type: 2}
-  padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
-  spacing: 15
+  font: {fileID: 11400000, guid: 2f490f72b6ed6ae4d8b31cee2cac3de7, type: 2}
+  fontSize: 15

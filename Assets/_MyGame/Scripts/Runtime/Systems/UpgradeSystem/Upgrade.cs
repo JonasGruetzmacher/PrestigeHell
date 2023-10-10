@@ -6,16 +6,12 @@ using LeroGames.Tools;
 
 namespace LeroGames.PrestigeHell
 {
-    public abstract class Upgrade : SerializedScriptableObject, ITooltipInformation
+    public abstract class Upgrade : BaseSO, ITooltipInformation
     {
-        public string id;
-        public string upgradeName;
-        public string shortDescription;
-        public string longDescription;
+        public bool isPayed = true;
+        [ShowIf("isPayed")]
         public Dictionary<ResourceType, float> upgradeCost = new Dictionary<ResourceType, float>();
         public List<Upgrade> blockedUpgrades = new List<Upgrade>();
-        public bool isUnlocked = false;
-        public bool isBlocked = false;
         public int upgradeLimit = 1;
         public event Action<Upgrade> upgradeStateChanged;
         public event Action<Upgrade> upgradeCompleted;
@@ -33,13 +29,11 @@ namespace LeroGames.PrestigeHell
 
         public virtual void Unlock(bool unlock = true)
         {
-            isUnlocked = unlock;
             upgradeStateChanged?.Invoke(this);
         }
 
         public virtual void BlockUpgrade()
         {
-            isBlocked = true;
             upgradeStateChanged?.Invoke(this);
         }
 
@@ -67,8 +61,6 @@ namespace LeroGames.PrestigeHell
         public virtual void ResetUpgrade()
         {
             currentUpgradeCount = 0;
-            isUnlocked = false;
-            isBlocked = false;
             upgradeReset?.Invoke(this);
         }
 
