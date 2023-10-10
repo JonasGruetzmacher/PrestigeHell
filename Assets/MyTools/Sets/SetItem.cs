@@ -4,18 +4,19 @@ using UnityEngine;
 
 namespace LeroGames.Tools
 {
-    public class SetItem : MonoBehaviour
+    public class SetItem<T> : MonoBehaviour
     {
-        public RuntimeSet Set;
+        public RuntimeSet<T> Set;
+        T Item;
 
         private void OnEnable()
         {
-            Set.Add(gameObject);
+            Set.Add(Item);
         }
 
         private void OnDisable()
         {
-            Set.Remove(gameObject);
+            Set.Remove(Item);
         }
     }
 }
