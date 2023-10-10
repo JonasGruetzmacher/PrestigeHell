@@ -6,6 +6,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using System.Linq;
+using log4net.Core;
 
 namespace LeroGames.PrestigeHell
 {
@@ -117,6 +118,25 @@ namespace LeroGames.PrestigeHell
                     return null;
                 default:
                     return stat.ToString();
+            }
+        }
+
+        public static CButton.ButtonState ToButtonState(this LevelUpgrade.LevelUpgradeState state)
+        {
+            switch (state)
+            {
+                case LevelUpgrade.LevelUpgradeState.Blocked:
+                    return CButton.ButtonState.Blocked;
+                case LevelUpgrade.LevelUpgradeState.Hidden:
+                    return CButton.ButtonState.Hidden;
+                case LevelUpgrade.LevelUpgradeState.Pickable:
+                    return CButton.ButtonState.Activated;
+                case LevelUpgrade.LevelUpgradeState.Selected:
+                    return CButton.ButtonState.Selected;
+                case LevelUpgrade.LevelUpgradeState.Shown:
+                    return CButton.ButtonState.Disabled;
+                default:
+                    return CButton.ButtonState.Hidden;
             }
         }
 
@@ -255,13 +275,7 @@ namespace LeroGames.PrestigeHell
         LevelUp = 1,
     }
 
-    public enum LevelUpgradeState
-    {
-        Locked = 0,
-        Unlocked = 1,
-        Selected = 2,
-        Disabled = 3,
-    }
+
 
     public enum Style
     {

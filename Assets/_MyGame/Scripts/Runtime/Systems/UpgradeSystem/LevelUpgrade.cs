@@ -4,93 +4,111 @@ using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Events;
 using LeroGames.Tools;
+using log4net.Core;
+using MoreMountains.TopDownEngine;
 // using LeroGames.StatSystem;
 
 namespace LeroGames.PrestigeHell
 {
-    public class LevelUpgrade : MonoBehaviour, MMEventListener<GameEvent>, IUpgrade, ITooltipInformation
+    public class LevelUpgrade
     {
-        [field: SerializeField] public Upgrade upgrade {get; private set;}
-
-        public LevelUpgradeState state { get; private set; }
-        public UnityEvent upgradeStateChanged;
-
-        [SerializeField] private int levelRequirement;
         
-        [SerializeField] private bool alreadyGotUnlocked = false;
-
-        public void SetButtonState(LevelUpgradeState state)
-        {
-            if (state == LevelUpgradeState.Unlocked && !alreadyGotUnlocked)
-            {
-                alreadyGotUnlocked = true;
-            }
-            this.state = state;
-            upgradeStateChanged?.Invoke();
-        }
-
-        public void OnClick()
-        {
-            upgrade.DoUpgrade();
-            SetButtonState(LevelUpgradeState.Selected);
-        }
-
-        private void OnUpgradeStateChanged(Upgrade upgrade)
-        {
-            CheckState();
-        }
+        public LevelUpgradeSO levelUpgradeSO { get; private set; }
         
-        private void CheckState()
-        {
-            if (upgrade.isUnlocked)
-            {
-                Debug.Log("Upgrade is unlocked");
-                return;
-            }
-            if (upgrade.isBlocked)
-            {
-                Debug.Log("Upgrade is blocked");
-                SetButtonState(LevelUpgradeState.Disabled);
-                return;
-            }
-            if (ResourcesManager.Instance.GetResourceAmount(ResourceType.Level) >= levelRequirement)
-            {
-                Debug.Log("Level requirement met");
-                SetButtonState(LevelUpgradeState.Unlocked);
-                return;
-            }
-            Debug.Log("Level requirement not met");
-            SetButtonState(LevelUpgradeState.Locked);
+        private bool alreadyGotUnlocked = false;
+        private bool blocked = false;
+        private bool selected = false;
 
+
+        public enum LevelUpgradeState
+        {
+            Hidden = 0,
+            Shown = 1,
+            Pickable = 4,
+            Selected = 2,
+            Blocked = 3,
+            Unassigned = 100
         }
 
-        public void OnMMEvent(GameEvent eventType)
+        public LevelUpgrade(LevelUpgradeSO levelUpgradeSO)
         {
-            if (eventType.eventName == Eventname.LevelUp)
+            this.levelUpgradeSO = levelUpgradeSO;
+            alreadyGotUnlocked = false;
+        }
+
+        public string GetShortDescription()
+        {
+            if (blocked)
             {
-                CheckState();
+                return "Blocked";
+            }
+            if (selected)
+            {
+                return "Selected";
+            }
+            return levelUpgradeSO.upgradeName;
+        }
+
+        public void SelectLevelUpgrade()
+        {
+            selected = true;
+            foreach (var upgrade in levelUpgradeSO.upgradesToUnlock)
+            {
+                Debug.Log("Applying upgrade " + upgrade.upgradeName);
+                upgrade.ForceUpgrade();
             }
         }
+
+        public void ResetLevelUpgrade()
+        {
+            selected = false;
+            blocked = false;
+            foreach (var upgrade in levelUpgradeSO.upgradesToUnlock)
+            {
+                upgrade.ResetUpgrade();
+            }
+        }
+
+        public void BlockLevelUpgrade()
+        {
+            blocked = true;
+        }
+
 
         public void GetTooltipInformation(out string infoLeft, out string infoRight)
         {
-            upgrade.GetTooltipInformation(out infoLeft, out infoRight);
-            infoRight += string.Format("Level {0}", levelRequirement);
+            levelUpgradeSO.GetTooltipInformation(out infoLeft, out infoRight);
+            infoRight += string.Format("Level {0}", levelUpgradeSO.levelRequirement);
         }
 
-        private void OnEnable()
+        public LevelUpgradeState GetLevelUpgradeState()
         {
-            CheckState();
-            upgrade.upgradeStateChanged += OnUpgradeStateChanged;
-            // upgrade.upgradeReset += ResetUpgrade;
-            this.MMEventStartListening<GameEvent>();
+            if (blocked)
+            {
+                return LevelUpgradeState.Blocked;
+            }
+            if (selected)
+            {
+                return LevelUpgradeState.Selected;
+            }
+            if (ResourcesManager.Instance.GetResourceAmountInt(ResourceType.Level) >= levelUpgradeSO.levelRequirement)
+            {
+                alreadyGotUnlocked = true;
+                return LevelUpgradeState.Pickable;
+            }
+            if (alreadyGotUnlocked)
+            {
+                return LevelUpgradeState.Shown;
+            }
+            return LevelUpgradeState.Hidden;
+
         }
 
-        private void OnDisable()
+        public void Reset()
         {
-            upgrade.upgradeStateChanged -= OnUpgradeStateChanged;
-            // upgrade.upgradeReset -= ResetUpgrade;
-            this.MMEventStopListening<GameEvent>();
+            alreadyGotUnlocked = false;
+            blocked = false;
+            selected = false;
         }
 
     }

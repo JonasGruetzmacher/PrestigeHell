@@ -9,7 +9,23 @@ namespace LeroGames.PrestigeHell
         public CButton button;
 
         [Header("Event")]
-        public LeroGames.Tools.GameEvent onClick;
+        public Tools.GameEvent onClick;
+
+        public void OnButtonStateChanged(Component sender, object data)
+        {
+            if (data is CButton.ButtonState buttonState)
+            {
+                button.SetButtonState(buttonState);
+            }
+        }
+
+        public void OnTextUpdate(Component sender, object data)
+        {
+            if (data is string text)
+            {
+                button.SetText(text);
+            }
+        }
 
         private void OnEnable()
         {

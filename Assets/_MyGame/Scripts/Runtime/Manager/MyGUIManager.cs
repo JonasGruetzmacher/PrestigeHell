@@ -20,6 +20,8 @@ namespace LeroGames.PrestigeHell
 		public GameObject levelUpButton;
 		public GameObject enemySelectionButton;
 
+		[Header("Events")]
+		[SerializeField] private Tools.GameEvent onUpdateUI;
 		public MMProgressBar XPBar;
 		public MMProgressBar dangerBar;
 		[SerializeField] private MMSerializableDictionary<ResourceType, MMProgressBar> resourceBars = new MMSerializableDictionary<ResourceType, MMProgressBar>();
@@ -106,6 +108,7 @@ namespace LeroGames.PrestigeHell
 				{
 					levelUpPanel.SetActive(state);
 					EventSystem.current.sendNavigationEvents = state;
+					onUpdateUI.Raise(this, "LevelUpPanel");
 				}
 		}
 

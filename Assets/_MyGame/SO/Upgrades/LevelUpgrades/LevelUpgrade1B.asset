@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9aa4ab6740f0048a045eb4ff76e396, type: 3}
+  m_Name: LevelUpgrade1B
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  id: levelUpgrade1B
+  upgradeName: B
+  levelRequirement: 1
+  upgradesToUnlock:
+  - {fileID: 11400000, guid: 33c3778254f77ae4096c6562bf48855a, type: 2}
+  getBlockedBy:
+  - {fileID: 11400000, guid: f777e2b57b14a844b8f8210dcb331ea2, type: 2}

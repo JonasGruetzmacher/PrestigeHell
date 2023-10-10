@@ -66,6 +66,10 @@ namespace LeroGames.PrestigeHell
                     upgrade.upgradeCompleted += OnUpgradeCompleted;
                 }
             }
+            foreach (var upgrade in levelUpgrades)
+            {
+                upgrade.ResetUpgrade();
+            }
 
             UpdateUI();
         }

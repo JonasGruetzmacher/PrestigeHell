@@ -8,10 +8,10 @@ namespace LeroGames.PrestigeHell
     public abstract class CUIComponent : MonoBehaviour
     {
         public CThemeSO overrideThemeSO;
-        private void Awake()
-        {
-            Init();
-        }
+        // private void Awake()
+        // {
+        //     Init();
+        // }
 
         public abstract void Setup();
         public abstract void Configure();

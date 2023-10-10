@@ -39,6 +39,18 @@ namespace LeroGames.PrestigeHell
                 case Stat.XPGain:
                     ApplyXPGain(value, objectToApplyTo, stats);
                     break;
+                case Stat.attackSpeed:
+                    ApplyAttackSpeed(value, objectToApplyTo, stats);
+                    break;
+            }
+        }
+
+        private static void ApplyAttackSpeed(float value, GameObject objectToApplyTo, Stats stats)
+        {
+            objectToApplyTo.TryGetComponent(out ProjectileWeapon weapon);
+            if (weapon != null)
+            {
+                weapon.TimeBetweenUses = 1f/value;
             }
         }
 

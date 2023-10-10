@@ -16,8 +16,6 @@ namespace LeroGames.PrestigeHell
         public List<Upgrade> blockedUpgrades = new List<Upgrade>();
         public bool isUnlocked = false;
         public bool isBlocked = false;
-        // public MMSerializableDictionary<ResourceType, float> upgradeCost = new MMSerializableDictionary<ResourceType, float>();
-        // public MMSerializableDictionary<ResourceType, AnimationCurve> upgradeCostCurve = new MMSerializableDictionary<ResourceType, AnimationCurve>();
         public int upgradeLimit = 1;
         public event Action<Upgrade> upgradeStateChanged;
         public event Action<Upgrade> upgradeCompleted;
@@ -26,12 +24,6 @@ namespace LeroGames.PrestigeHell
         public int currentUpgradeCount = 0;
         public Dictionary<ResourceType, float> GetNextUpgradeCost()
         {
-            // List<ResourceAmount> nextUpgradeCost = new List<ResourceAmount>();
-            // foreach (var resource in upgradeCostCurve)
-            // {
-            //     nextUpgradeCost.Add(new ResourceAmount(resource.Key, (int)resource.Value.Evaluate(currentUpgradeCount)));
-            // }
-            // return nextUpgradeCost;
             return upgradeCost;
         }
 
