@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9396dc579b91f20488b6e5f5accd0c9a, type: 3}
   m_Name: GroupSpawnRadius
   m_EditorClassIdentifier: 
-  markedString: Group Spawn Radius
+  markedString: '!Group Spawn Radius'

@@ -32,11 +32,7 @@ namespace LeroGames.PrestigeHell
             ApplyUpgrade();
             foreach (var unitToUpgrade in unitsToUpgrade)
             {
-                unitToUpgrade.AddUpgrade(this);
-            }
-            foreach (var blockUpgrade in blockedUpgrades)
-            {
-                blockUpgrade.BlockUpgrade();
+                unitToUpgrade?.AddUpgrade(this);
             }
         }
 
@@ -48,11 +44,7 @@ namespace LeroGames.PrestigeHell
                 ApplyUpgrade();
                 foreach (var unitToUpgrade in unitsToUpgrade)
                 {
-                    unitToUpgrade.AddUpgrade(this);
-                }
-                foreach (var blockUpgrade in blockedUpgrades)
-                {
-                    blockUpgrade.BlockUpgrade();
+                    unitToUpgrade?.AddUpgrade(this);
                 }
             }
         }
@@ -60,10 +52,10 @@ namespace LeroGames.PrestigeHell
         public override void ResetUpgrade()
         {
             base.ResetUpgrade();
-            foreach (var unitToUpgrade in unitsToUpgrade)
-            {
-                unitToUpgrade.RemoveUpgrade(this);
-            }
+            // foreach (var unitToUpgrade in unitsToUpgrade)
+            // {
+            //     unitToUpgrade.RemoveUpgrade(this);
+            // }
         }
 
         private bool CanPurchase()

@@ -12,7 +12,7 @@ namespace LeroGames.PrestigeHell
         {
             if (!string.IsNullOrEmpty(markedString))
             {
-                return markedString;
+                return string.Format("{0}`", markedString);
             }
             return base.ToString();
         }

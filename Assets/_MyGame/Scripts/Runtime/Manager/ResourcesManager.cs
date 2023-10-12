@@ -15,7 +15,9 @@ namespace LeroGames.PrestigeHell
         public LeroGames.Tools.GameEvent OnResourceChangeEvent;
 
         [SerializeField] private AnimationCurve levelCurve;
-        [SerializeField] FloatVariable xpMultiplier;
+        [SerializeField] private FloatVariable xpMultiplier;
+        [SerializeField] private StatType levelPointGain;
+
 
         private bool isQuitting = false;
 
@@ -185,8 +187,8 @@ namespace LeroGames.PrestigeHell
             }
             if (data is CharacterInformationSO characterInformation)
             {
-                AddResource(ResourceType.LevelPoints, 1);
-                Debug.Log("Needs Implementation");
+                AddResource(ResourceType.LevelPoints, characterInformation.stats.GetStat(levelPointGain));
+                // Debug.Log("Needs Implementation");
             }
         }
 

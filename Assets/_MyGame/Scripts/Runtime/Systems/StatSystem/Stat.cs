@@ -57,6 +57,8 @@ namespace LeroGames.PrestigeHell
         [Button]
         public void Initialize()
         {
+            if (StatType == null)
+                return;
             if (BaseValue == null) 
             {
                 TryFindBaseValue();

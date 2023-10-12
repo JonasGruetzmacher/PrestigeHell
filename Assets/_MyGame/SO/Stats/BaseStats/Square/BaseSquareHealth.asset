@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BaseSquareHealth
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  Value: 20
+  Value: 10

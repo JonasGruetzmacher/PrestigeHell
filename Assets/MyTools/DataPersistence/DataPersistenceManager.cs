@@ -16,6 +16,7 @@ namespace LeroGames.Tools
         [SerializeField] private string fileName = "gameData.json";
         [SerializeField] private float autoSaveInterval = 60f;
 
+        [ReadOnly, ShowInInspector]
         private GameData gameData;
         private List<IDataPersistence> dataPersistenceObjects;
         private FileDataHandler fileDataHandler;

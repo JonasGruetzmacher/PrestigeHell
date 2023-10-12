@@ -9754,7 +9754,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  xpMultiplier: {fileID: 0}
+  xpMultiplier: {fileID: 11400000, guid: e586ee34d85fc6e4f9f8096ecde7ccc5, type: 2}
+  levelPointGain: {fileID: 11400000, guid: 9f0271872514dde48afb5e737e9e59e4, type: 2}
 --- !u!114 &1081167942
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: cf653ce48bbc1d641a5288608efa638a, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -23,12 +24,12 @@ MonoBehaviour:
     SerializationNodes:
     - Name: upgradeCost
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[ResourceType, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.ResourceType,
+        Project],[System.Single, mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ResourceType, Assembly-CSharp]],
-        mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[LeroGames.PrestigeHell.ResourceType,
+        Project]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -61,18 +62,12 @@ MonoBehaviour:
       Data: 
     - Name: upgradeToApply
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
+      Data: 2|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.StatType,
+        Project],[System.Single, mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
+      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[LeroGames.PrestigeHell.StatType,
+        Project]], mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -83,11 +78,11 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: $k
-      Entry: 3
-      Data: 2
+      Entry: 10
+      Data: 0
     - Name: $v
       Entry: 4
-      Data: 50
+      Data: 20
     - Name: 
       Entry: 8
       Data: 
@@ -99,14 +94,11 @@ MonoBehaviour:
       Data: 
   id: upgradeDamageMultiplier2
   upgradeName: Damage Multiplier
-  shortDescription: +50% Damage
+  shortDescription: +20% Damage
   longDescription: 
-  blockedUpgrades: []
-  isUnlocked: 1
-  isBlocked: 0
+  isPayed: 1
   upgradeLimit: 1
   currentUpgradeCount: 0
   unitsToUpgrade:
-  - {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
   - {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   isPercentageUpgrade: 1

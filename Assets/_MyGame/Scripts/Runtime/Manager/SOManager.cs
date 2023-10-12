@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static LeroGames.Tools.HelperFunctions;
+using LeroGames.Tools;
 
 namespace LeroGames.PrestigeHell
 {
@@ -17,8 +18,12 @@ namespace LeroGames.PrestigeHell
         {
             statsList = GetScriptableObjects<Stats>(statsPath);
             upgradeList = GetScriptableObjects<Upgrade>(upgradePath);
+            List<Stat> upgradedStats = GetScriptableObjects<Stat>("Assets/_MyGame/SO/Stats/UpgradedStats");
 
-
+            foreach (var stat in upgradedStats)
+            {
+                stat.Reset();
+            }
 
             foreach (var upgrade in upgradeList)
             {

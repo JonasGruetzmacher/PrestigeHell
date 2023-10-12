@@ -593,7 +593,6 @@ GameObject:
   - component: {fileID: -460807181019045799}
   - component: {fileID: 4672990670352266084}
   - component: {fileID: -2874120434418095662}
-  - component: {fileID: 4502125463818429952}
   m_Layer: 0
   m_Name: XPOrbTier2
   m_TagString: Untagged
@@ -729,20 +728,7 @@ MonoBehaviour:
   Model: {fileID: 0}
   RequireCharacterComponent: 1
   RequirePlayerType: 1
-  resourceAmount:
-    type: 0
-    amount: 10
+  resourceAmount: {fileID: 11400000, guid: 14bf77ea458ce6a4199004b9c01d7f73, type: 2}
+  resourceType: 0
+  collectRange: {fileID: 11400000, guid: 17536b17dc79ff54c99ac06b83e349e6, type: 2}
   resourceLootEvent: {fileID: 11400000, guid: a75f6809c89faaf4d931d41fbf67c4c8, type: 2}
---- !u!114 &4502125463818429952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5985453685250786793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb65402003f1e6a4e9eca4d7a8085646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}

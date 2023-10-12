@@ -4840,7 +4840,6 @@ GameObject:
   - component: {fileID: 114742650107379586}
   - component: {fileID: 61214810784111820}
   - component: {fileID: 50008530485997898}
-  - component: {fileID: 6475256998532165008}
   m_Layer: 18
   m_Name: Bullet
   m_TagString: Untagged
@@ -4974,7 +4973,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1486318089921324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76891b3b532f84acaaeed44c357bd00c, type: 3}
+  m_Script: {fileID: 11500000, guid: b26221b761f525841a14cc63e0ffaa90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TargetLayerMask:
@@ -5013,6 +5012,7 @@ MonoBehaviour:
   HitAnythingEvent:
     m_PersistentCalls:
       m_Calls: []
+  damageOnTouch: {fileID: 11400000, guid: 2f8d2bb05cc072c41b96d26277c6bb70, type: 2}
 --- !u!114 &114742650107379586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5079,20 +5079,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6475256998532165008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486318089921324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb65402003f1e6a4e9eca4d7a8085646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
-  healthStatType: {fileID: 0}
 --- !u!1 &1493663112626144
 GameObject:
   m_ObjectHideFlags: 0

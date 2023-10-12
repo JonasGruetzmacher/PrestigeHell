@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SquareDamage
   m_EditorClassIdentifier: 
   StatType: {fileID: 11400000, guid: cf653ce48bbc1d641a5288608efa638a, type: 2}
-  BaseValue: {fileID: 0}
-  UpgradedValue: {fileID: 0}
+  BaseValue: {fileID: 11400000, guid: f3d40f59d6ddd8949b1ccedb5b961a89, type: 2}
+  UpgradedValue: {fileID: 11400000, guid: 5647fe3c8170f1446834ee2f0d5ee9fb, type: 2}

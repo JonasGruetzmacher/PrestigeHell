@@ -35,6 +35,7 @@ namespace LeroGames.PrestigeHell
         {
             baseStats.Clear();
             upgradedStats.Clear();
+            appliedUpgrades.Clear();
             if (stats == null)
                 return;
             foreach (var stat in stats)
@@ -81,6 +82,10 @@ namespace LeroGames.PrestigeHell
             return GetBaseStat(statType);
         }
 
+        /// <summary>
+        /// Adds the upgrade to the list of applied upgrades and updates the upgraded stats
+        /// </summary>
+        /// <param name="upgrade"></param>
         public void AddUpgrade(StatsUpgrade upgrade)
         {
             appliedUpgrades.Add(upgrade);
@@ -88,8 +93,15 @@ namespace LeroGames.PrestigeHell
             upgradeApplied?.Invoke(this, upgrade);
         }
 
+
+        /// <summary>
+        /// Removes the upgrade from the list of applied upgrades and updates the upgraded stats
+        /// </summary>
+        /// <param name="upgrade"></param>
         public void RemoveUpgrade(StatsUpgrade upgrade)
         {
+            if (appliedUpgrades == null)
+                return;
             appliedUpgrades.Remove(upgrade);
             UpdateUpgradedStats();
             upgradeApplied?.Invoke(this, null);
@@ -97,6 +109,8 @@ namespace LeroGames.PrestigeHell
 
         private void UpdateUpgradedStats()
         {
+            if (upgradedStats == null)
+                return;
             foreach (var stat in upgradedStats)
             {
                 if (stat.Value == null)
@@ -150,27 +164,8 @@ namespace LeroGames.PrestigeHell
                 if (stat.Key.ToMarkedString() == null)
                     continue;
 
-                // if (stat.Key == Stat.groupSize && IncludesStat(Stat.groupSizeVariance))
-                // {
-                //     infoLeft += string.Format("{0}: {1} - {2}\n", stat.Key.ToMarkedString(), GetStat(stat.Key) - GetStat(Stat.groupSizeVariance), GetStat(stat.Key) + GetStat(Stat.groupSizeVariance));
-                //     continue;
-                // }
                 infoLeft += string.Format("{0}: {1}\n", stat.Key.ToMarkedString(), GetStat(stat.Key).ToString("F2"));
             }
-
-            // foreach (var instanceStat in instanceStats)
-            // {
-            //     if (instanceStat.Key.ToMarkedString() == null)
-            //         continue;
-            //     if (instanceStat.Key == Stat.health && IncludesStat(Stat.healthVariance))
-            //     {
-            //         float minHealth = GetStat(instanceStat.Key) * (1f - GetStat(Stat.healthVariance));
-            //         float maxHealth = GetStat(instanceStat.Key) * (1f + GetStat(Stat.healthVariance));
-            //         infoLeft += string.Format("{0}: {1} - {2}\n", instanceStat.Key.ToMarkedString(), minHealth.ToString("F2"), maxHealth.ToString("F2"));
-            //         continue;
-            //     }
-            //     infoLeft += string.Format("{0}: {1}\n", instanceStat.Key.ToMarkedString(), GetStat(instanceStat.Key).ToString("F2"));
-            // }
         }
 
         private void OnValidate()

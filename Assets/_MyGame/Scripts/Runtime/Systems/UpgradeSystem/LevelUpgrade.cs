@@ -54,7 +54,6 @@ namespace LeroGames.PrestigeHell
             selected = true;
             foreach (var upgrade in levelUpgradeSO.upgradesToUnlock)
             {
-                Debug.Log("Applying upgrade " + upgrade.upgradeName);
                 upgrade.ForceUpgrade();
             }
         }

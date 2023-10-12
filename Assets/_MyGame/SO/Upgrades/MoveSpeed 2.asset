@@ -15,7 +15,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 4a6d76b48742a66449021d391d5fa962, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -23,12 +24,12 @@ MonoBehaviour:
     SerializationNodes:
     - Name: upgradeCost
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[ResourceType, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.ResourceType,
+        Project],[System.Single, mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ResourceType, Assembly-CSharp]],
-        mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[LeroGames.PrestigeHell.ResourceType,
+        Project]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -61,18 +62,12 @@ MonoBehaviour:
       Data: 
     - Name: upgradeToApply
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[Stat, Assembly-CSharp],[System.Single,
-        mscorlib]], mscorlib
+      Data: 2|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.StatType,
+        Project],[System.Single, mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[Stat, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
+      Data: 3|System.Collections.Generic.ObjectEqualityComparer`1[[LeroGames.PrestigeHell.StatType,
+        Project]], mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -83,8 +78,8 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: $k
-      Entry: 3
-      Data: 1
+      Entry: 10
+      Data: 0
     - Name: $v
       Entry: 4
       Data: 10
@@ -101,9 +96,7 @@ MonoBehaviour:
   upgradeName: Move Speed
   shortDescription: +10% Move Speed
   longDescription: 
-  blockedUpgrades: []
-  isUnlocked: 1
-  isBlocked: 0
+  isPayed: 1
   upgradeLimit: 2
   currentUpgradeCount: 0
   unitsToUpgrade:

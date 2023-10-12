@@ -11,13 +11,12 @@ namespace LeroGames.PrestigeHell
         public bool isPayed = true;
         [ShowIf("isPayed")]
         public Dictionary<ResourceType, float> upgradeCost = new Dictionary<ResourceType, float>();
-        public List<Upgrade> blockedUpgrades = new List<Upgrade>();
         public int upgradeLimit = 1;
+        public int currentUpgradeCount = 0;
         public event Action<Upgrade> upgradeStateChanged;
         public event Action<Upgrade> upgradeCompleted;
         public event Action<Upgrade> upgradeApplied;
         public event Action<Upgrade> upgradeReset;
-        public int currentUpgradeCount = 0;
         public Dictionary<ResourceType, float> GetNextUpgradeCost()
         {
             return upgradeCost;
@@ -28,11 +27,6 @@ namespace LeroGames.PrestigeHell
         public abstract void DoUpgrade();
 
         public virtual void Unlock(bool unlock = true)
-        {
-            upgradeStateChanged?.Invoke(this);
-        }
-
-        public virtual void BlockUpgrade()
         {
             upgradeStateChanged?.Invoke(this);
         }

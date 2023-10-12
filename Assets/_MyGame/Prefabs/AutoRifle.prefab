@@ -5051,7 +5051,6 @@ GameObject:
   - component: {fileID: 114251315345146356}
   - component: {fileID: -1654313090729970583}
   - component: {fileID: -4623520595880160839}
-  - component: {fileID: -8650715267726453227}
   m_Layer: 0
   m_Name: AutoRifle
   m_TagString: Untagged
@@ -5085,7 +5084,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1490220044263310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d7ce0b8cf4b34859b9e359283b2e7f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e6cae5b5413e9b449a843aa2586ee21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponName: 
@@ -5161,6 +5160,7 @@ MonoBehaviour:
   ObjectPooler: {fileID: 0}
   SpawnFeedbacks: []
   TestShootButton: 0
+  attackSpeed: {fileID: 11400000, guid: c81bb9e0cd83bd248853e7afbef30560, type: 2}
 --- !u!114 &114137986743622244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5280,19 +5280,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DelayBeforeShootAfterAcquiringTarget: 0.1
   OnlyAutoShootIfOwnerIsIdle: 0
---- !u!114 &-8650715267726453227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490220044263310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb65402003f1e6a4e9eca4d7a8085646, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 375483b05486f5940be2718204eacd08, type: 2}
 --- !u!1 &1806446063217534
 GameObject:
   m_ObjectHideFlags: 0
