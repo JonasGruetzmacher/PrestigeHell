@@ -8,6 +8,7 @@ namespace LeroGames.PrestigeHell
     public class ApplyStatsToObject : MonoBehaviour
     {
         [SerializeField] private Stats stats;
+        [SerializeField] private StatType healthStatType;
 
         protected virtual void Start()
         {
@@ -38,11 +39,11 @@ namespace LeroGames.PrestigeHell
             if(upgrade is StatsUpgrade)
             {
                 var statsUpgrade = upgrade as StatsUpgrade;
-                if (statsUpgrade.upgradeToApply.ContainsKey(Stat.health))
+                if (statsUpgrade.upgradeToApply.ContainsKey(healthStatType))
                 {
                     if (TryGetComponent(out Health health))
                     {
-                        health.ReceiveHealth(statsUpgrade.upgradeToApply[Stat.health], this.gameObject);
+                        health.ReceiveHealth(statsUpgrade.upgradeToApply[healthStatType], this.gameObject);
                     }
                 }
             }

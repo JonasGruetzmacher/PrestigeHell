@@ -746,3 +746,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: da734bd9af6626b4f8d9283926dda86e, type: 2}
+  healthStatType: {fileID: 0}

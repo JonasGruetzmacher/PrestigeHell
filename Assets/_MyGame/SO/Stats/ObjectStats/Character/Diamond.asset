@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575ffb728fdffc340a7f26b13535bdf6, type: 3}
+  m_Name: Diamond
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: statCurves
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[LeroGames.PrestigeHell.StatType,
+        Project],[LeroGames.PrestigeHell.ScalingStat, Project]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[LeroGames.PrestigeHell.StatType,
+        Project]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  stats:
+  - {fileID: 11400000, guid: c0bbc0dab1f70394b9885fc4dcd77e1b, type: 2}
+  - {fileID: 11400000, guid: 0e1adcd9c6f29ca42a7079fbc56bbebe, type: 2}
+  - {fileID: 11400000, guid: 646f5b1405cddcb47bb57d8e5f81c6a5, type: 2}
+  - {fileID: 11400000, guid: 66ae58f736f3f4e44a18d12580afd306, type: 2}
+  - {fileID: 11400000, guid: aef7912a38bc44441a3177b4286661a3, type: 2}
+  - {fileID: 11400000, guid: 05b03b2260322674f800dcef837c2541, type: 2}

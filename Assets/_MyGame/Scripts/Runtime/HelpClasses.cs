@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using System.Linq;
 using log4net.Core;
+using LeroGames.Tools;
 
 namespace LeroGames.PrestigeHell
 {
@@ -89,33 +90,33 @@ namespace LeroGames.PrestigeHell
             return $"{pair.Key}: {pair.Value}";
         }
 
-        public static string ToMarkedString(this Stat stat)
+        public static string ToMarkedString(this StatType stat)
         {
 
-            switch (stat)
+            switch (stat.name)
             {
-                case Stat.health:
+                case "health":
                     return "!Max Health`";
-                case Stat.speed:
-                    return "!Move Speed`";
-                case Stat.touchDamage:
-                    return "!Damage`";
-                case Stat.attackSpeed:
-                    return "!Attack Speed`";
-                case Stat.damageReduction:
-                    return "!Damage Reduction`";
-                case Stat.collectRange:
-                    return "!Collect Range`";
-                case Stat.XPGain:
-                    return "!XP Gain`";
-                case Stat.healthVariance:
-                    return null;
-                case Stat.groupSize:
-                    return "!Group Size`";
-                case Stat.groupSizeVariance:
-                    return null;
-                case Stat.groupSpawnRadius:
-                    return null;
+                // case Stat.speed:
+                //     return "!Move Speed`";
+                // case Stat.touchDamage:
+                //     return "!Damage`";
+                // case Stat.attackSpeed:
+                //     return "!Attack Speed`";
+                // case Stat.damageReduction:
+                //     return "!Damage Reduction`";
+                // case Stat.collectRange:
+                //     return "!Collect Range`";
+                // case Stat.XPGain:
+                //     return "!XP Gain`";
+                // case Stat.healthVariance:
+                //     return null;
+                // case Stat.groupSize:
+                //     return "!Group Size`";
+                // case Stat.groupSizeVariance:
+                //     return null;
+                // case Stat.groupSpawnRadius:
+                //     return null;
                 default:
                     return stat.ToString();
             }

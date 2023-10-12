@@ -9754,7 +9754,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  resourceStats: {fileID: 11400000, guid: ab14a7dfb309810468ecafbc1f1df413, type: 2}
+  xpMultiplier: {fileID: 0}
 --- !u!114 &1081167942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17780,6 +17780,11 @@ MonoBehaviour:
   MinFrequency: 1
   MaxFrequency: 2.5
   CanSpawnButton: 0
+  groupSizeStatType: {fileID: 11400000, guid: 1a0df5b5dd751b14aaa52984906c2167, type: 2}
+  groupSizeVarianceStatType: {fileID: 11400000, guid: 5d50132c8f8aa6349ae5068f170b656f,
+    type: 2}
+  groupSpawnRadiusStatType: {fileID: 11400000, guid: 8925402b8c3bd84479981b3d45ec73fd,
+    type: 2}
   groupSpawnRadius: 1
 --- !u!114 &1997970532 stripped
 MonoBehaviour:

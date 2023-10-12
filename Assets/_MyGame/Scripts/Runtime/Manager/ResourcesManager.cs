@@ -15,7 +15,7 @@ namespace LeroGames.PrestigeHell
         public LeroGames.Tools.GameEvent OnResourceChangeEvent;
 
         [SerializeField] private AnimationCurve levelCurve;
-        [SerializeField] Stats resourceStats;
+        [SerializeField] FloatVariable xpMultiplier;
 
         private bool isQuitting = false;
 
@@ -63,10 +63,9 @@ namespace LeroGames.PrestigeHell
 
         public void AddResource(ResourceType type, float amount)
         {
-            if (resourceStats != null)
+            if (xpMultiplier != null && type == ResourceType.XP)
             {
-                float multiplier = Enum.TryParse(type.ToString() + "Gain", out Stat stat) ? resourceStats.GetStat(stat) : 1;
-                amount *= multiplier;
+                amount *= xpMultiplier.Value;
             }
             resources[type] += amount;
             if(type == ResourceType.LevelPoints)
@@ -186,7 +185,8 @@ namespace LeroGames.PrestigeHell
             }
             if (data is CharacterInformationSO characterInformation)
             {
-                AddResource(ResourceType.LevelPoints, characterInformation.stats.GetStatAsInt(Stat.XPGain) * resourceStats.GetStat(Stat.XPGain));
+                AddResource(ResourceType.LevelPoints, 1);
+                Debug.Log("Needs Implementation");
             }
         }
 

@@ -5092,6 +5092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 775488a9835a3944fa9056a1eaf7b1ac, type: 2}
+  healthStatType: {fileID: 0}
 --- !u!1 &1493663112626144
 GameObject:
   m_ObjectHideFlags: 0

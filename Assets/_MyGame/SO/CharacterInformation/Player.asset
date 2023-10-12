@@ -21,6 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  requiredStats: []
   stats: {fileID: 11400000, guid: 47f6fe37545e89c43bf8c3fccbe68e92, type: 2}
   characterName: Player
   characterSprite: {fileID: 21300000, guid: dc570d0b68875aa468baed8b33c5965b, type: 3}

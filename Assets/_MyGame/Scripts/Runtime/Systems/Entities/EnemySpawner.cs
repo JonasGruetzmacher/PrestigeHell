@@ -11,6 +11,10 @@ namespace LeroGames.PrestigeHell
 {
     public class EnemySpawner : TimedSpawner, MMEventListener<TopDownEngineEvent>
     {
+        [Header("Stat Types")]
+        public StatType groupSizeStatType;
+        public StatType groupSizeVarianceStatType;
+        public StatType groupSpawnRadiusStatType;
         public float groupSpawnRadius = 1f;
 
         [ShowInInspector]
@@ -57,27 +61,27 @@ namespace LeroGames.PrestigeHell
             int groupSize = 1;
             float groupSpawnRadius = 1f;
 
-            nextGameObject.TryGetComponent(out CharacterStats characterStats);
-            if (characterStats != null)
+            nextGameObject.TryGetComponent(out CharacterInformation characterInformation);
+            if (characterInformation != null)
             {
-                Stats stats = characterStats.stats;
+                Stats stats = characterInformation.CharacterInformationSO.stats;
 
-                if (stats.IncludesStat(Stat.groupSize))
+                if (stats.IncludesStat(groupSizeStatType))
                 {
-                    if (stats.IncludesStat(Stat.groupSizeVariance))
+                    if (stats.IncludesStat(groupSizeVarianceStatType))
                     {
-                        int groupSizeVariance = (int)(stats.GetStat(Stat.groupSizeVariance));
+                        int groupSizeVariance = (int)stats.GetStat(groupSizeVarianceStatType);
                         int variance = UnityEngine.Random.Range(-groupSizeVariance, groupSizeVariance+1);
-                        groupSize = (int)(stats.GetStat(Stat.groupSize) + variance);
+                        groupSize = (int)(stats.GetStat(groupSizeStatType) + variance);
                     }
                     else
                     {
-                        groupSize = (int)stats.GetStat(Stat.groupSize);
+                        groupSize = (int)stats.GetStat(groupSizeStatType);
                     }
                 }
-                if (stats.IncludesStat(Stat.groupSpawnRadius))
+                if (stats.IncludesStat(groupSpawnRadiusStatType))
                 {
-                    groupSpawnRadius = stats.GetStat(Stat.groupSpawnRadius);
+                    groupSpawnRadius = stats.GetStat(groupSpawnRadiusStatType);
                 }
                 
             }

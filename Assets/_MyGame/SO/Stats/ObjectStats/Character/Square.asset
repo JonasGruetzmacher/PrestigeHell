@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575ffb728fdffc340a7f26b13535bdf6, type: 3}
+  m_Name: Square
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: statCurves
+      Entry: 6
+      Data: 
+  stats:
+  - {fileID: 11400000, guid: 19ab7d2ef1f7dd045a7efa3b724659d2, type: 2}
+  - {fileID: 11400000, guid: 056f02b1cbb6a4e41b851cd49a88b108, type: 2}
+  - {fileID: 11400000, guid: 3e4a9946779b5c447b54d793d4f831cb, type: 2}
+  - {fileID: 11400000, guid: 1d8ff88d1c594e941aa93649eda5e887, type: 2}

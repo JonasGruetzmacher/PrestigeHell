@@ -18,10 +18,7 @@ namespace LeroGames.PrestigeHell
             statsList = GetScriptableObjects<Stats>(statsPath);
             upgradeList = GetScriptableObjects<Upgrade>(upgradePath);
 
-            foreach (var stats in statsList)
-            {
-                stats.ResetAppliedUpgrades();
-            }
+
 
             foreach (var upgrade in upgradeList)
             {

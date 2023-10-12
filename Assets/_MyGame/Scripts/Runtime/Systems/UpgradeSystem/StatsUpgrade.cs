@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using LeroGames.PrestigeHell;
+using LeroGames.Tools;
 
 namespace LeroGames.PrestigeHell
 {
@@ -11,7 +12,7 @@ namespace LeroGames.PrestigeHell
     public class StatsUpgrade : Upgrade
     {
         public List<Stats> unitsToUpgrade = new List<Stats>();
-        public Dictionary<Stat, float> upgradeToApply = new Dictionary<Stat, float>();
+        public Dictionary<StatType, float> upgradeToApply = new Dictionary<StatType, float>();
         public bool isPercentageUpgrade = false;
 
         [Button]
@@ -31,7 +32,7 @@ namespace LeroGames.PrestigeHell
             ApplyUpgrade();
             foreach (var unitToUpgrade in unitsToUpgrade)
             {
-                unitToUpgrade.UnlockUpgrade(this);
+                unitToUpgrade.AddUpgrade(this);
             }
             foreach (var blockUpgrade in blockedUpgrades)
             {
@@ -47,7 +48,7 @@ namespace LeroGames.PrestigeHell
                 ApplyUpgrade();
                 foreach (var unitToUpgrade in unitsToUpgrade)
                 {
-                    unitToUpgrade.UnlockUpgrade(this);
+                    unitToUpgrade.AddUpgrade(this);
                 }
                 foreach (var blockUpgrade in blockedUpgrades)
                 {
