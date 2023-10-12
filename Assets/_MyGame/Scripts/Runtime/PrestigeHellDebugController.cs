@@ -25,6 +25,7 @@ namespace LeroGames.PrestigeHell
         public static DebugCommand HARD_RESET;
         public static DebugCommand SAVE;
         public static DebugCommand LOAD;
+        public static DebugCommand<string, float> SET_STAT;
 
         protected override void Awake()
         {
@@ -91,6 +92,20 @@ namespace LeroGames.PrestigeHell
 
             SAVE = new DebugCommand("save", "Save game", "save", () => { DataPersistenceManager.instance.SaveGame(); });
             LOAD = new DebugCommand("load", "Load game", "load", () => { DataPersistenceManager.instance.LoadGame(); });
+
+            SET_STAT = new DebugCommand<string, float>("set_stat", "Set stat", "set_stat [stat id] [value]", (id, value) =>
+            {
+                // List<StatSO> stats = Resources.LoadAll<StatSO>("Stats/").ToList();
+                // foreach (StatSO stat in stats)
+                // {
+                //     if (stat.id == id)
+                //     {
+                //         stat.SetValue(value);
+                //         return;
+                //     }
+                // }
+                // Debug.Log("Stat not found");
+            });
 
             commandList = new List<object>
             {
