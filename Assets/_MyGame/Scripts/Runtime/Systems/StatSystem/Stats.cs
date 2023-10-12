@@ -25,11 +25,6 @@ namespace LeroGames.PrestigeHell
         public event Action<Stats, StatsUpgrade> upgradeApplied;
 
 
-        private void Awake()
-        {
-            Initialize();
-        }
-
         [Button]
         public void Initialize()
         {
@@ -186,6 +181,7 @@ namespace LeroGames.PrestigeHell
             {
                 stat.Reset();
             }
+            UpdateUpgradedStats();
         }
 
         [Button]

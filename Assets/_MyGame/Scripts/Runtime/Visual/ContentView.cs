@@ -16,6 +16,7 @@ namespace LeroGames.PrestigeHell
         private Image imageRight;
 
         private HorizontalLayoutGroup horizontalLayoutGroup;
+        private VerticalLayoutGroup verticalLayoutGroup;
 
         public override void Setup()
         {
@@ -23,15 +24,24 @@ namespace LeroGames.PrestigeHell
             imageRight = containerRight.GetComponent<Image>();
 
             horizontalLayoutGroup = GetComponent<HorizontalLayoutGroup>();
+            verticalLayoutGroup = GetComponent<VerticalLayoutGroup>();
         }
 
         public override void Configure()
         {
-            horizontalLayoutGroup.padding = viewSO.padding;
-            horizontalLayoutGroup.spacing = viewSO.spacing;
+            if (horizontalLayoutGroup != null)
+            {
+                horizontalLayoutGroup.padding = viewSO.padding;
+                horizontalLayoutGroup.spacing = viewSO.spacing;
+            }
+            else if (verticalLayoutGroup != null)
+            {
+                verticalLayoutGroup.padding = viewSO.padding;
+                verticalLayoutGroup.spacing = viewSO.spacing;
+            }
 
-            imageLeft.color = viewSO.themeSO.secondary_bg;
-            imageRight.color = viewSO.themeSO.secondary_bg;
+            imageLeft.color = GetThemeSO().secondary_bg;
+            imageRight.color = GetThemeSO().secondary_bg;
         }
     }
 }

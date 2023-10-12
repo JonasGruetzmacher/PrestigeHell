@@ -9951,7 +9951,7 @@ MonoBehaviour:
   CharacterAnimator: {fileID: 95179347267985190}
   UseDefaultMecanim: 1
   RunAnimatorSanityChecks: 0
-  DisableAnimatorLogs: 1
+  DisableAnimatorLogs: 0
   CharacterModel: {fileID: 1358283918792732}
   CharacterHealth: {fileID: 0}
   SendStateChangeEvents: 1

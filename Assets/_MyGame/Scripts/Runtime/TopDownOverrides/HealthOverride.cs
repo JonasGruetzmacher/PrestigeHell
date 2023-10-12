@@ -37,7 +37,6 @@ namespace LeroGames.PrestigeHell
         {
             InitializeCurrentHealth();
             base.ResetHealthToMaxHealth();
-            
         }
     }
 }

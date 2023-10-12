@@ -34,9 +34,9 @@ namespace LeroGames.PrestigeHell
             verticalLayoutGroup.padding = viewSO.padding;
             verticalLayoutGroup.spacing = viewSO.spacing;
 
-            imageTop.color = viewSO.themeSO.primary_bg;
-            imageCenter.color = viewSO.themeSO.secondary_bg;
-            imageBottom.color = viewSO.themeSO.tertiary_bg;
+            imageTop.color = GetThemeSO().primary_bg;
+            imageCenter.color = GetThemeSO().secondary_bg;
+            imageBottom.color = GetThemeSO().tertiary_bg;
         }
     }
 }

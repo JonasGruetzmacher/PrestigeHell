@@ -8,7 +8,6 @@ namespace LeroGames.PrestigeHell
     [CreateAssetMenu(fileName = "View", menuName = "CustomUI/ViewSO")]
     public class CViewSO : SerializedScriptableObject
     {
-        public CThemeSO themeSO;
         public RectOffset padding;
         public float spacing;
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UpgradeButtonView
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -21,10 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  themeSO: {fileID: 11400000, guid: 3f7aca7c8a4390c438cb49e454d30265, type: 2}
   padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
+    m_Left: 15
+    m_Right: 15
+    m_Top: 15
+    m_Bottom: 20
   spacing: 15
