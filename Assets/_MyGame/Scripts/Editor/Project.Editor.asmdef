@@ -2,12 +2,12 @@
     "name": "Project.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:9898b2e12380b8e4aacdebc46403e096"
+        "GUID:9898b2e12380b8e4aacdebc46403e096",
+        "GUID:ffe9eb6f94fca5f4e9164e24556416ed",
+        "GUID:e8a57c53abfe9cf4dbb0691d3f160361"
     ],
     "includePlatforms": [],
-    "excludePlatforms": [
-        "Editor"
-    ],
+    "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],

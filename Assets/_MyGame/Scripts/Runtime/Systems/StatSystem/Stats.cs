@@ -102,7 +102,7 @@ namespace LeroGames.PrestigeHell
             upgradeApplied?.Invoke(this, null);
         }
 
-        private void UpdateUpgradedStats()
+        public void UpdateUpgradedStats()
         {
             if (upgradedStats == null)
                 return;
@@ -129,7 +129,11 @@ namespace LeroGames.PrestigeHell
                 upgradedStat.SetValue(GetBaseStat(statType));
                 return;
             }
-            
+            if (!Application.isPlaying)
+            {
+                upgradedStat.SetValue(GetBaseStat(statType));
+                return;
+            }
             upgradedStat.Value = baseStats[statType].Value + statCurves[statType].curve.Evaluate(ResourcesManager.Instance.GetResourceAmount(ResourceType.Danger));
         }
 

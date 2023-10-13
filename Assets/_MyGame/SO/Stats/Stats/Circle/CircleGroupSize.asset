@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CircleGroupSize
   m_EditorClassIdentifier: 
   StatType: {fileID: 11400000, guid: 1a0df5b5dd751b14aaa52984906c2167, type: 2}
-  BaseValue: {fileID: 11400000, guid: 3adf9904999f6db4fb1834a005d76eb3, type: 2}
-  UpgradedValue: {fileID: 11400000, guid: 2c969045e321cb041b15864b0df31661, type: 2}
+  BaseValue: {fileID: 0}
+  UpgradedValue: {fileID: 0}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BaseCircleHealthVariance
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  Value: 0
+  Value: 0.2

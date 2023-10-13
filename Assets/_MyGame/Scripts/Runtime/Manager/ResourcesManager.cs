@@ -95,6 +95,7 @@ namespace LeroGames.PrestigeHell
         public void SetResource(ResourceType type, float amount)
         {
             resources[type] = amount;
+            OnResourceChangeEvent?.Raise(this, new ResourceAmount(type, (int)amount));
             UpdateResource(type);
         }
 

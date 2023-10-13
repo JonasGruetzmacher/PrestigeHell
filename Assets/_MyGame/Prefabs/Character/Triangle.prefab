@@ -5534,7 +5534,7 @@ MonoBehaviour:
   WalkParticles: []
   TouchTheGroundParticles: []
   TouchTheGroundSfx: []
-  movementSpeed: {fileID: 11400000, guid: 6df7287c833531c44893587ed9ec1a49, type: 2}
+  movementSpeed: {fileID: 0}
 --- !u!114 &2575920756007099802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5883,8 +5883,8 @@ MonoBehaviour:
   TargetDamageResistanceProcessor: {fileID: 0}
   TargetAnimator: {fileID: 0}
   DisableAnimatorLogs: 1
-  initialHealth: {fileID: 11400000, guid: 809f4ba39dd81054dbb0508d2f16a8d0, type: 2}
-  healthVariance: {fileID: 11400000, guid: 770040e7f8ae9c44b947c36009e69fc1, type: 2}
+  initialHealth: {fileID: 0}
+  healthVariance: {fileID: 0}
 --- !u!114 &4745927281973992685
 MonoBehaviour:
   m_ObjectHideFlags: 0
