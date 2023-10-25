@@ -22,32 +22,32 @@ namespace LeroGames.PrestigeHell
             Initialize();
         }
 
-        [Button]
-        public void CreateStatAsset( float baseValue = 0f, string name = "Test")
-        {
+        // [Button]
+        // public void CreateStatAsset( float baseValue = 0f, string name = "Test")
+        // {
 
-            BaseValue = CreateInstance<FloatVariable>();
-            BaseValue.name = String.Format("Base{0}{1}", name, StatType.ToString());
-            BaseValue.Value = baseValue;
-            if (!Directory.Exists(string.Format("Assets/_MyGame/SO/Stats/BaseStats/{0}", name)))
-            {
-                Directory.CreateDirectory(string.Format("Assets/_MyGame/SO/Stats/BaseStats/{0}", name));
-            }
-            AssetDatabase.CreateAsset(BaseValue, String.Format("Assets/_MyGame/SO/Stats/BaseStats/{0}/{1}.asset", name, BaseValue.name));
+        //     BaseValue = CreateInstance<FloatVariable>();
+        //     BaseValue.name = String.Format("Base{0}{1}", name, StatType.ToString());
+        //     BaseValue.Value = baseValue;
+        //     if (!Directory.Exists(string.Format("Assets/_MyGame/SO/Stats/BaseStats/{0}", name)))
+        //     {
+        //         Directory.CreateDirectory(string.Format("Assets/_MyGame/SO/Stats/BaseStats/{0}", name));
+        //     }
+        //     AssetDatabase.CreateAsset(BaseValue, String.Format("Assets/_MyGame/SO/Stats/BaseStats/{0}/{1}.asset", name, BaseValue.name));
             
 
-            UpgradedValue = CreateInstance<FloatVariable>();
-            UpgradedValue.name = String.Format("Upgraded{0}{1}", name, StatType.ToString());
-            UpgradedValue.Value = baseValue;
-            if (!Directory.Exists(string.Format("Assets/_MyGame/SO/Stats/UpgradedStats/{0}", name)))
-            {
-                Directory.CreateDirectory(string.Format("Assets/_MyGame/SO/Stats/UpgradedStats/{0}", name));
-            }
-            AssetDatabase.CreateAsset(UpgradedValue, String.Format("Assets/_MyGame/SO/Stats/UpgradedStats/{0}/{1}.asset",name, UpgradedValue.name));
-            Debug.Log(string.Format("Created {0} stat for {1}", StatType, name));
+        //     UpgradedValue = CreateInstance<FloatVariable>();
+        //     UpgradedValue.name = String.Format("Upgraded{0}{1}", name, StatType.ToString());
+        //     UpgradedValue.Value = baseValue;
+        //     if (!Directory.Exists(string.Format("Assets/_MyGame/SO/Stats/UpgradedStats/{0}", name)))
+        //     {
+        //         Directory.CreateDirectory(string.Format("Assets/_MyGame/SO/Stats/UpgradedStats/{0}", name));
+        //     }
+        //     AssetDatabase.CreateAsset(UpgradedValue, String.Format("Assets/_MyGame/SO/Stats/UpgradedStats/{0}/{1}.asset",name, UpgradedValue.name));
+        //     Debug.Log(string.Format("Created {0} stat for {1}", StatType, name));
 
-            AssetDatabase.SaveAssets();
-        }
+        //     AssetDatabase.SaveAssets();
+        // }
 
         public void OnValidate()
         {
@@ -85,12 +85,16 @@ namespace LeroGames.PrestigeHell
 
         private void TryFindBaseValue()
         {
+        #if UNITY_EDITOR
             BaseValue = (FloatVariable)AssetDatabase.LoadAssetAtPath<FloatVariable>(string.Format("Assets/_MyGame/SO/Stats/BaseStats/{0}/Base{1}.asset", name.Replace(StatType.ToString(), ""), name, typeof(FloatVariable)));
+        #endif
         }
 
         private void TryFindUpgradedValue()
         {
+        #if UNITY_EDITOR
             UpgradedValue = (FloatVariable)AssetDatabase.LoadAssetAtPath<FloatVariable>(string.Format("Assets/_MyGame/SO/Stats/UpgradedStats/{0}/Upgraded{1}.asset", name.Replace(StatType.ToString(), ""), name, typeof(FloatVariable)));
+        #endif
         }
     }
 }

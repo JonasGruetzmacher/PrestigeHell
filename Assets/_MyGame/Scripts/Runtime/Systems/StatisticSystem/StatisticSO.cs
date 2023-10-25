@@ -6,6 +6,7 @@ using Sirenix.Serialization;
 
 namespace LeroGames.PrestigeHell
 {
+    [System.Serializable]
     [CreateAssetMenu(fileName = "Statistic", menuName = "StatisticSO")]
     public class StatisticSO : SerializedScriptableObject
     {
@@ -28,7 +29,7 @@ namespace LeroGames.PrestigeHell
         [Header("Unlockables")]
         public Dictionary<UnlockableSO, float> unlockables = new Dictionary<UnlockableSO, float>();
         
-        private List<(UnlockableSO, float)> unlockablesList = new List<(UnlockableSO, float)>();
+        public List<(UnlockableSO, float)> unlockablesList = new List<(UnlockableSO, float)>();
         private int currentGoalIndex = 0;
 
 

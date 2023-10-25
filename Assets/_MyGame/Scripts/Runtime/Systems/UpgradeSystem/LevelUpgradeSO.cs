@@ -18,11 +18,20 @@ namespace LeroGames.PrestigeHell
 
         public void GetTooltipInformation(out string infoLeft, out string infoRight)
         {
-            infoLeft = "";
+            infoLeft = string.Format("!{0}`\n", upgradeName);
             infoRight = "";
             foreach (var upgrade in upgradesToUnlock)
             {
-                infoLeft += string.Format("{0}\n", upgrade.shortDescription);
+                if (upgrade is StatsUpgrade statsUpgrade)
+                {
+                    upgrade.GetTooltipInformation(out string statsInfoLeft, out string statsInfoRight);
+                    infoLeft += statsInfoLeft;
+                    infoRight += statsInfoRight;
+                }
+                else
+                {
+                    infoLeft += string.Format("!{0}`\n", upgrade.shortDescription);
+                }
             }
         }
 

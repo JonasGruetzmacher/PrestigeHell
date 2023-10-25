@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LevelUpgrade1A
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -25,6 +25,6 @@ MonoBehaviour:
   upgradeName: A
   levelRequirement: 1
   upgradesToUnlock:
-  - {fileID: 11400000, guid: f099662a11ced1c4e894d8e57197d498, type: 2}
+  - {fileID: 11400000, guid: 33c3778254f77ae4096c6562bf48855a, type: 2}
   getBlockedBy:
   - {fileID: 11400000, guid: bcfa63b2579e30845bd1c547f280613d, type: 2}

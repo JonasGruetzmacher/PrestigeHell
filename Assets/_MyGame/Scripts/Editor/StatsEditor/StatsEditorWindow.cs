@@ -4,6 +4,9 @@ using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using LeroGames.PrestigeHell;
 using LeroGames.Tools;
+using System.Collections.Generic;
+
+
 
 
 public class StatsEditorWindow : EditorWindow
@@ -50,7 +53,15 @@ public class StatsEditorWindow : EditorWindow
 
                 foreach (var stat in stats.stats)
                 {
-                    statsInfoBox.Add(new Label(stat.name));
+                    Label label = new Label(stat.name);
+                    statsInfoBox.Add(label);
+
+                    Label developerDescription = new Label(stat.BaseValue.DeveloperDescription);
+                    statsInfoBox.Add(developerDescription);
+
+                    float baseValue = stat.BaseValue.Value;
+                    float upgradedValue = stat.UpgradedValue.Value;
+
 
                     SerializedObject serializedObject = new SerializedObject(stat.BaseValue);
                     SerializedProperty serializedProperty = serializedObject.GetIterator();
@@ -64,7 +75,25 @@ public class StatsEditorWindow : EditorWindow
                         propertyField.Bind(serializedObject);
                         statsInfoBox.Add(propertyField);
                     }
+                //     // Get a reference to the field from UXML and assign it its value.
+                //     var uxmlField = statsInfoBox.Q<CurveField>("the-uxml-field");
+                //     uxmlField.value = new AnimationCurve(new Keyframe[]
+                //     { new Keyframe(0, 0), new Keyframe(5, 8), new Keyframe(10, 4) });
+
+                //     // Create a new field, disable it, and give it a style class.
+                //     var csharpField = new CurveField("C# Field");
+                //     csharpField.SetEnabled(false);
+                //     csharpField.AddToClassList("some-styled-field");
+                //     csharpField.value = uxmlField.value;
+                //     statsInfoBox.Add(csharpField);
+                //     // Mirror value of uxml field into the C# field.
+                //     uxmlField.RegisterCallback<ChangeEvent<AnimationCurve>>((evt) =>
+                //     {
+                //         csharpField.value = evt.newValue;
+                //     });
                 }
+
+
             }
         };
 

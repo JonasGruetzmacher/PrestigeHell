@@ -22,6 +22,12 @@ namespace LeroGames.PrestigeHell
         public GameObject characterPrefab;
         public int poolSize = 20;
 
+
+        public void Reset()
+        {
+            stats.Reset();
+        }
+        
         public void GetTooltipInformation(out string infoLeft, out string infoRight)
         {
             infoRight = "";
@@ -41,19 +47,19 @@ namespace LeroGames.PrestigeHell
                 {
                     continue;
                 }
-                var asset = AssetDatabase.FindAssets(string.Format("{0}{1}", characterName, statType), new[] {string.Format("Assets/_MyGame/SO/Stats/Stats/{0}", characterName)});
+                // var asset = AssetDatabase.FindAssets(string.Format("{0}{1}", characterName, statType), new[] {string.Format("Assets/_MyGame/SO/Stats/Stats/{0}", characterName)});
 
-                if (!asset.IsNullOrEmpty() && AssetDatabase.LoadAssetAtPath<Stat>(asset.First()) != null)
-                {
-                    stats.stats.Add(AssetDatabase.LoadAssetAtPath<Stat>(string.Format("Assets/_MyGame/SO/Stats/Stats/{0}/{0}{1}.asset", characterName, statType)));
-                    Debug.Log(string.Format("Found {0} for {1}", statType, characterName));
-                }
-                else
-                {
-                    Stat stat = statType.CreateStat(characterName);
-                    Debug.Log(string.Format("Created {0} for {1}", stat.name, characterName));
-                    stats.stats.Add(stat);
-                }
+            //     if (!asset.IsNullOrEmpty() && AssetDatabase.LoadAssetAtPath<Stat>(asset.First()) != null)
+            //     {
+            //         stats.stats.Add(AssetDatabase.LoadAssetAtPath<Stat>(string.Format("Assets/_MyGame/SO/Stats/Stats/{0}/{0}{1}.asset", characterName, statType)));
+            //         Debug.Log(string.Format("Found {0} for {1}", statType, characterName));
+            //     }
+            //     else
+            //     {
+            //         // Stat stat = statType.CreateStat(characterName);
+            //         // Debug.Log(string.Format("Created {0} for {1}", stat.name, characterName));
+            //         // stats.stats.Add(stat);
+            //     }
             }
         }
 

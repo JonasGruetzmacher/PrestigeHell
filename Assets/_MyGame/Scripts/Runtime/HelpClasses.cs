@@ -1,13 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
-using Unity.VisualScripting;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using Sirenix.Serialization;
-using System.Linq;
-using log4net.Core;
-using LeroGames.Tools;
+
 
 namespace LeroGames.PrestigeHell
 {
@@ -193,7 +189,7 @@ namespace LeroGames.PrestigeHell
     }
 
 
-
+[System.Serializable]
     public struct ScalingStat
     {
         [HideLabel]

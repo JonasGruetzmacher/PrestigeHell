@@ -4,7 +4,6 @@ using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.Events;
 using LeroGames.Tools;
-using log4net.Core;
 using MoreMountains.TopDownEngine;
 // using LeroGames.StatSystem;
 

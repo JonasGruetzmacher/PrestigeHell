@@ -9,12 +9,12 @@ namespace LeroGames.PrestigeHell
 {
     public class LevelUpPanelController : MonoBehaviour
     {
-        string windowId = "LevelUpPanel";
+        public string windowId = "LevelUpPanel";
         [SerializeField] private SerializableDictionary<LevelUpgradeSO, ButtonViewModel> levelUpgradesInit;
         private Dictionary<LevelUpgrade, ButtonViewModel> levelUpgradeToVM = new Dictionary<LevelUpgrade, ButtonViewModel>();
         private Dictionary<ButtonViewModel, LevelUpgrade> vMToLevelUpgrade = new Dictionary<ButtonViewModel, LevelUpgrade>();
 
-        private void Start()
+        private void Awake()
         {
             Initialize();
             
@@ -47,10 +47,15 @@ namespace LeroGames.PrestigeHell
 
         public void UpdateUI()
         {
+            if (levelUpgradeToVM == null)
+            {
+                Debug.LogError("LevelUpgradeToVM is null");
+                return;
+            }
             foreach (var levelUpgrade in levelUpgradeToVM.Keys.ToList())
             {
-                levelUpgradeToVM[levelUpgrade].button.SetText(levelUpgrade.GetShortDescription());
-                levelUpgradeToVM[levelUpgrade].button.SetButtonState(levelUpgrade.GetLevelUpgradeState().ToButtonState());
+                levelUpgradeToVM[levelUpgrade].button?.SetText(levelUpgrade.GetShortDescription());
+                levelUpgradeToVM[levelUpgrade].button?.SetButtonState(levelUpgrade.GetLevelUpgradeState().ToButtonState());
             }
         }
 

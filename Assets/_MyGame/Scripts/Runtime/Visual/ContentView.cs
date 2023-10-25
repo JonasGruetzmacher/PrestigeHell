@@ -40,6 +40,8 @@ namespace LeroGames.PrestigeHell
                 verticalLayoutGroup.spacing = viewSO.spacing;
             }
             
+            if (GetThemeSO() == null)
+                return;
             if(imageLeft != null) imageLeft.color = GetThemeSO().secondary_bg;
             if(imageRight != null) imageRight.color = GetThemeSO().secondary_bg;
         }

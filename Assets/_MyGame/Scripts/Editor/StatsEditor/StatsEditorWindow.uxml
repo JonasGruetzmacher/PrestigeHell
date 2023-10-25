@@ -11,6 +11,7 @@
         <engine:ScrollView name="stats-info-scroll">
             <engine:Box name="stats-info">
                 <engine:Label name="stats-info-label" text="Stats Info"/>
+                <engine:Label name="stats-description" text="Developer Description"/>
             </engine:Box>
         </engine:ScrollView>
     </engine:Box>

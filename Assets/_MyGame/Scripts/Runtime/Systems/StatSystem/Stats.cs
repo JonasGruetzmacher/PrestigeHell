@@ -4,9 +4,6 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
 using LeroGames.Tools;
-using System.Resources;
-using Unity.VisualScripting.YamlDotNet.Core.Tokens;
-using UnityEngine.PlayerLoop;
 
 namespace LeroGames.PrestigeHell
 {            

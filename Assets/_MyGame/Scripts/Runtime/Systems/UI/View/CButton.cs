@@ -12,8 +12,8 @@ namespace LeroGames.PrestigeHell
         public Style style;
         public UnityEvent onClick;
 
-        protected Button button;
-        protected TextMeshProUGUI buttonText;
+        [SerializeField] protected Button button;
+        [SerializeField] protected TextMeshProUGUI buttonText;
 
         public override void Setup()
         {
@@ -35,11 +35,21 @@ namespace LeroGames.PrestigeHell
 
         public virtual void SetText(string text)
         {
+            if (buttonText == null)
+            {
+                Debug.LogError("Button text is null");
+                return;
+            }
             buttonText.text = text;
         }
 
         public virtual void SetButtonState(ButtonState buttonState)
         {
+            if (button == null)
+            {
+                Debug.LogError("Button is null");
+                return;
+            }
             switch (buttonState)
             {
                 case ButtonState.Hidden:

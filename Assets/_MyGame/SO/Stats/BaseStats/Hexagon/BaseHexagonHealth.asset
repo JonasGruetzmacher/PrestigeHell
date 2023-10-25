@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9a81ef60332d9419a7c46d7d0401b5, type: 3}
   m_Name: BaseHexagonHealth
   m_EditorClassIdentifier: 
-  DeveloperDescription: 
-  Value: 0
+  DeveloperDescription: Health
+  Value: 100

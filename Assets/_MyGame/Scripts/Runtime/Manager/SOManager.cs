@@ -53,5 +53,13 @@ namespace LeroGames.PrestigeHell
                 }
             }
         }
+
+        public void OnRestart(Component sender, object data)
+        {
+            foreach (var stat in statsList)
+            {
+                stat.UpdateUpgradedStats();
+            }
+        }
     }
 }

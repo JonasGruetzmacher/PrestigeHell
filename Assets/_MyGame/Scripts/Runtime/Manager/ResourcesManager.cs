@@ -65,7 +65,7 @@ namespace LeroGames.PrestigeHell
 
         public void AddResource(ResourceType type, float amount)
         {
-            if (xpMultiplier != null && type == ResourceType.XP)
+            if (xpMultiplier != null && (type == ResourceType.XP ||type == ResourceType.LevelPoints))
             {
                 amount *= xpMultiplier.Value;
             }

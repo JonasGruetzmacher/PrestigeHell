@@ -52,10 +52,14 @@ namespace LeroGames.PrestigeHell
         public override void ResetUpgrade()
         {
             base.ResetUpgrade();
-            // foreach (var unitToUpgrade in unitsToUpgrade)
-            // {
-            //     unitToUpgrade.RemoveUpgrade(this);
-            // }
+            if (unitsToUpgrade == null)
+            {
+                return;
+            }
+            foreach (var unitToUpgrade in unitsToUpgrade)
+            {
+                unitToUpgrade?.RemoveUpgrade(this);
+            }
         }
 
         private bool CanPurchase()
@@ -84,6 +88,18 @@ namespace LeroGames.PrestigeHell
             {
                 ResourceEvent.Trigger(ResourceMethods.Remove, new ResourceAmount(resourceAmount.Key, (int)resourceAmount.Value));
             }
+        }
+
+        public override void GetTooltipInformation(out string infoLeft, out string infoRight)
+        {
+            infoLeft = "";
+            infoRight = "";
+
+            foreach (var upgrade in upgradeToApply)
+            {
+                infoLeft += string.Format("{0}: {1}{2}`\n", upgrade.Key.ToMarkedString(), upgrade.Value.ToString("F2"), isPercentageUpgrade ? "%" : "");
+            }
+            
         }
     }
 }

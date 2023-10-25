@@ -27,7 +27,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 836a305f5970dee4bbaf1d54b05df548, type: 2}
   - {fileID: 11400000, guid: 4a6d76b48742a66449021d391d5fa962, type: 2}
   - {fileID: 11400000, guid: 9f0271872514dde48afb5e737e9e59e4, type: 2}
-  - {fileID: 11400000, guid: 1a0df5b5dd751b14aaa52984906c2167, type: 2}
   stats: {fileID: 11400000, guid: aba9b2db12c0f85469941d1d496a3bcb, type: 2}
   characterName: Diamond
   characterSprite: {fileID: 3625043607559282579, guid: 045b15ec09bba42448d89db77fa6f20a,

@@ -38,7 +38,7 @@ namespace LeroGames.PrestigeHell
 
         private void OnEnable()
         {
-            Setup();
+            Configure();
         }
     }
 }

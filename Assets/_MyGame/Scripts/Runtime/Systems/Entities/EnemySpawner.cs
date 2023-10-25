@@ -5,6 +5,7 @@ using MoreMountains.Tools;
 using System;
 using MoreMountains.TopDownEngine;
 using Sirenix.OdinInspector;
+using LeroGames.Tools;
 // using LeroGames.StatSystem;
 
 namespace LeroGames.PrestigeHell
@@ -15,6 +16,8 @@ namespace LeroGames.PrestigeHell
         public StatType groupSizeStatType;
         public StatType groupSizeVarianceStatType;
         public StatType groupSpawnRadiusStatType;
+        public FloatReference spawnRate;
+        public FloatReference spawnVariance;
         public float groupSpawnRadius = 1f;
 
         [ShowInInspector]
@@ -25,6 +28,13 @@ namespace LeroGames.PrestigeHell
             base.Initialization();
             spawnPoints = new List<Transform>(GetComponentsInChildren<Transform>());
             spawnPoints.Remove(transform);
+        }
+
+        protected override void DetermineNextFrequency()
+        {
+            MinFrequency = spawnRate - (1 + spawnVariance);
+            MaxFrequency = spawnRate + (1 + spawnVariance);
+            base.DetermineNextFrequency();
         }
 
         public virtual void Spawn(Vector2 position, GameObject nextGameObject, float spawnRadius = 0f)

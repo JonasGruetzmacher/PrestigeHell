@@ -16,6 +16,7 @@ namespace LeroGames.PrestigeHell
         {
             foreach (var statistic in statistics)
             {
+                statistic.Reset();
                 if (gameData.statistics.ContainsKey(statistic.id))
                 {
                     statistic.SetValue(gameData.statistics[statistic.id]);
@@ -68,6 +69,14 @@ namespace LeroGames.PrestigeHell
         }
 
         private void OnApplicationQuit()
+        {
+            foreach (var statistic in statistics)
+            {
+                statistic.Reset();
+            }
+        }
+
+        public void HardReset()
         {
             foreach (var statistic in statistics)
             {

@@ -11,6 +11,7 @@ namespace LeroGames.PrestigeHell
         public void Awake()
         {
             CharacterInformationSO.Initialize();
+            CharacterInformationSO.Reset();
         }
 
         public void Initialize()

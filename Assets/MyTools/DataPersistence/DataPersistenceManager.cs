@@ -13,6 +13,7 @@ namespace LeroGames.Tools
         public static DataPersistenceManager instance { get; private set; }
 
         public bool saveOnQuit = true;
+        public bool loadOnStart = true;
         [SerializeField] private string fileName = "gameData.json";
         [SerializeField] private float autoSaveInterval = 60f;
 
@@ -36,9 +37,12 @@ namespace LeroGames.Tools
 
         private void Start()
         {
+        #if !UNITY_EDITOR
+            saveOnQuit = true;
+        #endif
             this.fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
             this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-            LoadGame();
+            if (loadOnStart) LoadGame();
             StartCoroutine(AutoSave());
         }
 

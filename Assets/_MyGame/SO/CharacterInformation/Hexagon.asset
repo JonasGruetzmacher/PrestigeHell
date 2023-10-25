@@ -27,6 +27,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 836a305f5970dee4bbaf1d54b05df548, type: 2}
   - {fileID: 11400000, guid: 4a6d76b48742a66449021d391d5fa962, type: 2}
   - {fileID: 11400000, guid: 9f0271872514dde48afb5e737e9e59e4, type: 2}
+  - {fileID: 11400000, guid: 1a0df5b5dd751b14aaa52984906c2167, type: 2}
+  - {fileID: 11400000, guid: 5d50132c8f8aa6349ae5068f170b656f, type: 2}
   stats: {fileID: 11400000, guid: 0f21a6e0292a0d14e853b55f642fd6a3, type: 2}
   characterName: Hexagon
   characterSprite: {fileID: 2747690628134850419, guid: 16037dbd798344f57a526d53d48f5ead,
